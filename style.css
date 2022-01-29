@@ -1,0 +1,114 @@
+/* Colors:
+  - Cerulean Frost (#7799BB)
+  - Y In Mn Blue (#435678)
+  - #415481
+  - Reddish brown: #874c1f
+  - Outer Space Crayola (#2D3D42)
+  - Wheat (#E1CBAB)
+  - Timberwolf (#E3E0DA) 
+  - Dutch White (#DDCAAE)
+  - Icon Gray rgb(124, 134, 145) */
+
+/* Global Styles */
+.list i {
+  color: rgb(124, 134, 145);
+}
+
+.title i {
+  color: #ebeef5;
+}
+
+.button:active {
+  color: rgb(183, 196, 209);
+}
+
+/* Set margin and padding of body and h1 to 0 so nav bar extends to top of page. */
+body {
+  background: #ddcaae;
+  font-family: Karla, Calibri, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 70px;
+  color: #ebeef5;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+.title {
+  background: #874c1f;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 4em 1.5em 16em;
+}
+
+.add-item {
+  background: #41585f;
+  color: rgb(246, 249, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 2.5em 1em 2.5em;
+  padding: 1em 0 1em 0;
+}
+
+.add-item:active {
+  background: #2d3d42;
+}
+
+.add-item h2 {
+  padding-left: 1em;
+}
+
+/* Home Page Styles */
+.search {
+  border-radius: 50px;
+  background: white;
+  color: rgb(124, 134, 145);
+  padding: 0.6em 1em 0.6em 1em;
+  margin: 1.7em 2.8em 1.7em 2.3em;
+  display: flex;
+  align-items: center;
+}
+
+.search i {
+  padding-left: 0.5em;
+}
+
+.search input {
+  width: 100%;
+  line-height: 2.5em;
+  font-size: 44px;
+  font-family: Karla, Calibri, sans-serif;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  padding-left: 0.8em;
+}
+
+#search-label {
+  display: none;
+}
+
+.list {
+  background: #ebeef5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  list-style: none;
+  margin: 0 2.5em 1em 0;
+  color: #2d3d42;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 3em 1em 2em;
+}
+
+.list h2 {
+  font-size: 50px;
+}
