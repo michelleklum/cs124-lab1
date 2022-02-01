@@ -10,14 +10,17 @@
   - Icon Gray rgb(124, 134, 145) */
 
 /*
-  - pick new color palette
+  - pick new color palette - don't use red and green to differentiate
   - pick font
   - narrow input box for search or shrink radius of bar
   - add settings icon to top right
   - add navbar to bottom of color palette
   - curve edges of todo a little
   - Hi Zoe, here are your tasks for today...
-
+  - Pencil might be more for edit, than for delete
+  - Vertical dots instead of horizontal dots?
+  - Toolbar at bottom for Create New List so it's in fixed position if you have infinite lists
+  - Don't have 2 plus buttons (confusing)
 */
 
 /* Global Styles */
@@ -36,7 +39,8 @@
 /* Set margin and padding of body and h1 to 0 so nav bar extends to top of page. */
 body {
   background: #ddcaae;
-  font-family: Karla, Calibri, sans-serif;
+  font-family: Roboto, Calibri, sans-serif;
+  font-weight: 800;
   margin: 0;
   padding: 0;
 }
