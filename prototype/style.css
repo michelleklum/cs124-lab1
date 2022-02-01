@@ -9,6 +9,17 @@
   - Dutch White (#DDCAAE)
   - Icon Gray rgb(124, 134, 145) */
 
+/*
+  - pick new color palette
+  - pick font
+  - narrow input box for search or shrink radius of bar
+  - add settings icon to top right
+  - add navbar to bottom of color palette
+  - curve edges of todo a little
+  - Hi Zoe, here are your tasks for today...
+
+*/
+
 /* Global Styles */
 .list i {
   color: rgb(124, 134, 145);
