@@ -1,103 +1,128 @@
 /* Colors:
-  - Cerulean Frost (#7799BB)
-  - Y In Mn Blue (#435678)
-  - #415481
-  - Reddish brown: #874c1f
-  - Outer Space Crayola (#2D3D42)
-  - Wheat (#E1CBAB)
-  - Timberwolf (#E3E0DA) 
-  - Dutch White (#DDCAAE)
-  - Icon Gray rgb(124, 134, 145) */
+  - Charleston Green (#172528)
+  - Black Shadows (#BAB2B5) - list icons, magnifying glass
+  - *Platinum (#EAE8E8) - 
+  - White (#FEFFFF) - title icon, list items
+  - *Azure X 11 Web Color (#DEF2F1) - background
+  - Opal (#91C6C3) - 
+  - Verdigris (#33AAAA) - nav bar on botton
+  - Myrtle Green (#2B7A78)- header at top
+*/
 
 /*
-  - pick new color palette - don't use red and green to differentiate
-  - pick font
-  - narrow input box for search or shrink radius of bar
-  - add settings icon to top right
-  - add navbar to bottom of color palette
-  - curve edges of todo a little
-  - Hi Zoe, here are your tasks for today...
+  - TODO:
+  - pick font + ensure we can have different font weight
   - Pencil might be more for edit, than for delete
-  - Vertical dots instead of horizontal dots?
+  - add navbar to bottom
   - Toolbar at bottom for Create New List so it's in fixed position if you have infinite lists
-  - Don't have 2 plus buttons (confusing)
+
+  - IDEAS:
+  - Hi Zoe, here are your tasks for today...
 */
 
 /* Global Styles */
 .list i {
-  color: rgb(124, 134, 145);
+  color: #BAB2B5;
 }
 
-.title i {
-  color: #ebeef5;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-.button:active {
-  color: rgb(183, 196, 209);
-}
-
-/* Set margin and padding of body and h1 to 0 so nav bar extends to top of page. */
-body {
-  background: #ddcaae;
-  font-family: Roboto, Calibri, sans-serif;
-  font-weight: 800;
+/* Set margin of html, body, h1 to 0 so top bar extends to top of page,
+and also so there isn't extra margin on left and right for top bar and bottom toolbar. */
+html, body {
+  background: #EAE8E8;
+  font-family: 'Open Sans', Calibri, sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 h1 {
   font-size: 70px;
-  color: #ebeef5;
+  color: #FEFFFF;
   margin: 0;
-  padding: 0;
 }
 
 h2 {
   font-size: 44px;
 }
 
-.title {
-  background: #874c1f;
-  display: flex;
-  justify-content: space-between;
-  padding: 2em 4em 1.5em 16em;
+/* top-bar is class for top navbar */
+/* First three styles are for sticky navbar */
+.top-bar {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  background: #2B7A78;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
-.add-item {
-  background: #41585f;
-  color: rgb(246, 249, 250);
+/* margin: 0 auto; and width: 90%; are to center top bar content, leaving 5% width on each side */
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* margin-left auto makes setting gear icon flush to right */
+.top-bar i {
+  color: #FEFFFF;
+  margin-left: auto;
+}
+
+/* Sticky toolbar at bottom */
+/* First three styles are for sticky navbar */
+.bottom-toolbar {
+  bottom: 0;
+  position: sticky;
+  width: 100%;
+  background: #33AAAA;
+  color: #FEFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2em 2.5em 1em 2.5em;
-  padding: 1em 0 1em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.add-item:active {
-  background: #2d3d42;
+.bottom-toolbar h2 {
+  margin-left: 1em;
 }
 
-.add-item h2 {
-  padding-left: 1em;
-}
-
+/* First two styles are for sticky searchbar */
 /* Home Page Styles */
+#search-background {
+  position: sticky;
+  top: 10em;
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background: #EAE8E8;
+  overflow: hidden;
+}
+
 .search {
+  position: sticky;
+  top: 14em;
+  width: 100%;
   border-radius: 50px;
-  background: white;
-  color: rgb(124, 134, 145);
-  padding: 0.6em 1em 0.6em 1em;
-  margin: 1.7em 2.8em 1.7em 2.3em;
+  background: #FEFFFF;
+  color: #BAB2B5;
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .search i {
-  padding-left: 0.5em;
+  margin-left: 0.8em;
 }
 
 .search input {
-  width: 100%;
+  position: sticky;
+  top: 14em;
+  width: 80%;
+  background: #FEFFFF;
   line-height: 2.5em;
   font-size: 44px;
   font-family: Karla, Calibri, sans-serif;
@@ -105,23 +130,27 @@ h2 {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  padding-left: 0.8em;
 }
 
 #search-label {
-  display: none;
+  visibility: hidden;
+}
+
+#list-of-lists {
+  margin: 0 auto;
+  width: 90%;
 }
 
 .list {
-  background: #ebeef5;
+  border-radius: 8px;
+  background: #FEFFFF;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  list-style: none;
-  margin: 0 2.5em 1em 0;
-  color: #2d3d42;
+  color: #17252A;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 3em 1em 2em;
+  margin-bottom: 2em;
+  padding: 0.5em 2em 0.5em 2em;
 }
 
 .list h2 {
