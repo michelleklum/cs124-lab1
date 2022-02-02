@@ -9,54 +9,44 @@
   - Myrtle Green (#2B7A78)- header at top
 */
 
-/*
-  - TODO:
-  - pick font + ensure we can have different font weight
-  - Pencil might be more for edit, than for delete
-  - add navbar to bottom
-  - Toolbar at bottom for Create New List so it's in fixed position if you have infinite lists
-
-  - IDEAS:
-  - Hi Zoe, here are your tasks for today...
-*/
-
 /* Global Styles */
-.list i {
-  color: #BAB2B5;
+i {
+  color: #bab2b5;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-/* Set margin of html, body, h1 to 0 so top bar extends to top of page,
+/* set margin of html, body, h1 to 0 so top bar extends to top of page,
 and also so there isn't extra margin on left and right for top bar and bottom toolbar. */
-html, body {
-  background: #EAE8E8;
-  font-family: 'Open Sans', Calibri, sans-serif;
+html,
+body {
+  background: #eae8e8;
+  font-family: "Open Sans", Calibri, sans-serif;
   margin: 0;
 }
 
 h1 {
   font-size: 70px;
-  color: #FEFFFF;
+  color: #feffff;
   margin: 0;
 }
 
 h2 {
-  font-size: 44px;
+  font-size: 50px;
 }
 
-/* top-bar is class for top navbar */
-/* First three styles are for sticky navbar */
+/* top-bar is top navbar */
+/* first two styles are for sticky navbar */
 .top-bar {
   top: 0;
   position: sticky;
   width: 100%;
-  background: #2B7A78;
+  background: #2b7a78;
   padding-top: 2em;
   padding-bottom: 2em;
+  z-index: 1; /* set z-index: 1 so checkboxes don't overlap with top bar */
 }
 
 /* margin: 0 auto; and width: 90%; are to center top bar content, leaving 5% width on each side */
+/* really, to do that, we just need margin-left: auto and margin-right: auto */
 .top-bar-content {
   display: flex;
   align-items: center;
@@ -64,50 +54,36 @@ h2 {
   width: 90%;
 }
 
-/* margin-left auto makes setting gear icon flush to right */
 .top-bar i {
-  color: #FEFFFF;
+  color: #feffff;
+}
+
+/* margin-left auto makes setting gear icon / home icon flush to right */
+.right-aligned {
   margin-left: auto;
 }
 
-/* Sticky toolbar at bottom */
-/* First three styles are for sticky navbar */
-.bottom-toolbar {
-  bottom: 0;
-  position: sticky;
-  width: 100%;
-  background: #33AAAA;
-  color: #FEFFFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-.bottom-toolbar h2 {
-  margin-left: 1em;
-}
-
-/* First two styles are for sticky searchbar */
 /* Home Page Styles */
-#search-background {
+/* sticky search bar */
+/* first two styles are for sticky search bar */
+.search-background {
   position: sticky;
   top: 10em;
   width: 100%;
   padding-top: 2em;
   padding-bottom: 2em;
-  background: #EAE8E8;
+  background: #eae8e8;
   overflow: hidden;
 }
 
+/* first two styles are for sticky searchbar */
 .search {
   position: sticky;
   top: 14em;
   width: 100%;
   border-radius: 50px;
-  background: #FEFFFF;
-  color: #BAB2B5;
+  background: #feffff;
+  color: #bab2b5;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -118,11 +94,12 @@ h2 {
   margin-left: 0.8em;
 }
 
+/* first two styles are for sticky searchbar */
 .search input {
   position: sticky;
   top: 14em;
   width: 80%;
-  background: #FEFFFF;
+  background: #feffff;
   line-height: 2.5em;
   font-size: 44px;
   font-family: Karla, Calibri, sans-serif;
@@ -132,20 +109,23 @@ h2 {
   border-bottom-style: hidden;
 }
 
-#search-label {
+.search-label {
   visibility: hidden;
 }
 
+/* margin-left: auto and margin-right: auto and width: 90% are to center list of lists, leaving 5% width on each side */
 #list-of-lists {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 90%;
+  margin-bottom: 15em; /* so we can scroll to all the tasks and none are blocked by bottom toolbar */
 }
 
 .list {
   border-radius: 8px;
-  background: #FEFFFF;
+  background: #feffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  color: #17252A;
+  color: #172528;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -153,6 +133,156 @@ h2 {
   padding: 0.5em 2em 0.5em 2em;
 }
 
-.list h2 {
-  font-size: 50px;
+/* sticky bottom toolbar for home page only (create new list) */
+/* first three styles are for sticky toolbar */
+.bottom-toolbar {
+  bottom: 0;
+  position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
+  width: 100%;
+  background: #33aaaa;
+  color: #feffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.bottom-toolbar i {
+  color: #feffff;
+}
+
+.bottom-toolbar h2 {
+  margin-left: 1em;
+}
+
+/* Single List Page Styles */
+/* margin-right auto makes single list icon + list name flush to left */
+.left-aligned {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-content .left-aligned i {
+  margin-right: 0.25em;
+}
+
+/* sticky search bar + filter row */
+/* first two styles are for sticky search bar + filter row */
+.search-and-filter-background {
+  position: sticky;
+  top: 10em;
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background: #eae8e8;
+  display: flex;
+  flex-direction: column;
+  z-index: 1; /* set z-index: 1 so checkboxes don't overlap with sticky search bar + filter */
+}
+
+.filter {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+/* override default checkbox styles for filter checkbox */
+.filter input[type="checkbox"] {
+  margin-left: 2em;
+  margin-right: 3em;
+  transform: scale(4.5);
+  accent-color: #33aaaa;
+}
+
+/* margin-left: auto and margin-right: auto and width: 90% are to center list of tasks, leaving 5% width on each side */
+#list-of-tasks {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-bottom: 25em; /* so we can scroll to all the tasks and none are blocked by bottom toolbar */
+}
+
+.task {
+  border-radius: 8px;
+  background: #feffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #17252a;
+  margin-bottom: 2em;
+  padding: 0.5em 2em 0.5em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* override default checkbox styles for task checkboxes */
+.task input[type="checkbox"] {
+  margin-left: 2em;
+  margin-right: 4.5em;
+  transform: scale(5.5);
+  accent-color: #33aaaa;
+}
+
+.task-and-date {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.task-and-date h2 {
+  margin-bottom: 0; /* to make task and date flush next to each other vertically */
+}
+
+.date {
+  font-size: 35px;
+  margin-top: 0; /* to make task and date flush next to each other vertically */
+}
+
+.task .pencil {
+  margin-right: 0.2em;
+}
+
+/* make the two layers of bottom toolbar have flex direction column */
+/* make each individual layer have flex direction row */
+/* first two styles are for sticky toolbar */
+.single-list-bottom-toolbar {
+  bottom: 0;
+  position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many tasks */
+  width: 100%;
+  background: #33aaaa;
+  color: #feffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+}
+
+.single-list-bottom-toolbar i {
+  color: #feffff;
+}
+
+.add-task,
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-task {
+  padding: 1.25em 0 1.25em 0;
+}
+
+.delete {
+  width: 100%;
+  background: #2b7a78;
+}
+
+.add-task h2,
+.delete h2 {
+  margin-left: 1em;
 }
