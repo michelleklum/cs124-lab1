@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 /* top-bar is top navbar */
@@ -58,33 +58,51 @@ h2 {
   color: #feffff;
 }
 
-/* margin-left auto makes setting gear icon / home icon flush to right */
+/* Icon changes color when pressed */
+.top-bar i:active {
+  color: #BAB2B5;
+}
+
+/* margin-left auto makes three dots icon / home icon flush to right */
 .right-aligned {
   margin-left: auto;
+}
+
+.right-aligned i {
+  padding-left: 0.5em;
 }
 
 /* Home Page Styles */
 /* sticky search bar */
 /* first two styles are for sticky search bar */
 .search-background {
-  position: sticky;
-  top: 10em;
+  top: 0;
   width: 100%;
   padding-top: 2em;
   padding-bottom: 2em;
   background: #eae8e8;
-  overflow: hidden;
+}
+
+/* sticky top bar */
+/* first two styles are for sticky top bar */
+.top-home-background {
+  position: sticky;
+  top: 10em;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: #eae8e8;
 }
 
 /* first two styles are for sticky searchbar */
 .search {
-  position: sticky;
-  top: 14em;
+  top: 0;
   width: 100%;
   border-radius: 50px;
   background: #feffff;
   color: #bab2b5;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
   width: 90%;
@@ -98,11 +116,11 @@ h2 {
 .search input {
   position: sticky;
   top: 14em;
-  width: 80%;
+  width: 75%;
   background: #feffff;
   line-height: 2.5em;
   font-size: 44px;
-  font-family: Karla, Calibri, sans-serif;
+  font-family: "Open Sans", Calibri, sans-serif;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
@@ -122,15 +140,37 @@ h2 {
 }
 
 .list {
-  border-radius: 8px;
+  border-radius: 10px;
   background: #feffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   color: #172528;
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 5em;
+  grid-template-columns: 2.8em 34em 3em;
   margin-bottom: 2em;
   padding: 0.5em 2em 0.5em 2em;
+}
+
+.list-icon {
+  color: #172528;
+}
+
+.enter-list:active{
+  color: #2B7A78;
+}
+
+.edit-list {
+  grid-template-columns: 2.8em 25em 3em 3em;
+}
+
+.edit-list-style:active{
+  color: #2B7A78;
+}
+
+.delete-list:active{
+  color: #2B7A78;
 }
 
 /* sticky bottom toolbar for home page only (create new list) */
@@ -139,21 +179,29 @@ h2 {
   bottom: 0;
   position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
   width: 100%;
-  background: #33aaaa;
+  background: #33AAAA;
   color: #feffff;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  padding-left: 3.8em;
+}
+
+.bottom-toolbar:active {
+  color:#EAE8E8;
 }
 
 .bottom-toolbar i {
+  font-size: 30pt;
   color: #feffff;
 }
 
 .bottom-toolbar h2 {
-  margin-left: 1em;
+  margin-left: 0.5em;
+  font-size: 30pt;
+  font-weight: normal;
 }
 
 /* Single List Page Styles */
