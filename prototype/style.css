@@ -105,8 +105,8 @@ p {
   position: sticky;
   top: 0em;
   width: 100%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-bottom: 2em;
   background: #2b7a78;
   display: flex;
@@ -199,7 +199,7 @@ p {
 #cancel-search {
   margin-right: 6%;
   color: #feffff;
-  font-weight: light;
+  font-weight: 500;
 }
 
 /* margin-left: auto and margin-right: auto and width: 90% are to center list of lists, leaving 5% width on each side */
@@ -507,4 +507,43 @@ p {
 .set-completed {
   grid-column: 2 / span 1;
   grid-row: 4 / span 1;
+}
+
+#homework-list {
+  font-weight: 100;
+  background: #EAE8E8;
+  color: #172528;
+  border-radius: 10px;
+  padding-left: 0.5em;
+  padding-right: 2.5em;
+}
+
+#icon-options {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  row-gap: 2em;
+  margin-top: 4em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+#icon-options i {
+  background: #FEFFFF;
+  color: #172528;
+  padding: 0.3em 0.3em 0.3em 0.3em;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#icon-options .fa-book i {
+  background: #FEFFFF;
+  color: red;
+  padding: 0.3em 0.3em 0.3em 0.3em;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
