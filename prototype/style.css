@@ -257,6 +257,10 @@ p {
   padding: 0.5em 2em 0.5em 2em;
 }
 
+.list h2 {
+  font-weight: 600;
+}
+
 .list-icon {
   color: #172528;
 }
