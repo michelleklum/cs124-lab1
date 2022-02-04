@@ -4,14 +4,21 @@
   - *Platinum (#EAE8E8) - 
   - White (#FEFFFF) - title icon, list items
   - *Azure X 11 Web Color (#DEF2F1) - background
-  - Opal (#91C6C3) - 
+  - Opal (#91C6C3) - color of icons when pressed
   - Verdigris (#33AAAA) - nav bar on botton
-  - Myrtle Green (#2B7A78)- header at top
+  - Myrtle Green (#2B7A78)- header at top, icon color when pressed
+  - Yellow (#ebc323) - edit pencil icon
+  - Red (#ed554a) - delete trash can
 */
 
 /* Global Styles */
 i {
   color: #bab2b5;
+}
+
+/* all icons should slightly decrease in size when clicked to look like they're being pressed */
+i:active {
+  transform: scale(0.98);
 }
 
 /* set margin of html, body, h1 to 0 so top bar extends to top of page,
@@ -61,7 +68,7 @@ p {
   align-items: center;
   margin: 0 auto;
   width: 90%;
-  height: 90px;
+  height: 100px;
 }
 
 .top-bar i {
@@ -75,9 +82,9 @@ p {
   margin: 0;
 }
 
-/* Icon changes color when pressed */
+/* Top bar icons change color to Azure X 11 Web Color when pressed */
 .top-bar i:active {
-  color: #bab2b5;
+  color: #def2f1;
 }
 
 /* margin-left auto makes three dots icon / home icon flush to right */
@@ -89,18 +96,42 @@ p {
   padding-left: 0.5em;
 }
 
+.add-button {
+  position: fixed;
+  bottom: 75px;
+  right: 40px;
+  width: 175px;
+  height: 175px;
+  background: #33aaaa;
+  border-radius: 50%;
+  box-shadow: 5px 7px 5px #bab2b5;
+  display: flex; /* bottom three styles center the plus icon in the .add-button div */
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button i {
+  color: #feffff;
+}
+
+/* add-button should change color and decrease slightly in size when pressed */
+.add-button:active {
+  background: #2b7a78;
+  transform: scale(0.98);
+}
+
+/* margin-left: auto and margin-right: auto and width: 90% are to center list of lists, leaving 5% width on each side */
+#list-of-lists,
+#list-of-tasks {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-bottom: 300px; /* so that plus button doesn't cover edit task icon */
+}
+
 /* Home Page Styles */
 /* sticky search bar */
 /* first two styles are for sticky search bar */
-.search-background {
-  position: sticky;
-  top: 10em;
-  width: 100%;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  background: #eae8e8;
-}
-
 .alt-search-background {
   position: sticky;
   top: 0em;
@@ -164,7 +195,7 @@ p {
 .search input {
   position: sticky;
   top: 14em;
-  width: 80%;
+  width: 75%;
   background: #feffff;
   color: #172528;
   line-height: 2.5em;
@@ -174,6 +205,12 @@ p {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
+}
+
+/* get rid of default input outline on hover and click */
+.search input:hover,
+.search input:active {
+  outline: none;
 }
 
 /* first two styles are for sticky searchbar */
@@ -202,14 +239,6 @@ p {
   font-weight: 500;
 }
 
-/* margin-left: auto and margin-right: auto and width: 90% are to center list of lists, leaving 5% width on each side */
-#list-of-lists {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  margin-bottom: 15em; /* so we can scroll to all the tasks and none are blocked by bottom toolbar */
-}
-
 .list {
   border-radius: 10px;
   background: #feffff;
@@ -234,6 +263,14 @@ p {
 
 .edit-list {
   grid-template-columns: 2.8em 25em 3em 3em;
+}
+
+.edit-list-style {
+  color: #ebc323;
+}
+
+.delete-list {
+  color: #ed554a;
 }
 
 .edit-list-style:active {
@@ -304,6 +341,10 @@ p {
 }
 
 /* Single List Page Styles */
+#single-list-page h2 {
+  font-weight: normal;
+}
+
 /* margin-right auto makes single list icon + list name flush to left */
 .left-aligned {
   margin-right: auto;
@@ -317,41 +358,16 @@ p {
 
 /* sticky search bar + filter row */
 /* first two styles are for sticky search bar + filter row */
-.search-and-filter-background {
+.search-background {
   position: sticky;
-  top: 10em;
+  top: 9em;
   width: 100%;
-  padding-top: 2em;
+  padding-top: 1.8em;
   padding-bottom: 2em;
   background: #eae8e8;
   display: flex;
   flex-direction: column;
   z-index: 1; /* set z-index: 1 so checkboxes don't overlap with sticky search bar + filter */
-}
-
-.filter {
-  font-size: 40px;
-  display: flex;
-  align-items: center;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: 1em;
-}
-
-/* override default checkbox styles for filter checkbox */
-.filter input[type="checkbox"] {
-  margin-left: 2em;
-  margin-right: 3em;
-  transform: scale(4.5);
-  accent-color: #33aaaa;
-}
-
-/* margin-left: auto and margin-right: auto and width: 90% are to center list of tasks, leaving 5% width on each side */
-#list-of-tasks {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  margin-bottom: 25em; /* so we can scroll to all the tasks and none are blocked by bottom toolbar */
 }
 
 .task {
@@ -381,6 +397,7 @@ p {
 }
 
 .task-and-date h2 {
+  font-size: 40px;
   margin-bottom: 0; /* to make task and date flush next to each other vertically */
 }
 
@@ -388,49 +405,12 @@ p {
   margin-top: 0; /* to make task and date flush next to each other vertically */
 }
 
-.task .pencil {
+.edit-task-icon {
   margin-right: 0.2em;
 }
 
-/* make the two layers of bottom toolbar have flex direction column */
-/* make each individual layer have flex direction row */
-/* first two styles are for sticky toolbar */
-.single-list-bottom-toolbar {
-  bottom: 0;
-  position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many tasks */
-  width: 100%;
-  background: #33aaaa;
-  color: #feffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1em;
-}
-
-.single-list-bottom-toolbar i {
-  color: #feffff;
-}
-
-.add-task,
-.delete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.add-task {
-  padding: 1.25em 0 1.25em 0;
-}
-
-.delete {
-  width: 100%;
-  background: #2b7a78;
-}
-
-.add-task h2,
-.delete h2 {
-  margin-left: 1em;
+.edit-task-icon:active {
+  color: #2b7a78;
 }
 
 /* Edit Task Page Styles */
