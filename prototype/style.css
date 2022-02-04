@@ -516,17 +516,27 @@ p {
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-rows: 1fr;
   position:relative;
-  top:45%;
+  top:40%;
   transform:translate(0,-50%);
 }
 
-.edit-list-header h1 {
+.list-name input {
+  border-radius: 30px;
+  font-size: 54px;
   text-align: center;
-  width: 55%;
-  padding-right: 2em;
+  width: 95%;
+  margin-left: 0em;
   position:relative;
-  top:50%;
+  top:45px;
   transform:translate(0,-50%);
+  color: #172528;
+  line-height: 2.5em;
+  font-size: 44px;
+  font-family: "Open Sans", Calibri, sans-serif;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
 }
 
 #edit-list-page {
@@ -587,4 +597,8 @@ p {
 div.selected {
   background: #feffff;
   box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.edit-list-name-label {
+  visibility: hidden;
 }
