@@ -511,7 +511,7 @@ p {
 
 #homework-list {
   font-weight: 100;
-  background: #EAE8E8;
+  background: #eae8e8;
   color: #172528;
   border-radius: 10px;
   padding-left: 0.5em;
@@ -531,7 +531,7 @@ p {
 }
 
 #icon-options i {
-  background: #FEFFFF;
+  background: #feffff;
   color: #172528;
   padding: 0.3em 0.3em 0.3em 0.3em;
   margin: auto;
@@ -539,8 +539,8 @@ p {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#icon-options .fa-book i {
-  background: #FEFFFF;
+#selected i {
+  background: red;
   color: red;
   padding: 0.3em 0.3em 0.3em 0.3em;
   margin: auto;
