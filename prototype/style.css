@@ -37,6 +37,11 @@ h3 {
   font-size: 43px;
 }
 
+p {
+  font-size: 35px;
+  color: #172528;
+}
+
 /* top-bar is top navbar */
 /* first two styles are for sticky navbar */
 .top-bar {
@@ -56,15 +61,23 @@ h3 {
   align-items: center;
   margin: 0 auto;
   width: 90%;
+  height: 90px;
 }
 
 .top-bar i {
   color: #feffff;
+  padding-right: 0.5em;
+}
+
+.top-bar h2 {
+  font-size: 55px;
+  color: #feffff;
+  margin: 0;
 }
 
 /* Icon changes color when pressed */
 .top-bar i:active {
-  color: #BAB2B5;
+  color: #bab2b5;
 }
 
 /* margin-left auto makes three dots icon / home icon flush to right */
@@ -95,7 +108,7 @@ h3 {
   padding-top: 1em;
   padding-bottom: 1em;
   margin-bottom: 2em;
-  background: #2B7A78;
+  background: #2b7a78;
   display: flex;
   align-items: space-between;
   align-items: center;
@@ -130,7 +143,7 @@ h3 {
   position: sticky;
   top: 0em;
   border-radius: 30px;
-  background: #EAE8E8;
+  background: #eae8e8;
   color: #bab2b5;
   display: flex;
   align-items: center;
@@ -168,7 +181,7 @@ h3 {
   position: sticky;
   top: 14em;
   width: 70%;
-  background: #EAE8E8;
+  background: #eae8e8;
   color: #172528;
   line-height: 2em;
   font-size: 44px;
@@ -185,7 +198,7 @@ h3 {
 
 #cancel-search {
   margin-right: 6%;
-  color: #FEFFFF;
+  color: #feffff;
   font-weight: light;
 }
 
@@ -215,20 +228,20 @@ h3 {
   color: #172528;
 }
 
-.enter-list:active{
-  color: #2B7A78;
+.enter-list:active {
+  color: #2b7a78;
 }
 
 .edit-list {
   grid-template-columns: 2.8em 25em 3em 3em;
 }
 
-.edit-list-style:active{
-  color: #2B7A78;
+.edit-list-style:active {
+  color: #2b7a78;
 }
 
-.delete-list:active{
-  color: #2B7A78;
+.delete-list:active {
+  color: #2b7a78;
 }
 
 /* sticky bottom toolbar for home page only (create new list) */
@@ -237,8 +250,35 @@ h3 {
   bottom: 0;
   position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
   width: 100%;
-  height: 7%; 
-  background: #33AAAA;
+  height: 10%;
+  background: #33aaaa;
+  color: #feffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+.bottom-toolbar:active {
+  color: #eae8e8;
+}
+
+.bottom-toolbar i {
+  font-size: 50pt;
+  color: #feffff;
+}
+
+.bottom-toolbar h2 {
+  margin-left: 0.5em;
+}
+
+.alt-bottom-toolbar {
+  bottom: 0;
+  position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
+  width: 100%;
+  height: 7%;
+  background: #33aaaa;
   color: #feffff;
   display: flex;
   justify-content: left;
@@ -248,16 +288,16 @@ h3 {
   padding-left: 3.8em;
 }
 
-.bottom-toolbar:active {
-  color:#EAE8E8;
+.alt-bottom-toolbar:active {
+  color: #eae8e8;
 }
 
-.bottom-toolbar i {
+.alt-bottom-toolbar i {
   font-size: 30pt;
   color: #feffff;
 }
 
-.bottom-toolbar h2 {
+.alt-bottom-toolbar h2 {
   margin-left: 0.5em;
   font-size: 30pt;
   font-weight: normal;
@@ -345,7 +385,6 @@ h3 {
 }
 
 .date {
-  font-size: 35px;
   margin-top: 0; /* to make task and date flush next to each other vertically */
 }
 
@@ -392,4 +431,80 @@ h3 {
 .add-task h2,
 .delete h2 {
   margin-left: 1em;
+}
+
+/* Edit Task Page Styles */
+#edit-task-page {
+  background: #feffff;
+  height: 100vh; /* need this so #feffff background color extends entire screen */
+}
+
+#edit-task-page hr {
+  border: thin solid #91c6c3;
+}
+
+#edit-task i {
+  color: #91c6c3;
+}
+
+#edit-task-name {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+#edit-task {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 125px 3fr 1fr;
+  grid-template-rows: 150px 150px 150px 150px; /* TODO: may have to change depending on whether we add more attributes a task could have! */
+  margin: 0 auto;
+  width: 90%;
+}
+
+.set-date-icon {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.set-date {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.set-time {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.set-location-icon {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.set-location {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.set-note-icon {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.set-note {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.set-completed-icon {
+  grid-column: 1 / span 1;
+  grid-row: 4 / span 1;
+}
+
+.set-completed {
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
 }
