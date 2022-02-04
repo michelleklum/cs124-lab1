@@ -73,7 +73,11 @@ p {
 
 .top-bar i {
   color: #feffff;
-  padding-right: 0.5em;
+}
+
+.fa-cog {
+  margin-left: 25px;
+  margin-right: 2px;
 }
 
 .top-bar h2 {
@@ -288,7 +292,7 @@ p {
   position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
   width: 100%;
   height: 10%;
-  background: #33aaaa;
+  background: #ed554a;
   color: #feffff;
   display: flex;
   justify-content: center;
@@ -489,41 +493,94 @@ p {
   grid-row: 4 / span 1;
 }
 
-#homework-list {
+.edit-list-title {
   font-weight: 100;
-  background: #eae8e8;
+  background: #FEFFFF;
   color: #172528;
   border-radius: 10px;
-  padding-left: 0.5em;
-  padding-right: 2.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 0.1em;
+  position:relative;
+  padding-bottom: 0.1em;
+  top:30%;
 }
 
-#icon-options {
+
+.edit-list-header-content {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr;
+  position:relative;
+  top:45%;
+  transform:translate(0,-50%);
+}
+
+.edit-list-header h1 {
+  text-align: center;
+  width: 55%;
+  padding-right: 2em;
+  position:relative;
+  top:50%;
+  transform:translate(0,-50%);
+}
+
+#edit-list-page {
+  background: #feffff;
+  height: 100vh; /* need this so #feffff background color extends entire screen */
+}
+
+.icon-options {
+  background: #eae8e8;
+  border-radius: 20px;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   justify-content: space-evenly;
-  row-gap: 2em;
-  margin-top: 4em;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  row-gap: 5em;
+  column-gap: 1em;
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  padding-top: 3em;
+  padding-bottom: 7em;
+  padding-left: 3em;
+  padding-right: 3em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#icon-options i {
-  background: #feffff;
+.edit-list-header {
+  height: 150px;
+}
+.icon-options div {
   color: #172528;
+  background: rgb(252, 252, 252);
   padding: 0.3em 0.3em 0.3em 0.3em;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 20px;
+  width: 70%;
+  height: 140%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#selected i {
-  background: red;
-  color: red;
-  padding: 0.3em 0.3em 0.3em 0.3em;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.icon-options i {
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color: #172528;
+}
+
+.selected i {
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color: #33AAAA;
+}
+
+div.selected {
+  background: #feffff;
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
 }
