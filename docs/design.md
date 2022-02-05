@@ -6,7 +6,7 @@ your design decisions, including their rationale (include images)
 
 ### Home Page
 
-![Home Page Lab 1 Final Version](Home Page Final.png)
+![Home Page Lab 1 Final Version](docs/Home Page Final.png)
 
 ### Single List Page
 
