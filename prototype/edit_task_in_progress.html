@@ -27,12 +27,27 @@
   </head>
 
   <body id="edit-task-page">
-    <h2 id="edit-task-name">Text John about bank sta</h2>
+    <div class="edit-task-header">
+      <i class="fas fa-times fa-5x left-aligned"></i>
+      <div class="task-name">
+        <label for="edit-task-name" class="edit-task-name-label"
+          >Task Name</label
+        >
+        <!-- TODO: change hacky way to get 1 row of textarea to show up -->
+        <!-- need JavaScript so textarea can expand automatically as content grows -->
+        <textarea id="edit-task-name" name="edit-task-name" rows="1" cols="24">
+Text John about bank sta</textarea
+        >
+      </div>
+      <i class="fas fa-check fa-4x right-aligned"></i>
+    </div>
+
     <hr />
+
     <div id="edit-task">
       <i class="far fa-clock fa-4x set-date-icon"></i>
-      <p class="set-date">Wednesday, Feb 9</p>
-      <p class="set-time">1 PM</p>
+      <p class="set-date">Tuesday, Feb 15</p>
+      <p class="set-time">7 PM</p>
 
       <i class="fas fa-map-marker-alt fa-4x set-location-icon"></i>
       <p class="set-location">Set location</p>
