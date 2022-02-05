@@ -6,7 +6,7 @@ your design decisions, including their rationale (include images)
 
 ### Home Page
 
-<img src="home_page_final.png" alt="Home Page Lab 1 Final Version" width="175px">
+<img src="home_page_final.png" alt="Home Page Lab 1 Final Version" width="200px">
 
 ### Single List Page
 
