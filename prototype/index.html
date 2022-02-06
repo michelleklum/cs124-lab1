@@ -1,100 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="style.css" />
+<html>
 
-    <!-- Google Font: Roboto + Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <title>CS 124 - Lab 1 Walkthrough</title>
+    <link rel="stylesheet" href="ahh.css">
+</head>
+<body>
+    <H1>CS 124 - Lab 1 Walkthrough</H1>
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-      crossorigin="anonymous"
-    />
-  </head>
+    <div class="required-components">
+      <h2>Add Item to Empty List</h2>
+      <b>For instance, in an empty list, create an item named "Buy new John Grisham book"</b>
+      <h3>Before:</h3>
+      <div>
+        <iframe src="list_empty_initial.html" width="360px" height="100%" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
+        <p>
+        This is what an empty list looks like in our app. To create an item, the user can click on the plus
+        icon in the bottom right of the screen. This will pull up a page to create a new list, shown below.
+        <br/> <br/>
+        Note that if you click on the plus icon, the button will change color and compress slightly, indicating 
+        that it has been activated.
+        </p>
+      </div>
 
-  <body>
-    <div class="top-bar">
-      <div class="top-bar-content">
-        <h1>Task Manager</h1>
-        <i class="fas fa-cog fa-5x right-aligned"></i>
+      <h3>During:</h3>
+      <div>
+        <iframe src="list_empty_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
+        <p>
+        Next, the user is brought to a page to create a new list item. They will be able to change the name of the task 
+        (for instance, they can name it "Buy new John Grisham book"), the due date, the location, and add any relevant notes.
+        If the user decides they don't want to create the task, they can press the X in the top left corner, which cancels the 
+        task creation. When the user is done creating a task, they can press the check in the upper rght corner. 
+        <br/> <br/>
+        The X and check buttons respond to being pressed by changing size and color. Currently, only the name field is editable 
+        on this page. 
+        </p>
+      </div>
+
+      <h3>After:</h3>
+      <div>
+        <iframe src="list_empty_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
+        <p>
+        When the user presses the checkbox, confirming the creation of the new task, they are brought back to the list page, where
+        the task and its due date are visible. Note that the completed box is, by default, unchecked.
+        </p>
+      </div>
+
+    </div>
+
+    
+    <div class="required-components">
+      <h2>Add Item to Non-Empty List</h2>
+      <b>For instance, in a non-empty list, create an item named "Eat Lunch"</b>
+      <h3>Before:</h3>
+      <div>
+        <iframe src="list_empty_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
+        <p>
+        Notice that our list is not currently empty. To create an additional item in this list, the user can press the plus icon in the 
+        bottom right of the screen. Notice that this is the same as creating an additional item in an empty list. As before, when the user clicks 
+        this icon, they will be brought to a page to create a new task.
+        </p>
       </div>
     </div>
 
-    <div class="search-background">
-      <div class="search">
-        <i class="fas fa-search fa-3x"></i>
-        <label for="search" class="search-label">Search</label>
-        <input type="text" id="search" name="search" placeholder="Search" />
+    <div class="required-components">
+      <h2>Add Task to Empty List</h2>
+      <b>For instance, in an empty list, create an item named "Buy new John Grisham book"</b>
+      <h3>During:</h3>
+      <div>
+        <iframe src="list_empty_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
+        <p>
+        As before, the user can create the task in this screen. All features are the same as they were when the user added a task 
+        to an empty list. 
+        </p>
       </div>
     </div>
 
-    <div id="list-of-lists">
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Chores</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
 
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Homework</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
 
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Errands</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
-
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Events</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
-
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Events</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
-
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Events</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
-
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Events</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
-
-      <div class="list">
-        <i class="fas fa-grip-lines fa-4x"></i>
-        <h2>Events</h2>
-        <i class="fas fa-ellipsis-h fa-4x"></i>
-      </div>
-    </div>
-
-    <div class="bottom-toolbar">
-      <i class="fas fa-plus fa-4x"></i>
-      <h2>Create New List</h2>
-    </div>
-  </body>
+</body>
 </html>
