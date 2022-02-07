@@ -74,7 +74,7 @@ For the Single List Page, we originally wanted to give users sort and filter fun
 
 Also, we originally intended to locate the "delete completed tasks" / "delete all tasks" buttons directly on the Single List Page, but received feedback from user testing that users were scared of accidentally hitting the delete button while scrolling to see more tasks. So, we decided to hide the delete functionality in the Single List Page's menu mode as well.
 
-<img src="alt_initial_brainstorming_whiteboard.JPG" alt="Home Page and Single List Page Initial Brainstorming Whiteboard Drawings" width="400px">
+<img src="alt_initial_brainstorming_whiteboard.JPG" alt="Home Page and Single List Page Initial Brainstorming Whiteboard Drawings" width="500px">
 
 ## Alternate Designs: Home Page
 
@@ -110,7 +110,7 @@ Without any prompting, usability testing participants were able to understand th
 
 ## Usability Testing: Home Page New Version
 
-Users understood that if they tapped an individual list, they would see more of the list (i.e., tasks contained in the list). That told us that we had a user-friendly structure with a Home Page containing multiple lists, and then Single List Pages that could be accessed by tapping lists on the Home PAge.
+Users understood that if they tapped an individual list, they would see more of the list (i.e., tasks contained in the list). That told us that we had a user-friendly structure with a Home Page containing multiple lists, and then Single List Pages that could be accessed by tapping lists on the Home Page.
 
 Users understood that swiping from right to left would reveal the pencil and trashcan icons. They mentioned that other apps used that same swiping motion. They also understood that the pencil icon would allow them to edit an individual list, while the trashcan icon would delete the list. So, we decided to keep these features in our final version of the Home Page for Lab 1.
 
