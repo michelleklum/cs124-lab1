@@ -553,7 +553,6 @@ i.list-icon {
 .edit-task-header {
   margin: 0 auto;
   width: 90%;
-  height: 60px;
   display: flex;
   align-items: center;
   padding-top: 1em;
