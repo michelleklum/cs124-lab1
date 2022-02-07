@@ -137,6 +137,10 @@ p {
   margin-top: 1.2em;
 }
 
+.task i {
+  font-size: 22px !important;
+}
+
 /* Home Page Styles */
 /* sticky search bar */
 /* first two styles are for sticky search bar */
@@ -467,16 +471,16 @@ i.list-icon {
   color: #172528;
   display: grid;
   align-items: center;
-  grid-template-columns: 7em 1fr;
+  grid-template-columns: 3em 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
   padding-left: 1em;
 }
 
 .bottom-toolbar-edit-list-menu i {
   justify-self: center; /* center icons in menu */
-  font-size: 50pt;
+  font-size: 30px !important;
   color: #172528;
 }
 
@@ -595,8 +599,11 @@ i.list-icon {
 
 #edit-task-name {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
+  overflow-wrap: break-word;
+  width: 200px;
+  height: 60px;
 }
 
 #edit-task {
