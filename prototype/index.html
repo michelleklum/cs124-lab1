@@ -5,10 +5,41 @@
     <link rel="stylesheet" href=".css" />
   </head>
   <body>
+    <div id="top"></div>
+    <ul>
+      <li>
+        <a href="#add-item-to-empty-list"
+          >In an empty list, create an item named "Buy new John Grisham book"</a
+        >
+      </li>
+      <li>
+        <a href="#add-item-to-non-empty-list"
+          >In a non-empty list, create an item named "Eat Lunch"
+        </a>
+      </li>
+      <li>
+        <a href="#mark-list-item-completed"
+          >Mark the item named "Call Mom" completed (assumes there exists an
+          item named "Call Mom").
+        </a>
+      </li>
+      <li>
+        <a href="#rename-edit-list-items"
+          >Rename the item "Text John" to "Text John about bank statements"
+          (assumes there exists an item named "Text John").
+        </a>
+      </li>
+      <li>
+        <a href="#show-only-uncompleted">Show only uncompleted items. </a>
+      </li>
+      <li>
+        <a href="#delete-all-completed">Delete all completed items. </a>
+      </li>
+    </ul>
     <h1>CS 124 - Lab 1 Walkthrough</h1>
 
     <div class="required-components">
-      <h2>Add Item to Empty List</h2>
+      <h2 id="add-item-to-empty-list">Add Item to Empty List</h2>
       <b
         >For instance, in an empty list, create an item named "Buy new John
         Grisham book"</b
@@ -74,9 +105,10 @@
         </p>
       </div>
 
+      <a href="#top">Back to top of page</a>
       <hr />
 
-      <h2>Add Item to Non-Empty List</h2>
+      <h2 id="add-item-to-non-empty-list">Add Item to Non-Empty List</h2>
       <b>For instance, in a non-empty list, create an item named "Eat Lunch"</b>
       <h3>Before:</h3>
       <div>
@@ -123,9 +155,10 @@
         <p>The list item the user created has been added to the list.</p>
       </div>
 
+      <a href="#top">Back to top of page</a>
       <hr />
 
-      <h2>Mark List Item Completed</h2>
+      <h2 id="mark-list-item-completed">Mark List Item Completed</h2>
       <b
         >For instance, mark the item named "Call Mom" completed (assumes there
         exists an item named "Call Mom").
@@ -167,58 +200,10 @@
         </p>
       </div>
 
+      <a href="#top">Back to top of page</a>
       <hr />
 
-      <h2>Add Item to Non-Empty List</h2>
-      <b>For instance, in a non-empty list, create an item named "Eat Lunch"</b>
-      <h3>Before:</h3>
-      <div>
-        <iframe
-          src="list_non_empty_initial.html"
-          width="360"
-          height="640"
-          style="border: 1px solid black"
-          class="walkthrough_frame"
-        ></iframe>
-        <p>
-          Notice that our list is not currently empty. To create an additional
-          item in this list, the user can press the plus icon in the bottom
-          right of the screen. This is the same button the user would use to
-          create an item in an empty list. As before, when the user clicks this
-          icon, they will be brought to a page to create a new task.
-        </p>
-      </div>
-      <h3>During:</h3>
-      <div>
-        <iframe
-          src="list_non_empty_in_progress.html"
-          width="360"
-          height="640"
-          style="border: 1px solid black"
-          class="walkthrough_frame"
-        ></iframe>
-        <p>
-          The user is brought to the same screen that we saw earlier. To cancel
-          the creation of this new task, the user can press the X button. To
-          confirm the creation of the task, they can press the check. They can
-          edit fields like date, time, location, etc.
-        </p>
-      </div>
-      <h3>After:</h3>
-      <div>
-        <iframe
-          src="list_non_empty_after.html"
-          width="360"
-          height="640"
-          style="border: 1px solid black"
-          class="walkthrough_frame"
-        ></iframe>
-        <p>The list item the user created has been added to the list.</p>
-      </div>
-
-      <hr />
-
-      <h2>Rename/Edit List Items</h2>
+      <h2 id="rename-edit-list-items">Rename/Edit List Items</h2>
       <b
         >For instance, rename the item "Text John" to "Text John about bank
         statements" (assumes there exists an item named "Text John").
@@ -273,9 +258,10 @@
         </p>
       </div>
 
+      <a href="#top">Back to top of page</a>
       <hr />
 
-      <h2>Show only uncompleted items.</h2>
+      <h2 id="show-only-uncompleted">Show only uncompleted items.</h2>
       <h3>Before:</h3>
       <div>
         <iframe
@@ -318,55 +304,10 @@
         <p>Now, only uncompleted tasks are shown.</p>
       </div>
 
+      <a href="#top">Back to top of page</a>
       <hr />
 
-      <h2>Show only uncompleted items.</h2>
-      <h3>Before:</h3>
-      <div>
-        <iframe
-          src="list_hide_completed_initial.html"
-          width="360"
-          height="640"
-          style="border: 1px solid black"
-          class="walkthrough_frame"
-        ></iframe>
-        <p>
-          Before, we can see that completed items still appear on the list page.
-          To hide list items, the user first presses the three dots in the top
-          right corner.
-        </p>
-      </div>
-      <h3>During:</h3>
-      <div>
-        <iframe
-          src="list_hide_completed_in_progress.html"
-          width="360"
-          height="640"
-          style="border: 1px solid black"
-          class="walkthrough_frame"
-        ></iframe>
-        <p>
-          A menu appears with options to edit the list and change which items
-          are shown. To show only uncompleted items, the user can press the
-          button that says "Hide Completed Tasks."
-        </p>
-      </div>
-      <h3>After:</h3>
-      <div>
-        <iframe
-          src="list_hide_completed_after.html"
-          width="360"
-          height="640"
-          style="border: 1px solid black"
-          class="walkthrough_frame"
-        ></iframe>
-        <p>Now, only uncompleted tasks are shown.</p>
-      </div>
-
-      <hr />
-
-<<<<<<< HEAD
-      <h2>Delete all completed items.</h2>
+      <h2 id="delete-all-completed">Delete all completed items.</h2>
       <h3>Before:</h3>
       <div>
         <iframe
@@ -411,92 +352,7 @@
         ></iframe>
         <p>Now, only uncompleted tasks remain.</p>
       </div>
+      <a href="#top">Back to top of page</a>
     </div>
   </body>
-=======
-  <h2>Rename/Edit List Items</h2>
-  <b>For instance, rename the item "Text John" to "Text John about bank statements" (assumes there exists an item named "Text John").
-  </b>
-  <h3>Before:</h3>
-  <div>
-    <iframe src="list_call_mom_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    From the list page, the user can press on the pencil icon next to their list item. This takes them to 
-    a page to edit their list item.
-    </p>
-    <iframe src="edit_task_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-  </div>
-  <h3>During:</h3>
-  <div>
-    <iframe src="edit_task_in_progress.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    From this edit page, the user can click on the task name and rename it to their desired new name.
-    </p>
-  </div>
-  <h3>After:</h3>
-  <div>
-    <iframe src="edit_task_after.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    Afterwards, the user can press the checkmark, and the name of their list item will have changed on the main list page.
-    </p>
-  </div>
-
-  <h2>Show only uncompleted items.</h2>
-  <h3>Before:</h3>
-  <div>
-    <iframe src="list_hide_completed_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    Before, we can see that completed items still appear on the list page. To hide list items, the user first presses the three dots in the top right corner.
-    </p>
-  </div>
-  <h3>During:</h3>
-  <div>
-    <iframe src="list_hide_completed_in_progress.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    A menu appears with options to edit the list and change which items are shown. To show only uncompleted items, the user can press the button 
-    that says "Hide Completed Tasks."
-    </p>
-  </div>
-  <h3>After:</h3>
-  <div>
-    <iframe src="list_hide_completed_after.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    Now, only uncompleted tasks are shown.
-    </p>
-  </div>
-
-
-  <h2>Delete all completed items.</h2>
-  <h3>Before:</h3>
-  <div>
-    <iframe src="list_delete_completed_initial.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    This process is similar to hiding completed items. However, in this process, you will not be able to bring back completed items after you 
-    delete them. Before deleting completed items, we can see that completed items still appear on the list page. To delete these completed items, 
-    the user will presses the three dots in the top right corner. This will bring up the menu we saw earlier.
-    </p>
-  </div>
-  <h3>During:</h3>
-  <div>
-    <iframe src="list_delete_completed_in_progress.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    A menu appears with options to edit the list and change which items are shown. To delete completed items, the user can press the button 
-    that says "Delete completed tasks."
-    </p>
-  </div>
-  <h3>After:</h3>
-  <div>
-    <iframe src="list_delete_completed_after.html" width="360" height="640" style="border:1px solid black;" class = "walkthrough_frame"></iframe>
-    <p>
-    Now, only uncompleted tasks remain.
-    </p>
-  </div>
-
-
-  </div>
-
-
-
-</body>
->>>>>>> e034be7e8837a6b56d7cc361dc58eac5263e4137
 </html>
