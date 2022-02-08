@@ -2,7 +2,7 @@
 
 CS 124 Interaction Design Lab 1: To-do App UI Design (HTML and CSS)
 
-[Link to walkthrough](https://michelleklum.github.io/cs124-lab1/)
+Link to walkthrough: [https://michelleklum.github.io/cs124-lab1/](https://michelleklum.github.io/cs124-lab1/)
 
 ## Final App: Home Page
 
