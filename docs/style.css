@@ -214,7 +214,6 @@ p {
   outline: none;
 }
 
-
 /* sticky top bar */
 /* first two styles are for sticky top bar */
 .top-home-background {
@@ -549,7 +548,6 @@ i.list-icon {
   height: 100vh; /* need this so #feffff background color extends entire screen */
 }
 
-
 .edit-task-header {
   margin: 0 auto;
   width: 90%;
@@ -780,4 +778,54 @@ div.selected {
 
 .initial i {
   color: #bab2b5;
+}
+
+/* Lab 1 Walkthrough Styles */
+#walkthrough {
+  background: #feffff;
+}
+
+#walkthrough-container {
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+}
+
+#walkthrough h1 {
+  color: #172528;
+  font-size: 35px;
+}
+
+#walkthrough b,
+#walkthrough h3,
+#walkthrough p {
+  font-size: 18px;
+}
+
+#walkthrough a {
+  color: #33aaaa;
+  display: inline-block; /* anchors are inline elements and do not accept width, margin, etc. until they are defined as block level or inline-block elements */
+  margin: 1em 0;
+}
+
+#walkthrough-required-tasks-nav > li > a {
+  margin: 0;
+}
+
+#walkthrough .walkthrough-iframe-and-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ensure that walkthrough iframe will always be 360px, no matter what CSS Flexbox does */
+#walkthrough .walkthrough-iframe {
+  flex-basis: 360px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#walkthrough .walkthrough-text {
+  margin-top: 0;
+  margin-left: 1.5em;
 }
