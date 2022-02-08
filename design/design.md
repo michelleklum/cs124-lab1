@@ -1,5 +1,9 @@
 # CS 124 Lab 1 Design Document
 
+CS 124 Interaction Design Lab 1: To-do App UI Design (HTML and CSS)
+
+[Link to walkthrough](https://michelleklum.github.io/cs124-lab1/)
+
 ## Final App: Home Page
 
 As our app currently stands, this is how the Home Page for an existing user would look. We decided to give users the ability to create multiple lists, since users might want to sort tasks into separate lists based on what category of tasks they belong to (for example, Homework versus Shopping).
