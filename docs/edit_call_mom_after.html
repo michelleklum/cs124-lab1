@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font: Roboto + Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body id="edit-task-page">
+    <div class="edit-task-header">
+      <i class="fas fa-times fa-5x left-aligned"></i>
+      <div class="task-name">
+        <label for="edit-task-name" class="edit-task-name-label"
+          >Task Name</label
+        >
+        <!-- TODO: change hacky way to get 1 row of textarea to show up -->
+        <!-- need JavaScript so textarea can expand automatically as content grows -->
+        <textarea id="edit-task-name" name="edit-task-name" rows="1" cols="24">
+Call Mom</textarea
+        >
+      </div>
+      <i class="fas fa-check fa-4x right-aligned"></i>
+    </div>
+
+    <hr />
+
+    <div id="edit-task">
+      <i class="far fa-clock fa-4x set-date-icon"></i>
+      <p class="set-date">Friday, Feb 11</p>
+      <p class="set-time">5 PM</p>
+
+      <i class="fas fa-map-marker-alt fa-4x set-location-icon"></i>
+      <p class="set-location">Set location</p>
+
+      <i class="fas fa-sticky-note fa-4x set-note-icon"></i>
+      <p class="set-note">Additional notes</p>
+
+      <i class="fas fa-check-square fa-4x set-completed-icon"></i>
+      <p class="set-completed">Completed</p>
+    </div>
+
+    <div class="bottom-toolbar">
+      <i class="fas fa-trash-alt fa-4x trash"></i>
+    </div>
+  </body>
+</html>

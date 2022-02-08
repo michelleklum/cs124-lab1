@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS 124 - Lab 1 Walkthrough</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="walkthrough">
+    <div id="walkthrough-container">
+      <h1 id="top">CS 124 - Lab 1 Walkthrough</h1>
+      <h2 id="names">Michelle Lum and Zoe Tokheim</h2>
+      <hr />
+      <p>Scroll to see how our to-do app works!</p>
+
+      <p>
+        Or, if you prefer to navigate this way, here are direct links to the
+        walkthroughs for each of the required tasks:
+      </p>
+      <ul id="walkthrough-required-tasks-nav">
+        <li>
+          <a href="#add-item-to-empty-list"
+            >In an empty list, create an item named "Buy new John Grisham
+            book"</a>
+        </li>
+        <li>
+          <a href="#add-item-to-non-empty-list"
+            >In a non-empty list, create an item named "Eat Lunch"
+          </a>
+        </li>
+        <li>
+          <a href="#mark-list-item-completed"
+            >Mark the item named "Call Mom" completed (assumes there exists an
+            item named "Call Mom")
+          </a>
+        </li>
+        <li>
+          <a href="#mark-list-item-completed-alt"
+            >Mark the item named "Call Mom" completed (assumes there exists an
+            item named "Call Mom") (Alternate Method)
+          </a>
+        </li>
+        <li>
+          <a href="#rename-edit-list-items"
+            >Rename the item "Text John" to "Text John about bank statements"
+            (assumes there exists an item named "Text John")
+          </a>
+        </li>
+        <li>
+          <a href="#show-only-uncompleted">Show only uncompleted items </a>
+        </li>
+        <li>
+          <a href="#delete-all-completed">Delete all completed items </a>
+        </li>
+      </ul>
+      <p>
+        And here are the direct links for some additional features we added:
+      </p>
+      <ul id="walkthrough-required-tasks-nav">
+        <li>
+          <a href="#create-new-list">Create a new list </a>
+        </li>
+        <li>
+          <a href="#edit-list">Edit the appearance of a list </a>
+        </li>
+        <li>
+          <a href="#delete-list">Delete a list </a>
+        </li>
+        <li>
+          <a href="#delete-list-alt">Delete a list (Alternate Method) </a>
+        </li>
+        <li>
+          <a href="#search-list">Search for a list </a>
+        </li>
+        <li>
+          <a href="#search-task">Search for a task </a>
+        </li>
+      </ul>
+
+      <div class="features">
+        <hr />
+
+        <h2 id="add-item-to-empty-list">Add Item to Empty List</h2>
+        <b
+          >For instance, in an empty list, create an item named "Buy new John
+          Grisham book"</b
+        >
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_empty_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            This is what an empty list looks like in our app. To create an item,
+            the user can click on the plus icon in the bottom right corner of
+            the screen. This will pull up a page to create a new list, shown
+            below.
+            <br />
+            <br />
+            Note that if you click on the plus icon, the button will change
+            color and compress slightly, indicating that it has been activated.
+          </p>
+        </div>
+
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_empty_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Next, the user is brought to a page to create a new list item. They
+            will be able to change the name of the task (for instance, they can
+            name it "Buy new John Grisham book"), the due date, and the
+            location. They can also add any relevant notes. If the user decides
+            they don't want to create the task, they can tap the X in the top
+            left corner, which cancels the task creation. When the user is done
+            creating a task, they can tap the checkmark in the upper right corner
+            to save the task to the list.
+            <br />
+            <br />
+            The X and check buttons respond to being tapped by changing size
+            and color. Currently, only the name field is editable on this page.
+            We plan to implement the rest of this form when we transfer our app
+            over to JavaScript / React.
+          </p>
+        </div>
+
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_empty_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            When the user taps the checkbox, confirming the creation of the
+            new task, they are brought back to the single list page, where the
+            task and its due date are visible. Note that the completed box is,
+            by default, left unchecked.
+          </p>
+        </div>
+
+        <a href="#top">Back to top of page</a>
+        <hr />
+
+        <h2 id="add-item-to-non-empty-list">Add Item to Non-Empty List</h2>
+        <b
+          >For instance, in a non-empty list, create an item named "Eat
+          Lunch"</b
+        >
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_non_empty_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Notice that our Daily Tasks list is not currently empty. To create
+            an additional item in this list, the user can tap the plus icon in
+            the bottom right of the screen. This is the same button the user
+            would use to create an item in an empty list. As before, when the
+            user clicks the plus icon, they will be brought to a page to create
+            a new task.
+          </p>
+        </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_non_empty_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            The user is brought to the same screen that we saw earlier. To
+            cancel the creation of this new task, the user can tap the X
+            button. To confirm the creation of the task, they can tap the
+            check button. They can edit fields like date, time, location, etc.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_non_empty_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            The list item the user created ("Eat lunch") has been added to the
+            existing list.
+          </p>
+        </div>
+
+        <a href="#top">Back to top of page</a>
+        <hr />
+
+        <h2 id="mark-list-item-completed">Mark List Item Completed</h2>
+        <b
+          >For instance, mark the item named "Call Mom" completed (assumes there
+          exists an item named "Call Mom").
+        </b>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_call_mom_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            As before, this is the single list page where the user can view all
+            the tasks in a given list, and also create new tasks. All features
+            are the same as in the walkthrough of adding an item to an empty
+            list task.
+          </p>
+        </div>
+        <h3>During:</h3>
+        <div>
+          <p>
+            To mark an item completed, the user can simply tap the checkbox next
+            to the item they want to mark completed. There is no intermediate
+            screen.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_call_mom_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            After the user taps the checkbox, the list item is marked completed
+            (indicated by the filled-in checkbox).
+          </p>
+        </div>
+
+        <a href="#top">Back to top of page</a>
+        <hr />
+
+        <h2 id="mark-list-item-completed-alt">
+          Mark List Item Completed (Alternate Method)
+        </h2>
+        <b
+          >For instance, mark the item named "Call Mom" completed (assumes there
+          exists an item named "Call Mom").
+        </b>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_call_mom_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            As before, this is the single list page where the user can view all
+            the tasks in a given list, and also create new tasks. All features
+            are the same as in the walkthrough of adding an item to an empty
+            list task.
+          </p>
+        </div>
+        <br />
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="view_task.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            When the user taps on the "Call Mom" task on the single list page
+            shown above, they are brought to this page which allows them to view
+            task details. The user can then tap on the pencil icon to edit the
+            task.
+          </p>
+        </div>
+        <br />
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_call_mom_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Once the user is on the edit task page, they can check the
+            "Completed" checkbox to mark that task as completed.
+          </p>
+        </div>
+        <h3>During:</h3>
+        <div>
+          <p>
+            To mark the item completed, the user can simply tap the "Completed"
+            checkbox on the edit task page. There is no intermediate screen.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_call_mom_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            After the user taps the checkbox, the task is marked completed
+            (indicated by the filled-in checkbox). The user can tap the check
+            button in the top right corner to save the change they have made to
+            this task's completion status.
+          </p>
+        </div>
+
+        <br />
+
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_call_mom_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            After the user saves their change to the task's completion status,
+            the list item is marked completed on the single list page (indicated
+            by the filled-in checkbox).
+          </p>
+        </div>
+
+        <a href="#top">Back to top of page</a>
+        <hr />
+
+        <h2 id="rename-edit-list-items">Rename/Edit List Items</h2>
+        <b
+          >For instance, rename the item "Text John" to "Text John about bank
+          statements" (assumes there exists an item named "Text John").
+        </b>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_call_mom_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            From the list page, the user can tap the pencil icon next to the
+            list item they wish to rename/edit. This takes them to a page to
+            edit their list item.
+          </p>
+        </div>
+        <br />
+        <div>
+          <iframe
+            src="edit_task_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+        </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_task_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            From this edit task page, the user can click on the task name and
+            rename it to their desired new name.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_task_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Afterward, the user can tap the checkmark to save their changes to
+            the task name, and the name of their list item will be updated on
+            the main list page. Once the user taps the checkmark, they will automatically be 
+            returned to the main list page.
+          </p>
+        </div>
+        <br />
+        <div>
+          <iframe
+            src="edit_task_after_2.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+        </div>
+
+        <a href="#top">Back to top of page</a>
+        <hr />
+
+        <h2 id="show-only-uncompleted">Show only uncompleted items</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_hide_completed_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Currently, we still see completed items (indicated by filled-in
+            checkboxes) appearing on this single list page. To hide completed
+            list items, the user should first tap the three dots in the top
+            right corner.
+          </p>
+        </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_hide_completed_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            A menu will appear, providing options to edit the list and change
+            which items are shown. To show only completed items, the user should
+            tap the button that says "Hide Completed Tasks."
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_hide_completed_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">Now, only uncompleted tasks are shown.</p>
+        </div>
+
+        <a href="#top">Back to top of page</a>
+        <hr />
+
+        <h2 id="delete-all-completed">Delete all completed items</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_delete_completed_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            The process of deleting all completed items is similar to hiding
+            completed items. However, in this process, you will not be able to
+            bring back completed items after you delete them. Currently, we can
+            see completed items on the single list page. To delete these
+            completed items, the user should tap the three dots in the top right
+            corner. This will bring up the menu we saw earlier.
+          </p>
+        </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_delete_completed_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            A menu will appear, providing options to edit the list and change
+            which items are shown. To delete completed items, the user can tap
+            the button that says "Delete completed tasks."
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_delete_completed_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">Now, only uncompleted tasks remain.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+        <hr />
+
+        <h2 id="create-new-list">Create a new list</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="home.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            If the user would like to create a new list from the Home Page, they can tap the 
+            plus icon in the bottom right of the screen. Currently, this button will change color 
+            and compress slightly when tapped. Tapping this button will bring the user to the 
+            Create New List page.
+          </p>
+        </div class="walkthrough-iframe-and-text">
+          <br />
+          <div class="walkthrough-iframe-and-text">
+            <iframe
+              src="create_list_initial.html"
+              width="360"
+              height="640"
+              style="border: 1px solid black"
+              class="walkthrough-iframe"
+            ></iframe>
+            <p class="walkthrough-text">
+              Notice that, on the Create New List page, before the user types a name for their list, they cannot 
+              create a new list — the checkmark is disabled. 
+            </p>
+          </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="create_list_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            In the Create New List page, the user can type the name of their list and choose an icon for their list. The
+            selected icon will be shown in teal. Once the user types a name for their list, the checkmark icon will turn white, indicating that it can now be tapped to save the new list. 
+            If the user wants to cancel the creation of a new list, they can tap the X button. If they want to finish 
+            creating their list, they can tap the checkmark. In both cases, the button tapped will compress and change 
+            color slightly to show it has been activated.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="create_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">Once the checkmark is tapped, the user is brought back to the home page. Notice that their 
+            newly-created list has been added to the top of the page, with the chosen name and icon.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+        <hr />
+
+        <h2 id="edit-list">Edit the appearance of a list</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="create_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Users may want to change a list's name or icon. To do so, the user can swipe left on a list from 
+            the Home Page. This will reveal two options: editing the list (indicated by a pencil icon) and deleting 
+            the list (indicated by a trashcan icon). To edit the list, the user can tap the pencil. This will pull up 
+            the Edit List Page. 
+          </p>
+        </div>
+          <br />
+          <div>
+            <iframe
+              src="home_edit.html"
+              width="360"
+              height="640"
+              style="border: 1px solid black"
+              class="walkthrough-iframe"
+            ></iframe>
+          </div>
+          <br />
+          <div>
+            <iframe
+              src="edit_list_initial.html"
+              width="360"
+              height="640"
+              style="border: 1px solid black"
+              class="walkthrough-iframe"
+            ></iframe>
+          </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_list_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            From the Edit List Page, the user can change the name and/or icon of the list. They can also delete 
+            the list by tapping the red trashcan bar at the bottom of the screen. Here we're showing the user changing both the name and the icon of their list. At any time, the user can confirm their changes by 
+            pressing the checkmark, or alternatively, cancel their changes by tapping the X.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text"> Once the checkmark is tapped, the user is brought back to the home page. Notice that 
+            the user's edits to their list have been made.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+        <hr />
+
+        <h2 id="delete-list">Delete a list</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="create_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            One way to delete a list is through the home screen. The user can swipe left on any list. This will 
+            bring up options to edit or delete the list.
+          </p>
+        </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="home_edit.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            If the user wants to delete a list, the user can tap the red trashcan next to the list's name. This will delete the list. In future labs, we plan to add warnings before 
+            lists are actually deleted.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="delete_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text"> The list and its contents have been removed.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+        <hr />
+
+        <h2 id="delete-list-alt">Delete a list (Alternate Method)</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="create_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            Another way to delete a list is through the Edit List screen. The user can swipe left on any list. This will 
+            bring up the options to edit or delete the list. Then, they can tap the pencil icon to edit their list.
+          </p>
+        </div>
+        <br />
+          <div>
+            <iframe
+              src="home_edit.html"
+              width="360"
+              height="640"
+              style="border: 1px solid black"
+              class="walkthrough-iframe"
+            ></iframe>
+          </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="edit_list_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            The user can then tap the red trashcan bar at the bottom of the screen. This will delete the list. As stated before, we plan to add warnings before lists are actually deleted.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="delete_list_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text"> The list and its contents have been removed.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+        <hr />
+
+        <h2 id="search-list">Search for a list</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="home.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            To search for a list, the user can tap the magnifying glass in the top right corner of the home page. This 
+            will bring up the search page.
+          </p>
+        </div>
+        <br />
+          <div class="walkthrough-iframe-and-text">
+            <iframe
+              src="home_search_initial.html"
+              width="360"
+              height="640"
+              style="border: 1px solid black"
+              class="walkthrough-iframe"
+            ></iframe>
+            <p class="walkthrough-text">
+              When the user is first brought to the search page, all lists are shown, because the user has not entered a search keyword to filter the lists.
+            </p>
+          </div>
+        <h3>During:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="home_search_in_progress.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            The user can then type to search for their list and filter the lists. At any point, they can 
+            cancel their search by tapping "Cancel." In this case, suppose the user was looking for the "Birthday Gifts" 
+            list. They can then click on that list from the search menu and the list will open.  We plan to make the search filter not only by list name, but also by task description.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="list_delete_completed_initial.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text"> The desired list has been found through searching and is now open.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+
+        <hr />
+
+        <h2 id="search-task">Search for a task</h2>
+        <h3>Before:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="home.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text">
+            To search for a task, the user can first open the list that contains the task by tapping on that list from the home page.
+          </p>
+        </div>
+        <h3>After:</h3>
+        <div class="walkthrough-iframe-and-text">
+          <iframe
+            src="search_task_after.html"
+            width="360"
+            height="640"
+            style="border: 1px solid black"
+            class="walkthrough-iframe"
+          ></iframe>
+          <p class="walkthrough-text"> On the list page, the user can type the name 
+            of the task they want to find in the search bar. Now, only tasks with the word "Wrap" are shown.</p>
+        </div>
+        <a href="#top">Back to top of page</a>
+
+
+      </div>
+    </div>
+  </body>
+</html>

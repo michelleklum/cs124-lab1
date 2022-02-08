@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font: Roboto + Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body id="single-list-page">
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <div class="left-aligned">
+          <i class="fas fa-chevron-left fa-4x"></i>
+          <h2>Birthday Gifts</h2>
+        </div>
+        <i class="fas fa-ellipsis-h fa-4x right-aligned"></i>
+      </div>
+    </div>
+
+    <div id="single-list-menu-mode-overlay">
+      <div class="search-background">
+        <div class="search">
+          <i class="fas fa-search fa-3x"></i>
+          <label for="search" class="search-label">Search</label>
+          <!-- autocomplete off so that search input doesn't show suggestions -->
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div id="list-of-tasks">
+        <div class="task">
+          <div class="left-aligned">
+            <input
+              type="checkbox"
+              id="write-card-susie"
+              name="write-card-susie-done"
+              checked
+            />
+            <div class="task-and-date">
+              <label for="write-card-susie"
+                ><h2>Write birthday card for Susie</h2></label
+              >
+              <p class="date">2/7/22, 8:00 PM</p>
+            </div>
+          </div>
+          <div class="right-aligned">
+            <i class="fas fa-pencil-alt fa-4x edit-task-icon"></i>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="left-aligned">
+            <input
+              type="checkbox"
+              id="buy-gift-susie"
+              name="buy-gift-susie-done"
+              checked
+            />
+            <div class="task-and-date">
+              <label for="buy-gift-susie"
+                ><h2>Buy birthday gift for Susie</h2></label
+              >
+              <p class="date">2/8/22, 10:00 AM</p>
+            </div>
+          </div>
+          <div class="right-aligned">
+            <i class="fas fa-pencil-alt fa-4x edit-task-icon"></i>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="left-aligned">
+            <input
+              type="checkbox"
+              id="wrap-gift-susie"
+              name="wrap-gift-susie-done"
+            />
+            <div class="task-and-date">
+              <label for="wrap-gift-susie"
+                ><h2>Wrap Susie's birthday gift</h2></label
+              >
+              <p class="date">2/8/22, 7:00 PM</p>
+            </div>
+          </div>
+          <div class="right-aligned">
+            <i class="fas fa-pencil-alt fa-4x edit-task-icon"></i>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="left-aligned">
+            <input
+              type="checkbox"
+              id="give-gift-susie"
+              name="give-gift-susie-done"
+            />
+            <div class="task-and-date">
+              <label for="give-gift-susie"
+                ><h2>Give birthday gift to Susie!</h2></label
+              >
+              <p class="date">2/12/22, 2:00 PM</p>
+            </div>
+          </div>
+          <div class="right-aligned">
+            <i class="fas fa-pencil-alt fa-4x edit-task-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-toolbar-edit-list-menu">
+      <i class="fas fa-palette customize-list-icon"></i>
+      <h2 class="customize-list-desc">Customize list appearance</h2>
+
+      <i class="fas fa-eye hide-icon"></i>
+      <h2 class="hide-desc">Hide completed tasks</h2>
+
+      <i class="fas fa-trash-alt delete-completed-icon"></i>
+      <h2 class="delete-completed-desc">Delete completed tasks</h2>
+
+      <i class="fas fa-trash-alt delete-all-icon"></i>
+      <h2 class="delete-all-desc">Delete all tasks</h2>
+
+      <i class="fas fa-trash-alt delete-list-icon"></i>
+      <h2 class="delete-list-desc">Delete list</h2>
+    </div>
+  </body>
+</html>
