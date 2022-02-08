@@ -65,8 +65,6 @@ p {
   align-items: center;
 }
 
-
-
 /* Top Bar Styles */
 /* top-bar is top navbar */
 /* first two styles are for sticky navbar */
@@ -123,7 +121,6 @@ p {
   background: #eae8e8;
 }
 
-
 /* Add Plus Icon Button */
 .add-button {
   position: fixed;
@@ -163,9 +160,6 @@ p {
 #list-of-tasks {
   margin-top: 1.2em;
 }
-
-
-
 
 /* Search Page */
 /* sticky search bar */
@@ -340,7 +334,6 @@ i.list-icon {
   grid-template-columns: 1.9em 9.6em 2em 3em;
 }
 
-
 .edit-list-style {
   color: #ebc323;
 }
@@ -390,7 +383,6 @@ i.list-icon {
 #single-list-page h2 {
   font-weight: normal;
 }
-
 
 /* Tasks */
 .task {
