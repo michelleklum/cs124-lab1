@@ -1,18 +1,17 @@
-/* Colors:
-  - Charleston Green (#172528)
-  - Black Shadows (#BAB2B5) - list icons, magnifying glass
-  - *Platinum (#EAE8E8) - 
-  - White (#FEFFFF) - title icon, list items
-  - *Azure X 11 Web Color (#DEF2F1) - background
-  - Opal (#91C6C3) - icon color when pressed
-  - Verdigris (#33AAAA) - nav bar on botton
-  - Myrtle Green (#2B7A78)- header at top, icon color when pressed
+/* Color Palette:
+  - Charleston Green (#172528) - main font color, single list page menu mode icon color
+  - Black Shadows (#BAB2B5) - some list icons, home page list card box shadows, search bar magnifying glass icon color
+  - *Platinum (#EAE8E8) - app background
+  - White (#FEFFFF) - title font color + icon, list item card background, search bar
+  - *Azure X 11 Web Color (#DEF2F1) - top bar icon color when active
+  - Opal (#91C6C3) - edit task header icons and horizontal line
+  - Verdigris (#33AAAA) - add button
+  - Myrtle Green (#2B7A78)- top bar header background, icon color when pressed
   - Yellow (#ebc323) - edit pencil icon
-  - Red (#ed554a) - delete trash can
+  - Red (#ed554a) - delete trashcan icon
 */
 
 /* Global Styles */
-
 i {
   color: #bab2b5;
 }
@@ -50,18 +49,37 @@ p {
   color: #172528;
 }
 
+/* margin-left auto makes three dots icon flush to right */
+.right-aligned {
+  margin-left: auto;
+}
+
+.right-aligned i {
+  padding-left: 0.01em;
+}
+
+/* margin-right auto makes single list icon + list name flush to left */
+.left-aligned {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Top Bar Styles */
 /* top-bar is top navbar */
 /* first two styles are for sticky navbar */
 .top-bar {
-  top: 0;
   position: sticky;
+  top: 0;
   width: 100%;
   background: #2b7a78;
   z-index: 1; /* set z-index: 1 so checkboxes don't overlap with top bar */
 }
 
 /* margin: 0 auto; and width: 90%; are to center top bar content, leaving 5% width on each side */
-/* really, to do that, we just need margin-left: auto and margin-right: auto */
+/* but to do that, we really just need margin-left: auto and margin-right: auto */
 .top-bar-content {
   display: flex;
   align-items: center;
@@ -85,20 +103,28 @@ p {
   margin: 0;
 }
 
-/* Top bar icons change color to Azure X 11 Web Color when pressed */
+/* top bar icons change color to Azure X 11 Web Color when pressed */
 .top-bar i:active {
   color: #def2f1;
 }
 
-/* margin-left auto makes three dots icon / home icon flush to right */
-.right-aligned {
-  margin-left: auto;
+.top-bar-content .left-aligned i {
+  margin-right: 0.5em;
 }
 
-.right-aligned i {
-  padding-left: 0.01em;
+/* sticky top bar */
+/* first two styles are for sticky top bar */
+.top-home-background {
+  position: sticky;
+  top: 3.7em;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background: #eae8e8;
 }
 
+
+/* Add Plus Icon Button */
 .add-button {
   position: fixed;
   bottom: 25px;
@@ -124,6 +150,7 @@ p {
   transform: scale(0.98);
 }
 
+/* List of Lists */
 /* margin-left: auto and margin-right: auto and width: 90% are to center list of lists, leaving 5% width on each side */
 #list-of-lists,
 #list-of-tasks {
@@ -137,16 +164,15 @@ p {
   margin-top: 1.2em;
 }
 
-.task i {
-  font-size: 22px !important;
-}
 
-/* Home Page Styles */
+
+
+/* Search Page */
 /* sticky search bar */
 /* first two styles are for sticky search bar */
 .alt-search-background {
   position: sticky;
-  top: 0em;
+  top: 0;
   height: 60px;
   width: 100%;
   padding-top: 0.1em;
@@ -168,7 +194,7 @@ p {
   background: #91c6c3;
   display: flex;
   flex-direction: column;
-  z-index: 1; /* set z-index: 1 so checkboxes don't overlap with sticky search bar + filter */
+  z-index: 1; /* set z-index: 1 so checkboxes don't overlap with sticky search bar */
 }
 
 /* first two styles are for sticky searchbar */
@@ -226,10 +252,9 @@ p {
 }
 
 /* first two styles are for sticky searchbar */
-
 .alt-search {
   position: sticky;
-  top: 0em;
+  top: 0;
   border-radius: 20px;
   background: #eae8e8;
   color: #bab2b5;
@@ -344,8 +369,8 @@ i.list-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0em;
-  padding-bottom: 0em;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .bottom-toolbar:active {
@@ -361,54 +386,13 @@ i.list-icon {
   margin-left: 0.5em;
 }
 
-.alt-bottom-toolbar {
-  bottom: 0;
-  position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
-  width: 100%;
-  height: 7%;
-  background: #33aaaa;
-  color: #feffff;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding-top: 0em;
-  padding-bottom: 0em;
-  padding-left: 3.8em;
-}
-
-.alt-bottom-toolbar:active {
-  color: #eae8e8;
-}
-
-.alt-bottom-toolbar i {
-  font-size: 30pt;
-  color: #feffff;
-}
-
-.alt-bottom-toolbar h2 {
-  margin-left: 0.5em;
-  font-size: 20pt;
-  font-weight: normal;
-}
-
 /* Single List Page Styles */
 #single-list-page h2 {
   font-weight: normal;
 }
 
-/* margin-right auto makes single list icon + list name flush to left */
-.left-aligned {
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-}
 
-.top-bar-content .left-aligned i {
-  margin-right: 0.5em;
-}
-
-/* sticky search bar + filter row */
-
+/* Tasks */
 .task {
   border-radius: 8px;
   background: #feffff;
@@ -419,6 +403,10 @@ i.list-icon {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.task i {
+  font-size: 22px !important;
 }
 
 /* override default checkbox styles for task checkboxes */
@@ -446,7 +434,7 @@ i.list-icon {
 }
 
 .edit-task-icon {
-  margin-right: 0em;
+  margin-right: 0;
   font-size: 15px !important;
 }
 
@@ -478,9 +466,13 @@ i.list-icon {
   padding-left: 1em;
 }
 
+.bottom-toolbar-edit-list-menu h2 {
+  font-size: 16px !important;
+}
+
 .bottom-toolbar-edit-list-menu i {
   justify-self: center; /* center icons in menu */
-  font-size: 30px !important;
+  font-size: 22px !important;
   color: #172528;
 }
 
@@ -815,7 +807,7 @@ div.selected {
   margin: 1em 0;
 }
 
-#walkthrough-required-tasks-nav > li > a {
+#walkthrough-required-tasks-nav a {
   margin: 0;
 }
 
@@ -829,6 +821,8 @@ div.selected {
   flex-basis: 360px;
   flex-grow: 0;
   flex-shrink: 0;
+  border-width: 0px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #walkthrough .walkthrough-text {

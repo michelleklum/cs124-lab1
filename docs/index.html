@@ -51,6 +51,11 @@
         <li>
           <a href="#delete-all-completed">Delete all completed items </a>
         </li>
+      </ul>
+      <p>
+        And here are the direct links for some additional features we added:
+      </p>
+      <ul id="walkthrough-required-tasks-nav">
         <li>
           <a href="#create-new-list">Create a new list </a>
         </li>
@@ -114,13 +119,13 @@
             will be able to change the name of the task (for instance, they can
             name it "Buy new John Grisham book"), the due date, and the
             location. They can also add any relevant notes. If the user decides
-            they don't want to create the task, they can press the X in the top
+            they don't want to create the task, they can tap the X in the top
             left corner, which cancels the task creation. When the user is done
-            creating a task, they can press the check in the upper right corner
+            creating a task, they can tap the checkmark in the upper right corner
             to save the task to the list.
             <br />
             <br />
-            The X and check buttons respond to being pressed by changing size
+            The X and check buttons respond to being tapped by changing size
             and color. Currently, only the name field is editable on this page.
             We plan to implement the rest of this form when we transfer our app
             over to JavaScript / React.
@@ -137,7 +142,7 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            When the user presses the checkbox, confirming the creation of the
+            When the user taps the checkbox, confirming the creation of the
             new task, they are brought back to the single list page, where the
             task and its due date are visible. Note that the completed box is,
             by default, left unchecked.
@@ -163,7 +168,7 @@
           ></iframe>
           <p class="walkthrough-text">
             Notice that our Daily Tasks list is not currently empty. To create
-            an additional item in this list, the user can press the plus icon in
+            an additional item in this list, the user can tap the plus icon in
             the bottom right of the screen. This is the same button the user
             would use to create an item in an empty list. As before, when the
             user clicks the plus icon, they will be brought to a page to create
@@ -181,8 +186,8 @@
           ></iframe>
           <p class="walkthrough-text">
             The user is brought to the same screen that we saw earlier. To
-            cancel the creation of this new task, the user can press the X
-            button. To confirm the creation of the task, they can press the
+            cancel the creation of this new task, the user can tap the X
+            button. To confirm the creation of the task, they can tap the
             check button. They can edit fields like date, time, location, etc.
           </p>
         </div>
@@ -221,7 +226,7 @@
           <p class="walkthrough-text">
             As before, this is the single list page where the user can view all
             the tasks in a given list, and also create new tasks. All features
-            are the same as in the walkthrough of the adding an item to an empty
+            are the same as in the walkthrough of adding an item to an empty
             list task.
           </p>
         </div>
@@ -270,7 +275,7 @@
           <p class="walkthrough-text">
             As before, this is the single list page where the user can view all
             the tasks in a given list, and also create new tasks. All features
-            are the same as in the walkthrough of the adding an item to an empty
+            are the same as in the walkthrough of adding an item to an empty
             list task.
           </p>
         </div>
@@ -402,9 +407,9 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            Afterward, the user can press the checkmark to save their changes to
+            Afterward, the user can tap the checkmark to save their changes to
             the task name, and the name of their list item will be updated on
-            the main list page. Once the user presses the checkmark, they will automatically be 
+            the main list page. Once the user taps the checkmark, they will automatically be 
             returned to the main list page.
           </p>
         </div>
@@ -499,7 +504,7 @@
           ></iframe>
           <p class="walkthrough-text">
             A menu will appear, providing options to edit the list and change
-            which items are shown. To delete completed items, the user can press
+            which items are shown. To delete completed items, the user can tap
             the button that says "Delete completed tasks."
           </p>
         </div>
@@ -529,13 +534,12 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            If the user would like to create a new list from the Home Page, they can press the 
+            If the user would like to create a new list from the Home Page, they can tap the 
             plus icon in the bottom right of the screen. Currently, this button will change color 
-            and compress slightly when clicked. Pressing this button will bring the user to the 
-            Create New List page. Notice that, before the user types a name for their list, they cannot 
-            create a new list -- the checkmark is greyed out. 
+            and compress slightly when tapped. Tapping this button will bring the user to the 
+            Create New List page.
           </p>
-        </div>
+        </div class="walkthrough-iframe-and-text">
           <br />
           <div>
             <iframe
@@ -545,6 +549,10 @@
               style="border: 1px solid black"
               class="walkthrough-iframe"
             ></iframe>
+            <p class="walkthrough-text">
+              Notice that, on the Create New List page, before the user types a name for their list, they cannot 
+              create a new list — the checkmark is disabled. 
+            </p>
           </div>
         <h3>During:</h3>
         <div class="walkthrough-iframe-and-text">
@@ -556,10 +564,10 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            In the Create New List page, the user can type the name of their list and choose an icon for their list. The icon
-            chosen will be shown in teal. Once the user types a name for their list, the check icon will turn white again. 
-            If the user wants to cancel the creation of a new list, they can press the X button. If they want to finish 
-            creating their list, they can press the checkmark. In both cases, the button pressed will compress and change 
+            In the Create New List page, the user can type the name of their list and choose an icon for their list. The
+            selected icon will be shown in teal. Once the user types a name for their list, the checkmark icon will turn white, indicating that it can now be tapped to save the new list. 
+            If the user wants to cancel the creation of a new list, they can tap the X button. If they want to finish 
+            creating their list, they can tap the checkmark. In both cases, the button tapped will compress and change 
             color slightly to show it has been activated.
           </p>
         </div>
@@ -572,8 +580,8 @@
             style="border: 1px solid black"
             class="walkthrough-iframe"
           ></iframe>
-          <p class="walkthrough-text">Once the checkmark is pressed, the user is brought back to the home page. Notice that their 
-            newly-created list has been added to the top of the page, with their chosen name and icon.</p>
+          <p class="walkthrough-text">Once the checkmark is tapped, the user is brought back to the home page. Notice that their 
+            newly-created list has been added to the top of the page, with the chosen name and icon.</p>
         </div>
         <a href="#top">Back to top of page</a>
 
@@ -591,8 +599,8 @@
           ></iframe>
           <p class="walkthrough-text">
             Users may want to change a list's name or icon. To do so, the user can swipe left on a list from 
-            the Home Page. This will reveal two options: editing the list (indicated by a pencil) and deleting 
-            the list (indicated by a trashcan). To edit the list, the user can press the pencil. This will pull up 
+            the Home Page. This will reveal two options: editing the list (indicated by a pencil icon) and deleting 
+            the list (indicated by a trashcan icon). To edit the list, the user can tap the pencil. This will pull up 
             the Edit List Page. 
           </p>
         </div>
@@ -626,10 +634,9 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            From the Edit List Page, the user can change the name or icon of the list. They can also delete 
-            the list by pressing the red trashcan bar at the bottom of the screen. In this instance, the user will 
-            change both the name and the icon of their list. At any time, the user can confirm their changes by 
-            pressing the checkmark or cancel their changes by pressing the X.
+            From the Edit List Page, the user can change the name and/or icon of the list. They can also delete 
+            the list by tapping the red trashcan bar at the bottom of the screen. Here we're showing the user changing both the name and the icon of their list. At any time, the user can confirm their changes by 
+            pressing the checkmark, or alternatively, cancel their changes by tapping the X.
           </p>
         </div>
         <h3>After:</h3>
@@ -641,7 +648,7 @@
             style="border: 1px solid black"
             class="walkthrough-iframe"
           ></iframe>
-          <p class="walkthrough-text"> Once the checkmark is pressed, the user is brought back to the home page. Notice that 
+          <p class="walkthrough-text"> Once the checkmark is tapped, the user is brought back to the home page. Notice that 
             the user's edits to their list have been made.</p>
         </div>
         <a href="#top">Back to top of page</a>
@@ -660,7 +667,7 @@
           ></iframe>
           <p class="walkthrough-text">
             One way to delete a list is through the home screen. The user can swipe left on any list. This will 
-            bring up the options to edit or delete the list.
+            bring up options to edit or delete the list.
           </p>
         </div>
         <h3>During:</h3>
@@ -673,8 +680,8 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            The user can press the red trashcan. This will delete the list (we plan to add warnings before 
-            deleting lists).
+            If the user wants to delete a list, the user can tap the red trashcan next to the list's name. This will delete the list. In future labs, we plan to add warnings before 
+            lists are actually deleted.
           </p>
         </div>
         <h3>After:</h3>
@@ -704,7 +711,7 @@
           ></iframe>
           <p class="walkthrough-text">
             Another way to delete a list is through the Edit List screen. The user can swipe left on any list. This will 
-            bring up the options to edit or delete the list. Then, they can press the pencil to edit their list.
+            bring up the options to edit or delete the list. Then, they can tap the pencil icon to edit their list.
           </p>
         </div>
         <br />
@@ -727,8 +734,7 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            The user can then press the red trashcan bar at the bottom of the screen. This will delete the list 
-            (as stated before, we plan to add warnings before deleting lists).
+            The user can then tap the red trashcan bar at the bottom of the screen. This will delete the list. As stated before, we plan to add warnings before lists are actually deleted.
           </p>
         </div>
         <h3>After:</h3>
@@ -757,12 +763,12 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            To search for a list, the user can press the magnifying glass in the top right corner. This 
-            will bring up the search screen.
+            To search for a list, the user can tap the magnifying glass in the top right corner of the home page. This 
+            will bring up the search page.
           </p>
         </div>
         <br />
-          <div>
+          <div class="walkthrough-iframe-and-text">
             <iframe
               src="home_search_initial.html"
               width="360"
@@ -770,6 +776,9 @@
               style="border: 1px solid black"
               class="walkthrough-iframe"
             ></iframe>
+            <p class="walkthrough-text">
+              When the user is first brought to the search page, all lists are shown, because the user has not entered a search keyword to filter the lists.
+            </p>
           </div>
         <h3>During:</h3>
         <div class="walkthrough-iframe-and-text">
@@ -781,9 +790,9 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            The user can then type to search for their list and filter out other lists. At any point, they can 
-            cancel their search by pressing "Cancel." In this case, suppose the user was looking for the "Birthday Gifts" 
-            list. They can then click on that list from the search menu and the list will open.
+            The user can then type to search for their list and filter the lists. At any point, they can 
+            cancel their search by tapping "Cancel." In this case, suppose the user was looking for the "Birthday Gifts" 
+            list. They can then click on that list from the search menu and the list will open.  We plan to make the search filter not only by list name, but also by task description.
           </p>
         </div>
         <h3>After:</h3>
@@ -795,7 +804,7 @@
             style="border: 1px solid black"
             class="walkthrough-iframe"
           ></iframe>
-          <p class="walkthrough-text"> The list has been found through searching and is now open.</p>
+          <p class="walkthrough-text"> The desired list has been found through searching and is now open.</p>
         </div>
         <a href="#top">Back to top of page</a>
 
@@ -813,9 +822,7 @@
             class="walkthrough-iframe"
           ></iframe>
           <p class="walkthrough-text">
-            To search for a task, the user currently must first open the list that contains the task. They can then type the name 
-            of the task they want to find in the search bar. 
-
+            To search for a task, the user can first open the list that contains the task by tapping on that list from the home page.
           </p>
         </div>
         <h3>After:</h3>
@@ -827,7 +834,8 @@
             style="border: 1px solid black"
             class="walkthrough-iframe"
           ></iframe>
-          <p class="walkthrough-text"> Now, only tasks with the word "Wrap" are showing.</p>
+          <p class="walkthrough-text"> On the list page, the user can type the name 
+            of the task they want to find in the search bar. Now, only tasks with the word "Wrap" are shown.</p>
         </div>
         <a href="#top">Back to top of page</a>
 
