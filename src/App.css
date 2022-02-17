@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
-}
+/* Color Palette:
+  - Charleston Green (#172528) - main font color, single list page menu mode icon color
+  - Black Shadows (#BAB2B5) - some list icons, home page list card box shadows, search bar magnifying glass icon color
+  - *Platinum (#EAE8E8) - app background
+  - White (#FEFFFF) - title font color + icon, list item card background, search bar
+  - *Azure X 11 Web Color (#DEF2F1) - top bar icon color when active
+  - Opal (#91C6C3) - edit task header icons and horizontal line
+  - Verdigris (#33AAAA) - add button
+  - Myrtle Green (#2B7A78)- top bar header background, icon color when pressed
+  - Yellow (#ebc323) - edit pencil icon
+  - Red (#ed554a) - delete trashcan icon
+*/
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Global Styles */
+i {
+    color: #bab2b5;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  /* all icons should slightly decrease in size when clicked to look like they're being pressed */
+  i:active {
+    transform: scale(0.98);
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* set margin of html, body, h1 to 0 so top bar extends to top of page,
+  and also so there isn't extra margin on left and right for top bar and bottom toolbar. */
+  html,
+  body {
+    background: #eae8e8;
+    font-family: "Open Sans", Calibri, sans-serif;
+    margin: 0;
   }
-}
+  
+  .top-bar i {
+    font-size: 26px !important;
+  }
+  
+  h1 {
+    font-size: 25px;
+    color: #feffff;
+    margin: 0;
+  }
+  
+  h3 {
+    font-size: 15px;
+  }
+  
+  p {
+    font-size: 35px;
+    color: #172528;
+  }
+  
+  /* margin-left auto makes three dots icon flush to right */
+  .right-aligned {
+    margin-left: auto;
+  }
+  
+  .right-aligned i {
+    padding-left: 0.01em;
+  }
+  
+  /* margin-right auto makes single list icon + list name flush to left */
+  .left-aligned {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
