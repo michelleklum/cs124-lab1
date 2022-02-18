@@ -1,27 +1,27 @@
 .list {
-    border-radius: 7px;
-    background: #feffff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    color: #172528;
-    display: grid;
-    align-items: center;
-    justify-content: flex-start;
-    column-gap: 1em;
-    grid-template-columns: 1.9em 13em 3em;
-    margin-bottom: 1em;
-    padding: 0.2em 2em 0.2em 1em;
-  }
-  
-  .list i {
-    font-size: 25px !important;
-  }
-  
-  .list h2 {
-    font-weight: 600;
-    font-size: 18px;
-  }
-  
-  i.list-icon {
-    color: #172528;
-    font-size: 25px !important;
-  }
+  border-radius: 7px;
+  background: #feffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #172528;
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 1em;
+  grid-template-columns: 1.9em 13em 3em;
+  margin-bottom: 1em;
+  padding: 0.2em 2em 0.2em 1em;
+}
+
+.list i {
+  font-size: 25px !important;
+}
+
+.list h2 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+i.list-icon {
+  color: #172528;
+  font-size: 25px !important;
+}

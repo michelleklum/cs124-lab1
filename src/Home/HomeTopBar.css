@@ -1,25 +1,25 @@
 .top-bar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #2b7a78;
-    z-index: 1; /* set z-index: 1 so checkboxes don't overlap with top bar */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #2b7a78;
+  z-index: 1; /* set z-index: 1 so checkboxes don't overlap with top bar */
 }
 
 .top-bar-content {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    width: 90%;
-    height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 60px;
 }
 
 h1 {
-    font-size: 24px;
-    color: #feffff;
-    margin: 0;
+  font-size: 24px;
+  color: #feffff;
+  margin: 0;
 }
-  
+
 .right-aligned {
-   margin-left: auto;
+  margin-left: auto;
 }
