@@ -14,7 +14,10 @@ function ListCard(props) {
   let gridClassName = inEditMode ? "edit-list-grid" : "list-grid";
 
   return (
-    <div className={["list", gridClassName].join(" ")}>
+    <div
+      className={["list", gridClassName].join(" ")}
+      onClick={(e) => props.onChangePage("SingleListPage")}
+    >
       <i className={`fas fa-${props.listIcon} fa-4x list-icon`}></i>
       <h2>{props.listName}</h2>
       {inEditMode ? (

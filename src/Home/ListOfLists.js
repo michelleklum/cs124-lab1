@@ -11,6 +11,7 @@ function ListOfLists(props) {
           listName={list.listName}
           listIcon={list.listIcon}
           listTasks={list.listTasks}
+          onChangePage={props.onChangePage}
         />
       ))}
     </div>

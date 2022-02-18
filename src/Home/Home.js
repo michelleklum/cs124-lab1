@@ -5,7 +5,10 @@ function Home(props) {
   return (
     <div>
       <HomeTopBar />
-      <ListOfLists initialData={props.initialData} />
+      <ListOfLists
+        initialData={props.initialData}
+        onChangePage={props.onChangePage}
+      />
     </div>
   );
 }
