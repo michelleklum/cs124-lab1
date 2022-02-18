@@ -1,11 +1,15 @@
 import "./SingleListPage.css";
+import ListTopBar from "./ListTopBar";
+import ListOfTasks from "./ListOfTasks";
 
 function SingleListPage(props) {
   return (
-    <i
-      className="fas fa-pencil-alt fa-4x edit-list"
-      onClick={props.onListIconClick}
-    ></i>
+    <div id="single-list-page">
+      <ListTopBar />
+      <ListOfTasks
+        list={props.data.find((list) => list.id === props.currentList)}
+      />
+    </div>
   );
 }
 

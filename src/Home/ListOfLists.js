@@ -4,7 +4,7 @@ import ListCard from "./ListCard";
 function ListOfLists(props) {
   return (
     <div id="list-of-lists">
-      {props.initialData.map((list) => (
+      {props.data.map((list) => (
         <ListCard
           key={list.id}
           id={list.id}
@@ -12,6 +12,7 @@ function ListOfLists(props) {
           listIcon={list.listIcon}
           listTasks={list.listTasks}
           onChangePage={props.onChangePage}
+          onChangeList={props.onChangeList}
         />
       ))}
     </div>

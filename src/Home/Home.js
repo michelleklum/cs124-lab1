@@ -6,8 +6,9 @@ function Home(props) {
     <div>
       <HomeTopBar />
       <ListOfLists
-        initialData={props.initialData}
+        data={props.data}
         onChangePage={props.onChangePage}
+        onChangeList={props.onChangeList}
       />
     </div>
   );
