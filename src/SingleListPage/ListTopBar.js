@@ -11,12 +11,10 @@ function ListTopBar(props) {
           <BackButton onChangePage={props.onChangePage} />
           <h2>{props.list.listName}</h2>
         </div>
-        {props.inMenuMode ? null : (
-          <div className="right-aligned">
-            <ListSearchButton />
-            <ListMenuButton onChangeMenuMode={props.onChangeMenuMode} />
-          </div>
-        )}
+        <div className="right-aligned">
+          {props.inMenuMode ? null : <ListSearchButton />}
+          <ListMenuButton onChangeMenuMode={props.onChangeMenuMode} />
+        </div>
       </div>
     </div>
   );

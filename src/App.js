@@ -4,6 +4,8 @@ import Home from "./Home/Home";
 import SingleListPage from "./SingleListPage/SingleListPage";
 
 function App(props) {
+  const [data, setData] = useState(props.initialData);
+
   const [currentPage, setCurrentPage] = useState("Home");
   const [currentList, setCurrentList] = useState();
   const [currentTask, setCurrentTask] = useState();
@@ -24,7 +26,7 @@ function App(props) {
     <Fragment>
       {currentPage === "Home" ? (
         <Home
-          data={props.initialData}
+          data={data}
           currentPage={currentPage}
           currentList={currentList}
           currentTask={currentTask}
@@ -34,7 +36,7 @@ function App(props) {
       ) : null}
       {currentPage === "SingleListPage" ? (
         <SingleListPage
-          data={props.initialData}
+          data={data}
           currentPage={currentPage}
           currentList={currentList}
           currentTask={currentTask}

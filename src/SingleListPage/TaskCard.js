@@ -18,14 +18,18 @@ function TaskCard(props) {
   return (
     <div className="task">
       <div className="left-aligned">
-        <input type="checkbox" id={props.id} name={`${props.id}-done`} />
+        <input
+          type="checkbox"
+          id={props.task.id}
+          name={`${props.task.id}-done`}
+        />
         <div className="task-and-date">
-          <label htmlFor={props.id}>
-            <h2>{props.taskName}</h2>
+          <label htmlFor={props.task.id}>
+            <h2>{props.task.taskName}</h2>
           </label>
           <p className="date">
-            {props.taskDate},{" "}
-            {convertMilitaryTimeToStandardTime(props.taskTime)}
+            {props.task.taskDate},{" "}
+            {convertMilitaryTimeToStandardTime(props.task.taskTime)}
           </p>
         </div>
       </div>

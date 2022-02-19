@@ -10,7 +10,6 @@ function ListOfLists(props) {
           id={list.id}
           listName={list.listName}
           listIcon={list.listIcon}
-          listTasks={list.listTasks}
           onChangePage={props.onChangePage}
           onChangeList={props.onChangeList}
         />

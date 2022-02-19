@@ -9,6 +9,7 @@ const initialData = [
     id: 1,
     listName: "Calls and Texts",
     listIcon: "phone",
+    areCompletedTasksHidden: true,
     listTasks: [
       {
         id: 2,
@@ -16,7 +17,7 @@ const initialData = [
         taskDate: "03/11/2022",
         taskTime: "17:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: true,
       },
       {
         id: 3,
@@ -24,7 +25,7 @@ const initialData = [
         taskDate: "03/12/2022",
         taskTime: "10:00",
         taskNotes: "Reschedule to Saturday",
-        taskStatus: false,
+        isTaskCompleted: true,
       },
       {
         id: 4,
@@ -32,7 +33,7 @@ const initialData = [
         taskDate: "03/15/2022",
         taskTime: "19:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
       {
         id: 5,
@@ -40,7 +41,7 @@ const initialData = [
         taskDate: "03/17/2022",
         taskTime: "14:00",
         taskNotes: "Order Thin Mints",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
       {
         id: 6,
@@ -48,7 +49,7 @@ const initialData = [
         taskDate: "03/19/2022",
         taskTime: "14:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
       {
         id: 7,
@@ -56,7 +57,7 @@ const initialData = [
         taskDate: "03/21/2022",
         taskTime: "11:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
       {
         id: 8,
@@ -64,7 +65,7 @@ const initialData = [
         taskDate: "03/22/2022",
         taskTime: "13:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
     ],
   },
@@ -72,6 +73,7 @@ const initialData = [
     id: 9,
     listName: "Errands",
     listIcon: "carrot",
+    areCompletedTasksHidden: false,
     listTasks: [
       {
         id: 10,
@@ -79,7 +81,7 @@ const initialData = [
         taskDate: "03/09/2022",
         taskTime: "13:00",
         taskNotes: "Need 2 dozen",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
       {
         id: 11,
@@ -87,7 +89,7 @@ const initialData = [
         taskDate: "03/11/2022",
         taskTime: "15:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
       {
         id: 12,
@@ -95,7 +97,7 @@ const initialData = [
         taskDate: "03/12/2022",
         taskTime: "16:00",
         taskNotes: "",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
     ],
   },
@@ -103,13 +105,14 @@ const initialData = [
     id: 13,
     listName: "Shopping",
     listIcon: "shopping-basket",
-    listTasks: [
-    ],
+    areCompletedTasksHidden: false,
+    listTasks: [],
   },
   {
     id: 14,
     listName: "Homework",
     listIcon: "book",
+    areCompletedTasksHidden: false,
     listTasks: [
       {
         id: 15,
@@ -117,7 +120,7 @@ const initialData = [
         taskDate: "03/11/2022",
         taskTime: "15:00",
         taskNotes: "We got this!",
-        taskStatus: false,
+        isTaskCompleted: false,
       },
     ],
   },
@@ -125,29 +128,29 @@ const initialData = [
     id: 16,
     listName: "Birthday Gifts",
     listIcon: "gifts",
-    listTasks: [
-    ],
+    areCompletedTasksHidden: false,
+    listTasks: [],
   },
   {
     id: 17,
     listName: "Goals",
     listIcon: "seedling",
-    listTasks: [
-    ],
+    areCompletedTasksHidden: false,
+    listTasks: [],
   },
-    {
+  {
     id: 18,
     listName: "Events",
     listIcon: "list-alt",
-    listTasks: [
-    ],
+    areCompletedTasksHidden: false,
+    listTasks: [],
   },
   {
     id: 19,
     listName: "Travel",
     listIcon: "globe-africa",
-    listTasks: [
-    ],
+    areCompletedTasksHidden: false,
+    listTasks: [],
   },
 ];
 

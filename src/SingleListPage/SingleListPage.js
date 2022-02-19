@@ -1,30 +1,39 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import "./SingleListPage.css";
 import ListTopBar from "./ListTopBar";
 import ListOfTasks from "./ListOfTasks";
+import ListMenu from "./ListMenu";
 
 function SingleListPage(props) {
   const [inMenuMode, setMenuMode] = useState(false);
 
   function handleChangeMenuMode() {
     setMenuMode(!inMenuMode);
-    console.log(inMenuMode);
   }
 
+  const taskList = props.data.find((list) => list.id === props.currentList);
+
   return (
-    <div id="single-list-page">
-      <ListTopBar
-        list={props.data.find((list) => list.id === props.currentList)}
-        inMenuMode={inMenuMode}
-        onChangePage={props.onChangePage}
-        onChangeMenuMode={handleChangeMenuMode}
-      />
-      <ListOfTasks
-        list={props.data.find((list) => list.id === props.currentList)}
-        onChangePage={props.onChangePage}
-        onChangeTask={props.onChangeTask}
-      />
-    </div>
+    <Fragment>
+      <div id="single-list-page">
+        <ListTopBar
+          list={taskList}
+          inMenuMode={inMenuMode}
+          onChangePage={props.onChangePage}
+          onChangeMenuMode={handleChangeMenuMode}
+        />
+        <div id={inMenuMode ? "single-list-menu-mode-overlay" : null}>
+          <ListOfTasks
+            list={taskList}
+            onChangePage={props.onChangePage}
+            onChangeTask={props.onChangeTask}
+          />
+        </div>
+      </div>
+      {inMenuMode ? (
+        <ListMenu areCompletedTasksHidden={taskList.areCompletedTasksHidden} />
+      ) : null}
+    </Fragment>
   );
 }
 

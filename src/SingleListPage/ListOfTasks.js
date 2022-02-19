@@ -2,15 +2,16 @@ import "./ListOfTasks.css";
 import TaskCard from "./TaskCard";
 
 function ListOfTasks(props) {
+  const tasks = props.list.areCompletedTasksHidden
+    ? props.list.listTasks.filter((task) => task.isTaskCompleted === false)
+    : props.list.listTasks;
+
   return (
     <div id="list-of-tasks">
-      {props.list.listTasks.map((task) => (
+      {tasks.map((task) => (
         <TaskCard
           key={task.id}
-          id={task.id}
-          taskName={task.taskName}
-          taskDate={task.taskDate}
-          taskTime={task.taskTime}
+          task={task}
           onChangePage={props.onChangePage}
           onChangeTask={props.onChangeTask}
         />
