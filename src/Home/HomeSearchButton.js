@@ -2,9 +2,7 @@ import "./HomeSearchButton.css";
 
 function HomeSearchButton() {
   return (
-    <div className="search-button">
-      <i className="fas fa-search fa-4x"></i>
-    </div>
+    <i className="search-button fas fa-search fa-4x"></i>
   );
 }
 
