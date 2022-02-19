@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "./App.css";
 import Home from "./Home/Home";
+import HomeSearchPage from "./Home/HomeSearchPage";
 import SingleListPage from "./SingleListPage/SingleListPage";
 
 function App(props) {
@@ -32,6 +33,16 @@ function App(props) {
           currentTask={currentTask}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
+        />
+      ) : null}
+      {currentPage === "HomeSearchPage" ? (
+        <HomeSearchPage
+          data={data}
+          currentPage={currentPage}
+          currentList={currentList}
+          currentTask={currentTask}
+          onChangePage={handleChangePage}
+          onChangeTask={handleChangeTask}
         />
       ) : null}
       {currentPage === "SingleListPage" ? (

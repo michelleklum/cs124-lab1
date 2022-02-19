@@ -4,7 +4,10 @@ import ListOfLists from "./ListOfLists";
 function Home(props) {
   return (
     <div>
-      <HomeTopBar />
+      <HomeTopBar 
+        onChangePage={props.onChangePage}
+        onChangeList={props.onChangeList}
+      />
       <ListOfLists
         data={props.data}
         onChangePage={props.onChangePage}
