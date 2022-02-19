@@ -43,7 +43,7 @@
 /* first two styles are for sticky searchbar */
 .home-search input {
   position: sticky;
-  width: 60%;
+  width: 72%;
   background: #eae8e8;
   color: #172528;
   line-height: 0.5em;
