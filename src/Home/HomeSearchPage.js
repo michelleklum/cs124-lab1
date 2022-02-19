@@ -1,6 +1,6 @@
 import "./HomeSearchPage.css";
 import React, { Fragment, useState } from "react";
-import HomeSearchBar from "./HomeSearchBar";
+import SearchBar from "./SearchBar";
 import ListCard from "./ListCard";
 
 const filterLists = (lists, query) => {
@@ -8,7 +8,6 @@ const filterLists = (lists, query) => {
     return lists;
   }
   return lists.filter((list) => {
-    console.log(list)
     const listName = list.listName.toLowerCase();
     return listName.includes(query);
   });
@@ -22,7 +21,7 @@ function HomeSearchPage(props) {
 
   return (
     <Fragment>
-      <HomeSearchBar
+      <SearchBar
         onChangePage={props.onChangePage}
         onChangeList={props.onChangeList}
         searchQuery={searchQuery}
