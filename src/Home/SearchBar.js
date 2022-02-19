@@ -1,10 +1,10 @@
-import "./HomeSearchBar.css";
+import "./SearchBar.css";
 import CancelSearch from "./CancelSearch";
 
-function HomeSearchBar(props) {
+function SearchBar(props) {
   return (
-    <div className="home-search-background">
-      <div className="home-search">
+    <div className="search-background">
+      <div className="search">
         <i className="fas fa-search fa-3x"></i>
         <form action="/" method="get">
           <label htmlFor="search" className="search-label">Search</label>
@@ -13,6 +13,8 @@ function HomeSearchBar(props) {
             id="search"
             name="search"
             placeholder="Search"
+            autoComplete="off"
+            autoFocus
             value={props.searchQuery}
             onInput={e => props.setSearchQuery(e.target.value)} 
           />
@@ -23,4 +25,4 @@ function HomeSearchBar(props) {
   );
 }
 
-export default HomeSearchBar;
+export default SearchBar;
