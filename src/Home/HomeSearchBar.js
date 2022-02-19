@@ -6,10 +6,19 @@ function HomeSearchBar(props) {
     <div className="home-search-background">
       <div className="home-search">
         <i className="fas fa-search fa-3x"></i>
-        <label htmlFor="search" className="search-label">Search</label>
-        <input type="text" id="search" name="search" placeholder="Search" />
+        <form action="/" method="get">
+          <label htmlFor="search" className="search-label">Search</label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search"
+            value={props.searchQuery}
+            onInput={e => props.setSearchQuery(e.target.value)} 
+          />
+        </form>
       </div>
-      <CancelSearch onChangePage={props.onChangePage}/>
+      <CancelSearch onChangePage={props.onChangePage} />
     </div>
   );
 }
