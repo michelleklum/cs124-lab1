@@ -3,6 +3,8 @@ import "./SingleListPage.css";
 import ListTopBar from "./ListTopBar";
 import ListOfTasks from "./ListOfTasks";
 import ListMenu from "./ListMenu";
+import AddButton from "../Home/AddButton";
+
 
 function SingleListPage(props) {
   const [inMenuMode, setMenuMode] = useState(false);
@@ -22,6 +24,7 @@ function SingleListPage(props) {
           onChangePage={props.onChangePage}
           onChangeMenuMode={handleChangeMenuMode}
         />
+        <AddButton/>
         <div id={inMenuMode ? "single-list-menu-mode-overlay" : null}>
           <ListOfTasks
             list={taskList}
