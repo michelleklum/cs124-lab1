@@ -11,9 +11,17 @@ function ListMenu(props) {
       <EditListBar />
       <HideCompletedBar
         areCompletedTasksHidden={props.areCompletedTasksHidden}
+        currentList={props.currentList}
+        onEditList={props.onEditList}
       />
-      <DeleteCompletedBar />
-      <DeleteAllTasksBar />
+      <DeleteCompletedBar
+        currentList={props.currentList}
+        onEditList={props.onEditList}
+      />
+      <DeleteAllTasksBar
+        currentList={props.currentList}
+        onEditList={props.onEditList}
+      />
       <DeleteListBar />
     </div>
   );

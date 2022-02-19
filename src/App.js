@@ -7,6 +7,13 @@ import SingleListPage from "./SingleListPage/SingleListPage";
 function App(props) {
   const [data, setData] = useState(props.initialData);
 
+  function handleEditList(listId, listField, newValue) {
+    const oldListData = data.find((list) => list.id === listId);
+    const oldDataWithoutEditedList = data.filter((list) => list.id !== listId);
+    const newList = { ...oldListData, [listField]: newValue };
+    setData([...oldDataWithoutEditedList, newList]);
+  }
+
   const [currentPage, setCurrentPage] = useState("Home");
   const [currentList, setCurrentList] = useState();
   const [currentTask, setCurrentTask] = useState();
@@ -53,6 +60,7 @@ function App(props) {
           currentTask={currentTask}
           onChangePage={handleChangePage}
           onChangeTask={handleChangeTask}
+          onEditList={handleEditList}
         />
       ) : null}
     </Fragment>

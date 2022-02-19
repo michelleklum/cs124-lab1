@@ -6,9 +6,13 @@ function ListOfTasks(props) {
     ? props.list.listTasks.filter((task) => task.isTaskCompleted === false)
     : props.list.listTasks;
 
+  function sortTasksCompareFunction(a, b) {
+    return new Date(a.taskDate) < new Date(b.taskDate) ? -1 : 1;
+  }
+
   return (
     <div id="list-of-tasks">
-      {tasks.map((task) => (
+      {tasks.sort(sortTasksCompareFunction).map((task) => (
         <TaskCard
           key={task.id}
           task={task}
