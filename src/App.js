@@ -42,6 +42,7 @@ function App(props) {
           currentList={currentList}
           currentTask={currentTask}
           onChangePage={handleChangePage}
+          onChangeList={handleChangeList}
           onChangeTask={handleChangeTask}
         />
       ) : null}

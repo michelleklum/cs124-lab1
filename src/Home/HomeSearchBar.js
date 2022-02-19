@@ -13,6 +13,7 @@ function HomeSearchBar(props) {
             id="search"
             name="search"
             placeholder="Search"
+            autocomplete="off"
             value={props.searchQuery}
             onInput={e => props.setSearchQuery(e.target.value)} 
           />
