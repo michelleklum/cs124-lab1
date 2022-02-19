@@ -1,0 +1,39 @@
+.task {
+  border-radius: 8px;
+  background: #feffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #17252a;
+  margin-bottom: 1em;
+  padding: 0.2em 1.5em 0.2em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task i {
+  font-size: 22px !important;
+}
+
+/* override default checkbox styles for task checkboxes */
+.task input[type="checkbox"] {
+  margin-left: 0.5em;
+  margin-right: 1.5em;
+  transform: scale(2);
+  accent-color: #33aaaa;
+}
+
+.task-and-date {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.task-and-date h2 {
+  font-size: 16px;
+  margin-bottom: 0; /* to make task and date flush next to each other vertically */
+}
+
+.date {
+  margin-top: 0; /* to make task and date flush next to each other vertically */
+  font-size: 15px;
+}

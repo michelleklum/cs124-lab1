@@ -1,6 +1,6 @@
-import "./SearchButton.css";
+import "./HomeSearchButton.css";
 
-function SearchButton() {
+function HomeSearchButton() {
   return (
     <div className="search-button">
       <i className="fas fa-search fa-4x"></i>
@@ -8,4 +8,4 @@ function SearchButton() {
   );
 }
 
-export default SearchButton;
+export default HomeSearchButton;

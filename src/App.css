@@ -13,54 +13,58 @@
 
 /* Global Styles */
 i {
-    color: #bab2b5;
-  }
+  color: #bab2b5;
+}
 
-  /* all icons should slightly decrease in size when clicked to look like they're being pressed */
-  i:active {
-    transform: scale(0.98);
-  }
-  
-  /* set margin of html, body, h1 to 0 so top bar extends to top of page,
+/* all icons should slightly decrease in size when clicked to look like they're being pressed */
+i:active {
+  transform: scale(0.98);
+}
+
+/* set margin of html, body, h1 to 0 so top bar extends to top of page,
   and also so there isn't extra margin on left and right for top bar and bottom toolbar. */
-  html,
-  body {
-    background: #eae8e8;
-    font-family: "Open Sans", Calibri, sans-serif;
-    margin: 0;
-  }
-  
-  .top-bar i {
-    font-size: 26px !important;
-  }
-  
-  h1 {
-    font-size: 25px;
-    color: #feffff;
-    margin: 0;
-  }
-  
-  h3 {
-    font-size: 15px;
-  }
-  
-  p {
-    font-size: 35px;
-    color: #172528;
-  }
-  
-  /* margin-left auto makes three dots icon flush to right */
-  .right-aligned {
-    margin-left: auto;
-  }
-  
-  .right-aligned i {
-    padding-left: 0.01em;
-  }
-  
-  /* margin-right auto makes single list icon + list name flush to left */
-  .left-aligned {
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-  }
+html,
+body {
+  background: #eae8e8;
+  font-family: "Open Sans", Calibri, sans-serif;
+  margin: 0;
+}
+
+.top-bar i {
+  font-size: 26px !important;
+}
+
+h1 {
+  font-size: 25px;
+  color: #feffff;
+  margin: 0;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 35px;
+  color: #172528;
+}
+
+/* margin-right auto makes single list icon + list name flush to left */
+.left-aligned {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.left-aligned i {
+  padding-right: 0.5em;
+}
+
+/* margin-left auto makes three dots icon flush to right */
+.right-aligned {
+  margin-left: auto;
+}
+
+.right-aligned i {
+  padding-left: 0.5em;
+}

@@ -1,5 +1,5 @@
 import "./HomeTopBar.css";
-import SearchButton from "./SearchButton";
+import HomeSearchButton from "./HomeSearchButton";
 import SettingsButton from "./SettingsButton";
 
 function HomeTopBar() {
@@ -7,7 +7,7 @@ function HomeTopBar() {
     <div className="top-bar">
       <div className="top-bar-content">
         <h1>Task Manager</h1>
-        <SearchButton />
+        <HomeSearchButton />
         <SettingsButton />
       </div>
     </div>

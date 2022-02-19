@@ -1,15 +1,32 @@
 import "./TaskCard.css";
 
+function convertMilitaryTimeToStandardTime(militaryTime) {
+  let amPm = "AM"; // assume AM for now
+
+  let [hour, minute] = militaryTime.split(":");
+  hour = parseInt(hour);
+  if (hour > 12) {
+    // PM times
+    hour -= 12;
+    amPm = "PM";
+  }
+
+  return `${hour}:${minute} ${amPm}`;
+}
+
 function TaskCard(props) {
   return (
     <div className="task">
       <div className="left-aligned">
-        <input type="checkbox" id="call-mom" name="call-mom-done" />
+        <input type="checkbox" id={props.id} name={`${props.id}-done`} />
         <div className="task-and-date">
-          <label htmlFor="call-mom">
-            <h2>Call Mom</h2>
+          <label htmlFor={props.id}>
+            <h2>{props.taskName}</h2>
           </label>
-          <p className="date">2/11/22, 5:00 PM</p>
+          <p className="date">
+            {props.taskDate},{" "}
+            {convertMilitaryTimeToStandardTime(props.taskTime)}
+          </p>
         </div>
       </div>
     </div>

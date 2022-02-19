@@ -1,14 +1,22 @@
 import "./ListTopBar.css";
+import BackButton from "./BackButton";
+import ListSearchButton from "./ListSearchButton";
+import ListMenuButton from "./ListMenuButton";
 
 function ListTopBar(props) {
   return (
     <div className="top-bar">
       <div className="top-bar-content">
         <div className="left-aligned">
-          <i className="fas fa-chevron-left fa-4x"></i>
-          <h2>Calls and Texts</h2>
+          <BackButton onChangePage={props.onChangePage} />
+          <h2>{props.list.listName}</h2>
         </div>
-        <i className="fas fa-ellipsis-h fa-4x right-aligned"></i>
+        {props.inMenuMode ? null : (
+          <div className="right-aligned">
+            <ListSearchButton />
+            <ListMenuButton onChangeMenuMode={props.onChangeMenuMode} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -2,11 +2,18 @@ import "./ListOfTasks.css";
 import TaskCard from "./TaskCard";
 
 function ListOfTasks(props) {
-  console.log(props.list);
   return (
     <div id="list-of-tasks">
       {props.list.listTasks.map((task) => (
-        <TaskCard key={task.id} id={task.id} taskName={task.taskName} />
+        <TaskCard
+          key={task.id}
+          id={task.id}
+          taskName={task.taskName}
+          taskDate={task.taskDate}
+          taskTime={task.taskTime}
+          onChangePage={props.onChangePage}
+          onChangeTask={props.onChangeTask}
+        />
       ))}
     </div>
   );
