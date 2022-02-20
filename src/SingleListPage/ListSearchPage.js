@@ -14,14 +14,14 @@ const filterTasks = (tasks, query) => {
 };
 
 function ListSearchPage(props) {
-  const list = props.data.find((list) =>
-    list.id === props.currentList)
+  const list = props.data.find((list) => list.id === props.currentList);
   const { search } = window.location;
-  const query = new URLSearchParams(search).get('s');
-  const [searchQuery, setSearchQuery] = useState(query || '');
-  const filteredTasks = filterTasks(list.listTasks, searchQuery);
-
-  console.log(list)
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
+  const tasksToShow = list.areCompletedTasksHidden
+    ? list.listTasks.filter((task) => task.isTaskCompleted === false)
+    : list.listTasks;
+  const filteredTasks = filterTasks(tasksToShow, searchQuery);
 
   return (
     <Fragment>
