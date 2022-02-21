@@ -4,7 +4,7 @@ import HomeSearchBar from "./HomeSearchBar";
 import ListCard from "../Home/ListCard";
 
 const filterLists = (lists, query) => {
-  if (!query) {
+  if (query.length == 0) {
     return lists;
   }
   return lists.filter((list) => {
@@ -14,9 +14,7 @@ const filterLists = (lists, query) => {
 };
 
 function HomeSearchPage(props) {
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get('s');
-  const [searchQuery, setSearchQuery] = useState(query || '');
+  const [searchQuery, setSearchQuery] = useState('');
   const filteredLists = filterLists(props.data, searchQuery);
 
   return (
