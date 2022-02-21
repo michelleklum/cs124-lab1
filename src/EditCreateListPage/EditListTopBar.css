@@ -40,3 +40,9 @@
   .edit-list-name-label {
     visibility: hidden;
   }
+
+  /* get rid of default input outline on hover and click */
+.list-name input:hover,
+.list-name input:active {
+  outline: solid #91C6C3;
+}

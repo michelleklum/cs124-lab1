@@ -8,7 +8,6 @@ function ConfirmEditListButton(props) {
         props.onChangePage("Home")
     }
 
-    console.log(props.currentListId)
     return (
         <div className="right-aligned">
             <i className="fas fa-check fa-4x"
