@@ -5,26 +5,25 @@ import EditListButton from "./EditListButton";
 import DeleteListButton from "./DeleteListButton";
 
 function ListCard(props) {
-  const [touchStart, setTouchStart] = React.useState(0);
-  const [touchEnd, setTouchEnd] = React.useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const [inEditMode, setEditMode] = useState(false);
 
-  function handleTouchStart(touch) {
-    setTouchStart(touch.targetTouches[0].clientX);
+  /* The three functions below handle user swiping left or right on ListCard to reveal / hide edit and delete icons */
+  function handleTouchStart(e) {
+    setTouchStart(e.targetTouches[0].clientX);
   }
 
-  function handleTouchMove(touch) {
-    setTouchEnd(touch.targetTouches[0].clientX);
+  function handleTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX);
   }
 
   function handleTouchEnd() {
-    if ((touchStart - touchEnd) > 75 && (touchEnd !== 0) && !inEditMode) {
-      toggleEditMode()
-      console.log(touchStart)
-      console.log(touchEnd)
+    if (touchStart - touchEnd > 75 && touchEnd !== 0 && !inEditMode) {
+      toggleEditMode();
     }
-    if ((touchStart - touchEnd) < -75 && (touchEnd !== 0) && inEditMode) {
-      toggleEditMode()
+    if (touchStart - touchEnd < -75 && touchEnd !== 0 && inEditMode) {
+      toggleEditMode();
     }
   }
 
