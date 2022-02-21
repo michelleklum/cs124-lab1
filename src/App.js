@@ -73,7 +73,7 @@ function App(props) {
   function handleChangeTask(newTaskId) {
     setCurrentTaskId(newTaskId);
   }
-
+  
   return (
     <Fragment>
       {currentPage === "Home" ? (
@@ -135,8 +135,8 @@ function App(props) {
         <EditCreateListPage
           data={data}
           currentListId={currentListId}
-          onChangePage={handleChangePage}
           onEditList={handleEditList}
+          onChangePage={handleChangePage}
           inEditListMode={false}
           inCreateListMode={false}
         />

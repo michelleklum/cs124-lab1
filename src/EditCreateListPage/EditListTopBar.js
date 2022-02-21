@@ -1,23 +1,35 @@
+import React, { useState } from 'react'
 import CancelEditListButton from "./CancelEditListButton"
+import ConfirmEditListButton from './ConfirmEditListButton';
 import "./EditListTopBar.css";
 
 function EditListTopBar(props) {
+    const { name } = window.location;
+    const listName = new URLSearchParams(name).get('s');
+    const [tempListName, setTempListName] = useState(listName || props.currentListName);
+
     return (
         <div className="edit-list-header top-bar">
             <div className="edit-list-header-content top-bar-content">
                 <CancelEditListButton onChangePage={props.onChangePage} />
                 <div className="list-name">
-                    {/* <label htmlFor="edit-list-name"
+                    <label htmlFor="edit-list-name"
                         className="edit-list-name-label">List Name</label>
-                    <input type="text"
+                    <input
+                        type="text"
                         id="edit-list-name"
                         name="edit-list-name"
-                        value="Homework"
-                        style="text-align:center;" /> */}
+                        autoComplete="off"
+                        value={tempListName}
+                        onInput={e => setTempListName(e.target.value)}
+                    />
                 </div>
-                <div className="right-aligned">
-                    <i className="fas fa-check fa-4x"></i>
-                </div>
+                <ConfirmEditListButton
+                    data={props.data}
+                    currentListId={props.currentListId}
+                    onChangePage={props.onChangePage}
+                    onEditList={props.onEditList}
+                    listName={tempListName} />
             </div>
         </div>
     )

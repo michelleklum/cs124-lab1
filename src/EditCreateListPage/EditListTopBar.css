@@ -15,6 +15,28 @@
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr;
     position: relative;
-    top: 50%;
+    top: 48%;
     transform: translate(0, -50%);
 }
+
+.list-name input {
+    border-radius: 20px;
+    margin-left: 0.3em;
+    text-align: center;
+    width: 95%;
+    position: relative;
+    top: 12px;
+    transform: translate(0, -50%);
+    color: #172528;
+    line-height: 2.2em;
+    font-size: 18px;
+    font-family: "Open Sans", Calibri, sans-serif;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+  }
+
+  .edit-list-name-label {
+    visibility: hidden;
+  }
