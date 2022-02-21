@@ -14,14 +14,6 @@
   font-size: 22px !important;
 }
 
-/* override default checkbox styles for task checkboxes */
-.task input[type="checkbox"] {
-  margin-left: 0.5em;
-  margin-right: 1.5em;
-  transform: scale(2);
-  accent-color: #33aaaa;
-}
-
 .task-and-date {
   display: flex;
   flex-direction: column;

@@ -10,15 +10,15 @@ function SingleListPage(props) {
 
   function handleChangeMenuMode() {
     setMenuMode(!inMenuMode);
+    console.log(inMenuMode);
   }
-
-  const taskList = props.data.find((list) => list.id === props.currentList);
 
   return (
     <Fragment>
       <div id="single-list-page">
         <ListTopBar
-          list={taskList}
+          data={props.data}
+          currentListId={props.currentListId}
           inMenuMode={inMenuMode}
           onChangePage={props.onChangePage}
           onChangeMenuMode={handleChangeMenuMode}
@@ -26,17 +26,22 @@ function SingleListPage(props) {
         <AddButton />
         <div id={inMenuMode ? "single-list-menu-mode-overlay" : null}>
           <ListOfTasks
-            list={taskList}
+            data={props.data}
+            currentListId={props.currentListId}
             onChangePage={props.onChangePage}
             onChangeTask={props.onChangeTask}
+            onEditTask={props.onEditTask}
           />
         </div>
       </div>
       {inMenuMode ? (
         <ListMenu
-          areCompletedTasksHidden={taskList.areCompletedTasksHidden}
-          currentList={props.currentList}
+          data={props.data}
+          currentListId={props.currentListId}
           onEditList={props.onEditList}
+          onDeleteCompleted={props.onDeleteCompleted}
+          onDeleteAllTasks={props.onDeleteAllTasks}
+          onDeleteList={props.onDeleteList}
         />
       ) : null}
     </Fragment>

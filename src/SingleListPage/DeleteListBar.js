@@ -1,10 +1,18 @@
 import React, { Fragment } from "react";
 
-function DeleteListBar() {
+function DeleteListBar(props) {
   return (
     <Fragment>
-      <i className="fas fa-dumpster-fire delete-list-icon"></i>
-      <h2 className="delete-list-desc">Delete list</h2>
+      <i
+        className="fas fa-dumpster-fire delete-list-icon"
+        onClick={() => props.onDeleteList(props.currentListId)}
+      ></i>
+      <h2
+        className="delete-list-desc"
+        onClick={() => props.onDeleteList(props.currentListId)}
+      >
+        Delete list
+      </h2>
     </Fragment>
   );
 }

@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 function HideCompletedBar(props) {
   function changeListHideCompletedState() {
     props.onEditList(
-      props.currentList,
+      props.currentListId,
       "areCompletedTasksHidden",
       !props.areCompletedTasksHidden
     );

@@ -6,23 +6,28 @@ import DeleteAllTasksBar from "./DeleteAllTasksBar";
 import DeleteListBar from "./DeleteListBar";
 
 function ListMenu(props) {
+  const taskList = props.data.find((list) => list.id === props.currentListId);
+
   return (
     <div className="bottom-toolbar-edit-list-menu">
       <EditListBar />
       <HideCompletedBar
-        areCompletedTasksHidden={props.areCompletedTasksHidden}
-        currentList={props.currentList}
+        areCompletedTasksHidden={taskList.areCompletedTasksHidden}
+        currentListId={props.currentListId}
         onEditList={props.onEditList}
       />
       <DeleteCompletedBar
-        currentList={props.currentList}
-        onEditList={props.onEditList}
+        currentListId={props.currentListId}
+        onDeleteCompleted={props.onDeleteCompleted}
       />
       <DeleteAllTasksBar
-        currentList={props.currentList}
-        onEditList={props.onEditList}
+        currentListId={props.currentListId}
+        onDeleteAllTasks={props.onDeleteAllTasks}
       />
-      <DeleteListBar />
+      <DeleteListBar
+        currentListId={props.currentListId}
+        onDeleteList={props.onDeleteList}
+      />
     </div>
   );
 }

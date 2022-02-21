@@ -14,7 +14,7 @@ const filterTasks = (tasks, query) => {
 };
 
 function ListSearchPage(props) {
-  const list = props.data.find((list) => list.id === props.currentList);
+  const list = props.data.find((list) => list.id === props.currentListId);
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
