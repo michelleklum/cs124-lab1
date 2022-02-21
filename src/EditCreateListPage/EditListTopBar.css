@@ -1,0 +1,20 @@
+.edit-list-header i {
+    font-size: 30px !important;
+}
+
+.top-bar i {
+    color: #feffff;
+}
+
+.edit-list-header {
+    height: 80px;
+}
+
+.edit-list-header-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}

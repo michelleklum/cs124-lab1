@@ -131,7 +131,7 @@ function App(props) {
           inCreateTaskMode={false}
         />
       ) : null}
-      {currentPage === "ViewListPage" ? (
+      {currentPage === "EditListPage" ? (
         <EditCreateListPage
           data={data}
           currentListId={currentListId}
