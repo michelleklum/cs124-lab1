@@ -4,7 +4,7 @@ function EditListButton(props) {
   return (
     <i
       className="fas fa-pencil-alt fa-4x edit-list"
-      onClick={props.onListIconClick}
+      onClick={() => props.onChangePage("HomeSearchPage")}
     ></i>
   );
 }

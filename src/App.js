@@ -5,6 +5,8 @@ import HomeSearchPage from "./HomeSearchPage/HomeSearchPage";
 import ListSearchPage from "./ListSearchPage/ListSearchPage";
 import SingleListPage from "./SingleListPage/SingleListPage";
 import ViewEditCreateTaskPage from "./ViewEditCreateTaskPage/ViewEditCreateTaskPage";
+import EditCreateListPage from "./EditCreateListPage/EditCreateListPage";
+
 
 function App(props) {
   const [data, setData] = useState(props.initialData);
@@ -113,8 +115,8 @@ function App(props) {
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
-          onChangeList={handleChangePage}
           onChangeTask={handleChangeTask}
+          onEditTask={handleEditTask}
         />
       ) : null}
       {currentPage === "ViewTaskPage" ? (
@@ -126,6 +128,16 @@ function App(props) {
           onEditTask={handleEditTask}
           inEditTaskMode={false}
           inCreateTaskMode={false}
+        />
+      ) : null}
+      {currentPage === "ViewListPage" ? (
+        <EditCreateListPage
+          data={data}
+          currentListId={currentListId}
+          onChangePage={handleChangePage}
+          onEditList={handleEditList}
+          inEditListMode={false}
+          inCreateListMode={false}
         />
       ) : null}
     </Fragment>
