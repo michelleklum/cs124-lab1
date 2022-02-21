@@ -4,9 +4,7 @@ import ConfirmEditListButton from './ConfirmEditListButton';
 import "./EditListTopBar.css";
 
 function EditListTopBar(props) {
-    const { name } = window.location;
-    const listName = new URLSearchParams(name).get('s');
-    const [tempListName, setTempListName] = useState(listName || props.currentListName);
+    const [tempListName, setTempListName] = useState(props.currentListName || "");
 
     return (
         <div className="edit-list-header top-bar">
