@@ -4,10 +4,10 @@ import Home from "./Home/Home";
 import HomeSearchPage from "./Home/HomeSearchPage";
 import ListSearchPage from "./SingleListPage/ListSearchPage";
 import SingleListPage from "./SingleListPage/SingleListPage";
+import ViewEditCreateTaskPage from "./ViewEditCreateTaskPage/ViewEditCreateTaskPage";
 
 function App(props) {
   const [data, setData] = useState(props.initialData);
-  console.log(data);
 
   function handleEditTask(listId, taskId, taskField, newValue) {
     const oldList = data.find((list) => list.id === listId);
@@ -64,12 +64,12 @@ function App(props) {
     setCurrentPage(newPage);
   }
 
-  function handleChangeList(newList) {
-    setCurrentListId(newList);
+  function handleChangeList(newListId) {
+    setCurrentListId(newListId);
   }
 
-  function handleChangeTask(newTask) {
-    setCurrentTaskId(newTask);
+  function handleChangeTask(newTaskId) {
+    setCurrentTaskId(newTaskId);
   }
 
   return (
@@ -77,7 +77,6 @@ function App(props) {
       {currentPage === "Home" ? (
         <Home
           data={data}
-          currentPage={currentPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -87,7 +86,6 @@ function App(props) {
       {currentPage === "HomeSearchPage" ? (
         <HomeSearchPage
           data={data}
-          currentPage={currentPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -98,7 +96,6 @@ function App(props) {
       {currentPage === "SingleListPage" ? (
         <SingleListPage
           data={data}
-          currentPage={currentPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -113,11 +110,21 @@ function App(props) {
       {currentPage === "ListSearchPage" ? (
         <ListSearchPage
           data={data}
-          currentPage={currentPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
           onChangeTask={handleChangeTask}
+        />
+      ) : null}
+      {currentPage === "ViewTaskPage" ? (
+        <ViewEditCreateTaskPage
+          data={data}
+          currentListId={currentListId}
+          currentTaskId={currentTaskId}
+          onChangePage={handleChangePage}
+          onEditTask={handleEditTask}
+          inEditTaskMode={false}
+          inCreateTaskMode={false}
         />
       ) : null}
     </Fragment>

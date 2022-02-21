@@ -1,4 +1,4 @@
-function BackButton(props) {
+function ListBackButton(props) {
   return (
     <i
       className="fas fa-chevron-left fa-4x"
@@ -7,4 +7,4 @@ function BackButton(props) {
   );
 }
 
-export default BackButton;
+export default ListBackButton;

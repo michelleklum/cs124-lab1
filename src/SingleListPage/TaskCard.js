@@ -1,5 +1,5 @@
 import "./TaskCard.css";
-import Checkbox from "./Checkbox";
+import Checkbox from "../Global/Checkbox";
 
 function convertMilitaryTimeToStandardTime(militaryTime) {
   let amPm = "AM"; // assume AM for now
@@ -16,15 +16,21 @@ function convertMilitaryTimeToStandardTime(militaryTime) {
 }
 
 function TaskCard(props) {
+  function handleTaskCardClick() {
+    props.onChangePage("ViewTaskPage");
+    props.onChangeTask(props.task.id);
+  }
+
   return (
     <div className="task">
       <div className="left-aligned">
         <Checkbox
-          task={props.task}
-          onEditTask={props.onEditTask}
           currentListId={props.currentListId}
+          task={props.task}
+          disableCheckbox={false}
+          onEditTask={props.onEditTask}
         />
-        <div className="task-and-date">
+        <div className="task-and-date" onClick={handleTaskCardClick}>
           <label htmlFor={`task-${props.task.id}`}>
             <h2>{props.task.taskName}</h2>
           </label>

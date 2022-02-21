@@ -1,5 +1,5 @@
 import "./ListTopBar.css";
-import BackButton from "./BackButton";
+import ListBackButton from "./ListBackButton";
 import ListSearchButton from "./ListSearchButton";
 import ListMenuButton from "./ListMenuButton";
 
@@ -10,7 +10,7 @@ function ListTopBar(props) {
     <div className="top-bar">
       <div className="top-bar-content">
         <div className="left-aligned">
-          <BackButton onChangePage={props.onChangePage} />
+          <ListBackButton onChangePage={props.onChangePage} />
           <h2>{taskList.listName}</h2>
         </div>
         <div className="right-aligned">

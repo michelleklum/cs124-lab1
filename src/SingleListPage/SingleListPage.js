@@ -10,7 +10,6 @@ function SingleListPage(props) {
 
   function handleChangeMenuMode() {
     setMenuMode(!inMenuMode);
-    console.log(inMenuMode);
   }
 
   return (
