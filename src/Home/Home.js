@@ -13,6 +13,7 @@ function Home(props) {
         data={props.data}
         onChangePage={props.onChangePage}
         onChangeList={props.onChangeList}
+        onDeleteList={props.onDeleteList}
       />
       <AddButton/>
     </div>

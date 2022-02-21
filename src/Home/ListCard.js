@@ -53,8 +53,8 @@ function ListCard(props) {
       <h2>{props.listName}</h2>
       {inEditMode ? (
         <Fragment>
-          <EditListButton onListIconClick={toggleEditMode} onChangePage={props.onChangePage} />
-          <DeleteListButton onListIconClick={toggleEditMode} />
+          <EditListButton onChangePage={props.onChangePage} id={props.id}/>
+          <DeleteListButton onDeleteList={props.onDeleteList} id={props.id}/>
         </Fragment>
       ) : (
         <EnterListArrow onListIconClick={toggleEditMode} />

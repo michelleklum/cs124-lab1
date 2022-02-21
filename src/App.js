@@ -81,6 +81,7 @@ function App(props) {
           data={data}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
+          onDeleteList={handleDeleteList}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
         />
