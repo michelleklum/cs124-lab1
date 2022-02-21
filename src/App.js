@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
 import "./App.css";
 import Home from "./Home/Home";
-import HomeSearchPage from "./Home/HomeSearchPage";
-import ListSearchPage from "./SingleListPage/ListSearchPage";
+import HomeSearchPage from "./HomeSearchPage/HomeSearchPage";
+import ListSearchPage from "./ListSearchPage/ListSearchPage";
 import SingleListPage from "./SingleListPage/SingleListPage";
 import ViewEditCreateTaskPage from "./ViewEditCreateTaskPage/ViewEditCreateTaskPage";
 
@@ -113,6 +113,7 @@ function App(props) {
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
+          onChangeList={handleChangePage}
           onChangeTask={handleChangeTask}
         />
       ) : null}

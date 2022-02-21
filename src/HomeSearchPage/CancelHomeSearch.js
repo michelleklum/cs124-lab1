@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import "./CancelSearch.css";
+import "./CancelHomeSearch.css";
 
-function CancelSearch(props) {
+function CancelHomeSearch(props) {
   return (
     <Fragment>
       <h3
@@ -15,4 +15,4 @@ function CancelSearch(props) {
   );
 }
 
-export default CancelSearch;
+export default CancelHomeSearch;

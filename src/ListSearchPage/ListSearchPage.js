@@ -1,7 +1,7 @@
 import "./ListSearchPage.css";
 import React, { Fragment, useState } from "react";
-import SearchBar from "../Home/SearchBar";
-import TaskCard from "./TaskCard";
+import ListSearchBar from "./ListSearchBar";
+import TaskCard from "../SingleListPage/TaskCard";
 
 const filterTasks = (tasks, query) => {
   if (!query) {
@@ -12,6 +12,7 @@ const filterTasks = (tasks, query) => {
     return taskName.includes(query);
   });
 };
+
 
 function ListSearchPage(props) {
   const list = props.data.find((list) => list.id === props.currentListId);
@@ -25,11 +26,11 @@ function ListSearchPage(props) {
 
   return (
     <Fragment>
-      <SearchBar
+      <ListSearchBar
         onChangePage={props.onChangePage}
-        onChangeList={props.onChangeList}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        id={list.id}
       />
       <div id="filtered-tasks">
         {filteredTasks.map((task) => (

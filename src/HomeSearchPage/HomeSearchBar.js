@@ -1,7 +1,7 @@
-import "./SearchBar.css";
-import CancelSearch from "./CancelSearch";
+import "./HomeSearchBar.css";
+import CancelHomeSearch from "./CancelHomeSearch";
 
-function SearchBar(props) {
+function HomeSearchBar(props) {
   return (
     <div className="search-background">
       <div className="search">
@@ -20,9 +20,9 @@ function SearchBar(props) {
           />
         </form>
       </div>
-      <CancelSearch onChangePage={props.onChangePage} />
+      <CancelHomeSearch onChangePage={props.onChangePage} />
     </div>
   );
 }
 
-export default SearchBar;
+export default HomeSearchBar;
