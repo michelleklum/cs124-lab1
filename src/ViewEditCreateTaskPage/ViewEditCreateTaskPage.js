@@ -32,7 +32,13 @@ function ViewEditCreateTaskPage(props) {
         inEditTaskMode={props.inEditTaskMode}
         onEditTask={props.onEditTask}
       />
-      {props.inEditTaskMode ? <DeleteTaskBar /> : null}
+      {props.inEditTaskMode ? (
+        <DeleteTaskBar
+          currentListId={props.currentListId}
+          currentTaskId={props.currentTaskId}
+          onDeleteTask={props.onDeleteTask}
+        />
+      ) : null}
     </div>
   );
 }

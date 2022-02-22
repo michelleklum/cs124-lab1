@@ -15,14 +15,30 @@ function App(props) {
       data.map((list) =>
         list.id === listId
           ? {
-            ...list,
-            listTasks: list.listTasks.map((task) =>
-              task.id === taskId ? { ...task, [taskField]: newValue } : task
-            ),
-          }
+              ...list,
+              listTasks: list.listTasks.map((task) =>
+                task.id === taskId ? { ...task, [taskField]: newValue } : task
+              ),
+            }
           : list
       )
     );
+  }
+
+  function handleDeleteTask(listId, taskId) {
+    setData(
+      data.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              listTasks: list.listTasks.filter((task) => task.id !== taskId),
+            }
+          : list
+      )
+    );
+    setCurrentPage(
+      "SingleListPage"
+    ); /* after deleting task, redirect to Single List Page */
   }
 
   function handleEditList(listId, listField, newValue) {
@@ -36,7 +52,9 @@ function App(props) {
   function handleEditListNameIcon(listId, newName, newIcon) {
     setData(
       data.map((list) =>
-        list.id === listId ? { ...list, listName: newName, listIcon: newIcon } : list
+        list.id === listId
+          ? { ...list, listName: newName, listIcon: newIcon }
+          : list
       )
     );
   }
@@ -46,9 +64,9 @@ function App(props) {
       data.map((list) =>
         list.id === listId
           ? {
-            ...list,
-            listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
-          }
+              ...list,
+              listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
+            }
           : list
       )
     );
@@ -147,6 +165,7 @@ function App(props) {
           onChangePage={handleChangePage}
           onEditData={setData}
           onEditTask={handleEditTask}
+          onDeleteTask={handleDeleteTask}
           inEditTaskMode={true}
           inCreateTaskMode={false}
         />
