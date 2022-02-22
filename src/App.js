@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { generateUniqueID } from "web-vitals/dist/modules/lib/generateUniqueID";
 import "./App.css";
 import Home from "./Home/Home";
 import HomeSearchPage from "./HomeSearchPage/HomeSearchPage";
@@ -15,11 +16,11 @@ function App(props) {
       data.map((list) =>
         list.id === listId
           ? {
-              ...list,
-              listTasks: list.listTasks.map((task) =>
-                task.id === taskId ? { ...task, [taskField]: newValue } : task
-              ),
-            }
+            ...list,
+            listTasks: list.listTasks.map((task) =>
+              task.id === taskId ? { ...task, [taskField]: newValue } : task
+            ),
+          }
           : list
       )
     );
@@ -30,9 +31,9 @@ function App(props) {
       data.map((list) =>
         list.id === listId
           ? {
-              ...list,
-              listTasks: list.listTasks.filter((task) => task.id !== taskId),
-            }
+            ...list,
+            listTasks: list.listTasks.filter((task) => task.id !== taskId),
+          }
           : list
       )
     );
@@ -49,7 +50,7 @@ function App(props) {
     );
   }
 
-  function handleEditListNameIcon(listId, newName, newIcon) {
+  function handleEditListAppearance(listId, newName, newIcon) {
     setData(
       data.map((list) =>
         list.id === listId
@@ -64,9 +65,9 @@ function App(props) {
       data.map((list) =>
         list.id === listId
           ? {
-              ...list,
-              listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
-            }
+            ...list,
+            listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
+          }
           : list
       )
     );
@@ -85,6 +86,8 @@ function App(props) {
     setCurrentPage("Home"); /* after deleting list, redirect to Home Page */
   }
 
+
+  // Code below changes current page, list, and task
   const [currentPage, setCurrentPage] = useState("Home");
   const [currentListId, setCurrentListId] = useState();
   const [currentTaskId, setCurrentTaskId] = useState();
@@ -99,6 +102,20 @@ function App(props) {
 
   function handleChangeTask(newTaskId) {
     setCurrentTaskId(newTaskId);
+  }
+
+
+  // Functions below handle list and task creation 
+  function handleCreateList(listName, listIcon) {
+    const newList = {
+      id: generateUniqueID(),
+      listName: listName,
+      listIcon: listIcon,
+      areCompletedTasksHidden: false,
+      listTasks: [],
+    }
+    const newData = data.concat(newList)
+    setData(newData)
   }
 
   return (
@@ -174,10 +191,26 @@ function App(props) {
         <EditCreateListPage
           data={data}
           currentListId={currentListId}
-          onEditList={handleEditListNameIcon}
+          onEditList={handleEditListAppearance}
           onChangePage={handleChangePage}
-          inEditListMode={false}
+          onChangeList={handleChangeList}
+          onDeleteList={handleDeleteList}
+          onCreateList={handleCreateList}
+          inEditListMode={true}
           inCreateListMode={false}
+        />
+      ) : null}
+      {currentPage === "CreateListPage" ? (
+        <EditCreateListPage
+          data={data}
+          currentListId={currentListId}
+          onEditList={handleEditListAppearance}
+          onCreateList={handleCreateList}
+          onChangeList={handleChangeList}
+          onChangePage={handleChangePage}
+          onDeleteList={handleDeleteList}
+          inEditListMode={false}
+          inCreateListMode={true}
         />
       ) : null}
     </Fragment>

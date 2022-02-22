@@ -3,10 +3,17 @@ import ConfirmEditListButton from './ConfirmEditListButton';
 import "./EditListTopBar.css";
 
 function EditListTopBar(props) {
+    console.log(props.tempListName)
     return (
         <div className="edit-list-header top-bar">
             <div className="edit-list-header-content top-bar-content">
-                <CancelEditListButton onChangePage={props.onChangePage} />
+                <CancelEditListButton
+                    onChangePage={props.onChangePage}
+                    onChangeListName={props.onChangeListName}
+                    onChangeListIcon={props.onChangeListIcon}
+                    onChangeList={props.onChangeList}
+                    listName={props.tempListName}
+                    listIcon={props.tempSelectedIcon} />
                 <div className="list-name">
                     <label htmlFor="edit-list-name"
                         className="edit-list-name-label">List Name</label>
@@ -24,9 +31,16 @@ function EditListTopBar(props) {
                     currentListId={props.currentListId}
                     currentListIcon={props.currentListIcon}
                     onChangePage={props.onChangePage}
+                    onChangeList={props.onChangeList}
+                    onChangeListName={props.onChangeListName}
+                    onChangeListIcon={props.onChangeListIcon}
                     onEditList={props.onEditList}
-                    listName={props.tempListName} 
-                    listIcon={props.tempSelectedIcon}/>
+                    onCreateList={props.onCreateList}
+                    listName={props.tempListName}
+                    listIcon={props.tempSelectedIcon}
+                    inCreateListMode={props.inCreateListMode}
+                    inEditListMode={props.inEditListMode}
+                />
             </div>
         </div>
     )
