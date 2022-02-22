@@ -24,7 +24,7 @@ function CompletionBar(props) {
           ? "Completed?"
           : props.task.isTaskCompleted
           ? "Completed"
-          : "Not Completed"}
+          : "Not completed"}
       </p>
     </Fragment>
   );

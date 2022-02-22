@@ -11,13 +11,14 @@
 }
 
 .task i {
-  font-size: 22px !important;
+  margin-right: 16px;
 }
 
 .task-and-date {
   display: flex;
   flex-direction: column;
   align-items: left;
+  flex-grow: 1;
 }
 
 .task-and-date h2 {

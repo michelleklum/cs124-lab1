@@ -1,7 +1,0 @@
-/* override default checkbox styles for task checkboxes */
-input[type="checkbox"] {
-  margin-left: 0.5em;
-  margin-right: 0.75em;
-  transform: scale(2);
-  accent-color: #33aaaa;
-}
