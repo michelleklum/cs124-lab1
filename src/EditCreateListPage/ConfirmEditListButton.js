@@ -3,8 +3,8 @@ import "./ConfirmEditListButton.css";
 function ConfirmEditListButton(props) {
     function confirmEdit() {
         props.onEditList(props.currentListId,
-            'listName',
-            props.listName)
+            props.listName,
+            props.listIcon)
         props.onChangePage("Home")
     }
 

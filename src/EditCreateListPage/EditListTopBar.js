@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
 import CancelEditListButton from "./CancelEditListButton"
 import ConfirmEditListButton from './ConfirmEditListButton';
 import "./EditListTopBar.css";
 
 function EditListTopBar(props) {
-    const [tempListName, setTempListName] = useState(props.currentListName || "");
-
     return (
         <div className="edit-list-header top-bar">
             <div className="edit-list-header-content top-bar-content">
@@ -18,16 +15,18 @@ function EditListTopBar(props) {
                         id="edit-list-name"
                         name="edit-list-name"
                         autoComplete="off"
-                        value={tempListName}
-                        onInput={e => setTempListName(e.target.value)}
+                        value={props.tempListName}
+                        onInput={e => props.onChangeListName(e.target.value)}
                     />
                 </div>
                 <ConfirmEditListButton
                     data={props.data}
                     currentListId={props.currentListId}
+                    currentListIcon={props.currentListIcon}
                     onChangePage={props.onChangePage}
                     onEditList={props.onEditList}
-                    listName={tempListName} />
+                    listName={props.tempListName} 
+                    listIcon={props.tempSelectedIcon}/>
             </div>
         </div>
     )

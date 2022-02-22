@@ -27,3 +27,9 @@
     top: 42%;
     transform: translate(0, -50%);
   }
+
+  #edit-list-page {
+    background: #feffff;
+    height: 100vh; /* need this so #feffff background color extends entire screen */
+  }
+  

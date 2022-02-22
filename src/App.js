@@ -15,11 +15,11 @@ function App(props) {
       data.map((list) =>
         list.id === listId
           ? {
-              ...list,
-              listTasks: list.listTasks.map((task) =>
-                task.id === taskId ? { ...task, [taskField]: newValue } : task
-              ),
-            }
+            ...list,
+            listTasks: list.listTasks.map((task) =>
+              task.id === taskId ? { ...task, [taskField]: newValue } : task
+            ),
+          }
           : list
       )
     );
@@ -33,14 +33,22 @@ function App(props) {
     );
   }
 
+  function handleEditListNameIcon(listId, newName, newIcon) {
+    setData(
+      data.map((list) =>
+        list.id === listId ? { ...list, listName: newName, listIcon: newIcon } : list
+      )
+    );
+  }
+
   function handleDeleteCompletedTasks(listId) {
     setData(
       data.map((list) =>
         list.id === listId
           ? {
-              ...list,
-              listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
-            }
+            ...list,
+            listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
+          }
           : list
       )
     );
@@ -147,7 +155,7 @@ function App(props) {
         <EditCreateListPage
           data={data}
           currentListId={currentListId}
-          onEditList={handleEditList}
+          onEditList={handleEditListNameIcon}
           onChangePage={handleChangePage}
           inEditListMode={false}
           inCreateListMode={false}
