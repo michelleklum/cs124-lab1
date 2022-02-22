@@ -4,7 +4,7 @@ import HomeSearchBar from "./HomeSearchBar";
 import ListCard from "../Home/ListCard";
 
 const filterLists = (lists, query) => {
-  if (query.length == 0) {
+  if (query.length === 0) {
     return lists;
   }
   return lists.filter((list) => {

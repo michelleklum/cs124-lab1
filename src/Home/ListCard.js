@@ -19,6 +19,7 @@ function ListCard(props) {
   }
 
   function handleTouchEnd() {
+    // touchEnd !== 0 ensures there's a drag, not a click/tap
     if (touchStart - touchEnd > 75 && touchEnd !== 0 && !inEditMode) {
       toggleEditMode();
     }
