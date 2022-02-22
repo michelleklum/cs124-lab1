@@ -80,6 +80,7 @@ function App(props) {
           data={data}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
+          onDeleteList={handleDeleteList}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
         />
@@ -140,12 +141,12 @@ function App(props) {
           inCreateTaskMode={false}
         />
       ) : null}
-      {currentPage === "ViewListPage" ? (
+      {currentPage === "EditListPage" ? (
         <EditCreateListPage
           data={data}
           currentListId={currentListId}
-          onChangePage={handleChangePage}
           onEditList={handleEditList}
+          onChangePage={handleChangePage}
           inEditListMode={false}
           inCreateListMode={false}
         />
