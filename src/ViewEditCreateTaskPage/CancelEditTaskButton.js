@@ -1,6 +1,6 @@
 function CancelEditTaskButton(props) {
   function handleCancelEditTask() {
-    // reset data to what it was before going to Edit Task Page
+    // Canceling task changes, so reset data to what it was prior to any changes made on this Edit Task Page
     props.onEditData(props.initialData);
     props.onChangePage("SingleListPage");
   }

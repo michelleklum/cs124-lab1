@@ -9,7 +9,9 @@ function Checkbox(props) {
       !props.task.isTaskCompleted
     );
   }
-  // TODO: We styled the checkbox on this page as a hacky way to make the checkbox icon show up
+
+  // TODO: We styled the checkbox directly in the JSX because otherwise, the checkbox icon wouldn't appear.
+
   // fa-stop is a solid filled-in checkbox from Font Awesome.
   // To make it an outline instead, we turned its color to #FeFFFF to blend in with background,
   // and added a border.

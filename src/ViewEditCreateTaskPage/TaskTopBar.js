@@ -6,10 +6,6 @@ import SaveTaskButton from "./SaveTaskButton";
 import EditTaskButton from "./EditTaskButton";
 
 function TaskTopBar(props) {
-  // TODO: differentiate updates to data based on click to cancel vs. save task
-  // could have state in ViewEditCreateTaskPage that tracks the oldData
-  // and pass that in here and call App's setData based on thats
-
   return (
     <div className="task-header">
       {props.inEditTaskMode ? (
