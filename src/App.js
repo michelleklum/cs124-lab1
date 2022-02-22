@@ -11,45 +11,47 @@ function App(props) {
   const [data, setData] = useState(props.initialData);
 
   function handleEditTask(listId, taskId, taskField, newValue) {
-    const oldList = data.find((list) => list.id === listId);
-    const oldDataWithoutEditedList = data.filter((list) => list.id !== listId);
-
-    const oldTask = oldList.listTasks.find((task) => task.id === taskId);
-    const oldTasksWithoutEditedTask = oldList.listTasks.filter(
-      (task) => task.id !== taskId
+    setData(
+      data.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              listTasks: list.listTasks.map((task) =>
+                task.id === taskId ? { ...task, [taskField]: newValue } : task
+              ),
+            }
+          : list
+      )
     );
-
-    const editedTask = { ...oldTask, [taskField]: newValue };
-    const editedList = {
-      ...oldList,
-      listTasks: [...oldTasksWithoutEditedTask, editedTask],
-    };
-
-    setData([...oldDataWithoutEditedList, editedList]);
   }
 
   function handleEditList(listId, listField, newValue) {
-    const oldList = data.find((list) => list.id === listId);
-    const oldDataWithoutEditedList = data.filter((list) => list.id !== listId);
-    const editedList = { ...oldList, [listField]: newValue };
-    setData([...oldDataWithoutEditedList, editedList]);
+    setData(
+      data.map((list) =>
+        list.id === listId ? { ...list, [listField]: newValue } : list
+      )
+    );
   }
 
   function handleDeleteCompletedTasks(listId) {
-    const oldList = data.find((list) => list.id === listId);
-    const oldDataWithoutEditedList = data.filter((list) => list.id !== listId);
-    const uncompletedListTasks = oldList.listTasks.filter(
-      (task) => !task.isTaskCompleted
+    setData(
+      data.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              listTasks: list.listTasks.filter((task) => !task.isTaskCompleted),
+            }
+          : list
+      )
     );
-    const editedList = { ...oldList, listTasks: uncompletedListTasks };
-    setData([...oldDataWithoutEditedList, editedList]);
   }
 
   function handleDeleteAllTasks(listId) {
-    const oldList = data.find((list) => list.id === listId);
-    const oldDataWithoutEditedList = data.filter((list) => list.id !== listId);
-    const editedList = { ...oldList, listTasks: [] };
-    setData([...oldDataWithoutEditedList, editedList]);
+    setData(
+      data.map((list) =>
+        list.id === listId ? { ...list, listTasks: [] } : list
+      )
+    );
   }
 
   function handleDeleteList(listId) {
