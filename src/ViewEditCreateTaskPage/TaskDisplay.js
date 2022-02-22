@@ -8,8 +8,10 @@ function TaskDisplay(props) {
     <div id="task-display">
       <DateAndTimeBar task={props.task} inEditTaskMode={props.inEditTaskMode} />
       <AdditionalNotesBar
+        currentListId={props.currentListId}
         task={props.task}
         inEditTaskMode={props.inEditTaskMode}
+        onEditTask={props.onEditTask}
       />
       <CompletionBar
         currentListId={props.currentListId}

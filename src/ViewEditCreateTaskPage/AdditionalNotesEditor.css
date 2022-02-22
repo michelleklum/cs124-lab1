@@ -1,16 +1,17 @@
 /* get rid of default input outline on hover and click */
-.edit-task-name textarea:hover,
-.edit-task-name textarea:active {
+.edit-task-notes textarea:hover,
+.edit-task-notes textarea:active {
   outline: none;
 }
 
-.edit-task-name textarea {
+.edit-task-notes textarea {
   resize: none; /* removes ability for user to click and drag to resize textarea */
   overflow: hidden; /* hides textarea scrollbar */
   background: #eae8e8;
   color: #172528;
   font-size: 15px;
-  width: 70%;
+  width: 115%;
+  height: auto;
   font-family: "Open Sans", Calibri, sans-serif;
   border-top-style: hidden;
   border-right-style: hidden;
@@ -20,5 +21,4 @@
   outline: none;
   padding: 1em;
   border-radius: 0.75em;
-  text-align: center;
 }
