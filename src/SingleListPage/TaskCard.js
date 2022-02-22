@@ -25,20 +25,25 @@ function TaskCard(props) {
     <div className="task">
       <div className="left-aligned">
         <Checkbox
+          className="checkbox"
           currentListId={props.currentListId}
           task={props.task}
-          disableCheckbox={false}
+          disableCheckbox={props.inMenuMode ? true : false}
           onEditTask={props.onEditTask}
         />
-        <div className="task-and-date" onClick={handleTaskCardClick}>
-          <label htmlFor={`task-${props.task.id}`}>
-            <h2>{props.task.taskName}</h2>
-          </label>
-          <p className="date">
-            {props.task.taskDate},{" "}
-            {convertMilitaryTimeToStandardTime(props.task.taskTime)}
-          </p>
-        </div>
+      </div>
+
+      <div
+        className="task-and-date"
+        onClick={props.inMenuMode ? null : handleTaskCardClick}
+      >
+        <label htmlFor={`task-${props.task.id}`}>
+          <h2>{props.task.taskName}</h2>
+        </label>
+        <p className="date">
+          {props.task.taskDate},{" "}
+          {convertMilitaryTimeToStandardTime(props.task.taskTime)}
+        </p>
       </div>
     </div>
   );

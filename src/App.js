@@ -7,7 +7,6 @@ import SingleListPage from "./SingleListPage/SingleListPage";
 import ViewEditCreateTaskPage from "./ViewEditCreateTaskPage/ViewEditCreateTaskPage";
 import EditCreateListPage from "./EditCreateListPage/EditCreateListPage";
 
-
 function App(props) {
   const [data, setData] = useState(props.initialData);
 
@@ -125,8 +124,19 @@ function App(props) {
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
-          onEditTask={handleEditTask}
           inEditTaskMode={false}
+          inCreateTaskMode={false}
+        />
+      ) : null}
+      {currentPage === "EditTaskPage" ? (
+        <ViewEditCreateTaskPage
+          data={data}
+          currentListId={currentListId}
+          currentTaskId={currentTaskId}
+          onChangePage={handleChangePage}
+          onEditData={setData}
+          onEditTask={handleEditTask}
+          inEditTaskMode={true}
           inCreateTaskMode={false}
         />
       ) : null}

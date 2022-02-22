@@ -19,6 +19,7 @@ function ListOfTasks(props) {
           key={task.id}
           currentListId={props.currentListId}
           task={task}
+          inMenuMode={props.inMenuMode}
           onChangePage={props.onChangePage}
           onChangeTask={props.onChangeTask}
           onEditTask={props.onEditTask}

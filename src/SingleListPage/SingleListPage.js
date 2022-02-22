@@ -8,7 +8,7 @@ import AddButton from "../Home/AddButton";
 function SingleListPage(props) {
   const [inMenuMode, setMenuMode] = useState(false);
 
-  function handleChangeMenuMode() {
+  function toggleMenuMode() {
     setMenuMode(!inMenuMode);
   }
 
@@ -20,13 +20,17 @@ function SingleListPage(props) {
           currentListId={props.currentListId}
           inMenuMode={inMenuMode}
           onChangePage={props.onChangePage}
-          onChangeMenuMode={handleChangeMenuMode}
+          onChangeMenuMode={toggleMenuMode}
         />
         <AddButton />
-        <div id={inMenuMode ? "single-list-menu-mode-overlay" : null}>
+        <div
+          id={inMenuMode ? "single-list-menu-mode-overlay" : null}
+          onClick={inMenuMode ? toggleMenuMode : null}
+        >
           <ListOfTasks
             data={props.data}
             currentListId={props.currentListId}
+            inMenuMode={inMenuMode}
             onChangePage={props.onChangePage}
             onChangeTask={props.onChangeTask}
             onEditTask={props.onEditTask}
