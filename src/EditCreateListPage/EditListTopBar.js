@@ -3,7 +3,6 @@ import ConfirmEditListButton from './ConfirmEditListButton';
 import "./EditListTopBar.css";
 
 function EditListTopBar(props) {
-    console.log(props.tempListName)
     return (
         <div className="edit-list-header top-bar">
             <div className="edit-list-header-content top-bar-content">

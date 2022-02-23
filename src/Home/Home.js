@@ -1,6 +1,6 @@
 import HomeTopBar from "./HomeTopBar";
 import ListOfLists from "./ListOfLists";
-import AddButton from "./AddButton";
+import AddButton from "../Global/AddButton";
 
 function Home(props) {
   return (
@@ -16,7 +16,8 @@ function Home(props) {
         onDeleteList={props.onDeleteList}
       />
       <AddButton
-        onChangePage={props.onChangePage} />
+        onChangePage={props.onChangePage}
+        currentPage={props.currentPage} />
     </div>
   );
 }

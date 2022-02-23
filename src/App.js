@@ -118,6 +118,26 @@ function App(props) {
     setData(newData)
   }
 
+
+  function handleCreateTask(listId) {
+    const list = data.find((list) => list.id === listId);
+    const newTasks = list.listTasks.concat(
+      {
+        id: generateUniqueID(),
+        taskName: null,
+        taskDate: null,
+        taskTime: null,
+        taskNotes: null,
+        isTaskCompleted: false
+      })
+    setData(
+      data.map((list) =>
+        list.id === listId ? { ...list, listTasks: newTasks } : list
+      )
+    );
+  }
+
+
   return (
     <Fragment>
       {currentPage === "Home" ? (
@@ -125,6 +145,7 @@ function App(props) {
           data={data}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
+          currentPage={currentPage}
           onDeleteList={handleDeleteList}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
@@ -145,6 +166,7 @@ function App(props) {
           data={data}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
+          currentPage={currentPage}
           onChangePage={handleChangePage}
           onChangeTask={handleChangeTask}
           onEditList={handleEditList}
@@ -185,6 +207,20 @@ function App(props) {
           onDeleteTask={handleDeleteTask}
           inEditTaskMode={true}
           inCreateTaskMode={false}
+        />
+      ) : null}
+      {currentPage === "CreateTaskPage" ? (
+        <ViewEditCreateTaskPage
+          data={data}
+          currentListId={currentListId}
+          currentTaskId={currentTaskId}
+          onChangePage={handleChangePage}
+          onEditData={setData}
+          onEditTask={handleEditTask}
+          onDeleteTask={handleDeleteTask}
+          onCreateTask={handleCreateTask}
+          inEditTaskMode={false}
+          inCreateTaskMode={true}
         />
       ) : null}
       {currentPage === "EditListPage" ? (

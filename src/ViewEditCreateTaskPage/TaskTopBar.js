@@ -6,6 +6,25 @@ import SaveTaskButton from "./SaveTaskButton";
 import EditTaskButton from "./EditTaskButton";
 
 function TaskTopBar(props) {
+  // var confirmButton;
+  // if (props.inEditTaskMode) {
+  //   confirmButton =
+  //   <SaveTaskButton onChangePage={props.onChangePage} />
+  // }
+  // else if (props.inCreateTaskMode) {
+  //   confirmButton =
+  //     <div className="right-aligned create-mode-confirm">
+  //       <i className="fas fa-check fa-4x"
+  //         onClick={() => confirmCreateList()}></i>
+  //     </div>
+  // }
+  // else {
+  //   confirmButton =
+  //     <div className="right-aligned">
+  //       <i className="fas fa-check fa-4x" id="no-info"></i>
+  //     </div>
+  // }
+
   return (
     <div className="task-header">
       {props.inEditTaskMode ? (

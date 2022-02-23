@@ -12,6 +12,12 @@ function ViewEditCreateTaskPage(props) {
   /* TODO: Better way of capturing the previous state data for cancel edit task button? */
   const [initialData, setInitialData] = useState(props.data);
 
+  if (props.inCreateTaskMode) {
+    props.onCreateTask(props.currentListId)
+    const task = list.listTasks.find((task) => task.name === null);
+    props.onChangeTask(task.id)
+  }
+
   return (
     <div id="task-page">
       <TaskTopBar
