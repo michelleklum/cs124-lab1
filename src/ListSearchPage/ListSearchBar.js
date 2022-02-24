@@ -24,6 +24,7 @@ function ListSearchBar(props) {
       <CancelListSearch
         onChangePage={props.onChangePage}
         onChangeList={props.onChangeList}
+        prevPage={props.prevPage}
         id={props.id} />
     </div>
   );

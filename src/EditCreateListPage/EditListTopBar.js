@@ -8,6 +8,7 @@ function EditListTopBar(props) {
             <div className="edit-list-header-content top-bar-content">
                 <CancelEditListButton
                     onChangePage={props.onChangePage}
+                    prevPage={props.prevPage}
                     onChangeListName={props.onChangeListName}
                     onChangeListIcon={props.onChangeListIcon}
                     onChangeList={props.onChangeList}
@@ -27,6 +28,7 @@ function EditListTopBar(props) {
                 </div>
                 <ConfirmEditListButton
                     data={props.data}
+                    prevPage={props.prevPage}
                     currentListId={props.currentListId}
                     currentListIcon={props.currentListIcon}
                     onChangePage={props.onChangePage}

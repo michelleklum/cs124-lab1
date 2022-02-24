@@ -51,6 +51,7 @@ function ViewEditCreateTaskPage(props) {
     <div id="task-page">
       <TaskTopBar
         task={task}
+        prevPage={props.prevPage}
         currentListId={props.currentListId}
         currentTaskId={props.currentTaskId}
         onChangePage={props.onChangePage}

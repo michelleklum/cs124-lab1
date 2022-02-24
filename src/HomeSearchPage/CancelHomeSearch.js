@@ -7,7 +7,7 @@ function CancelHomeSearch(props) {
       <h3
         className="right-aligned"
         id="cancel-search"
-        onClick={() => props.onChangePage("Home")}
+        onClick={() => props.onChangePage(props.prevPage)}
       >
         Cancel
       </h3>

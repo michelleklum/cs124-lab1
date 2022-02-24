@@ -4,7 +4,7 @@ function CancelEditListButton(props) {
     return (
         <div className="left-aligned">
             <i className="fas fa-times fa-5x cancel-edit-list"
-                onClick={() => props.onChangePage("Home")}></i>
+                onClick={() => props.onChangePage(props.prevPage)}></i>
         </div>
     );
 }

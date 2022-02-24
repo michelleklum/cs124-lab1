@@ -24,6 +24,7 @@ function HomeSearchPage(props) {
         onChangeList={props.onChangeList}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        prevPage={props.prevPage}
       />
       <div id="filtered-lists">
         {filteredLists.map((list) => (
@@ -34,6 +35,7 @@ function HomeSearchPage(props) {
             listIcon={list.listIcon}
             onChangePage={props.onChangePage}
             onChangeList={props.onChangeList}
+            onDeleteList={props.onDeleteList}
           />
         ))}
       </div>

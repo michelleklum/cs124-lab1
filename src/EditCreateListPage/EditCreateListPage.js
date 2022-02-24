@@ -19,6 +19,7 @@ function EditCreateListPage(props) {
       <div className="edit-list-header top-bar">
         <EditListTopBar
           data={props.data}
+          prevPage={props.prevPage}
           onChangePage={props.onChangePage}
           currentListId={props.currentListId}
           onEditList={props.onEditList}

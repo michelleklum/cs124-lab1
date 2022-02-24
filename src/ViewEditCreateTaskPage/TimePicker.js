@@ -17,8 +17,6 @@ function getHourMinAmPm(militaryTime) {
 
 function getPrevHour(hour) {
   let prevHour = parseInt(hour) - 1;
-  console.log(typeof prevHour);
-  console.log(prevHour);
   if (prevHour === 0) {
     prevHour = 12;
   }

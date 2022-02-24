@@ -9,7 +9,7 @@ function CancelListSearch(props) {
       <h3
         className="right-aligned"
         id="cancel-search"
-        onClick={() => props.onChangePage("SingleListPage")}
+        onClick={() => props.onChangePage(props.prevPage)}
       >
         Cancel
       </h3>
