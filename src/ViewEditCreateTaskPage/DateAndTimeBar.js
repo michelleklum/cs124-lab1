@@ -18,8 +18,10 @@ function DateAndTimeBar(props) {
   return (
     <Fragment>
       <i className="far fa-clock fa-4x set-date-icon"></i>
-      <p className="set-date">{props.task.taskDate}</p>
-      <p className="set-time">
+      <p className="set-date" onClick={props.onDateClick}>
+        {props.task.taskDate}
+      </p>
+      <p className="set-time" onClick={props.onTimeClick}>
         {convertMilitaryTimeToStandardTime(props.task.taskTime)}
       </p>
     </Fragment>

@@ -21,7 +21,12 @@ function Checkbox(props) {
         <i
           id={`task-${props.task.id}`}
           name={`is-task-${props.task.id}-complete`}
-          className="fas fa-solid fa-check fa-4x set-completed-icon checkbox-checked"
+          className={[
+            "fas fa-solid fa-check fa-4x set-completed-icon checkbox-checked",
+            props.openDatePicker || props.openTimePicker
+              ? "set-completed-icon-picker-open"
+              : "set-completed-icon-picker-closed",
+          ].join(" ")}
           style={{
             color: "#91C6C3",
             fontSize: "23px",
@@ -37,7 +42,12 @@ function Checkbox(props) {
         <i
           id={`task-${props.task.id}`}
           name={`is-task-${props.task.id}-complete`}
-          className="fas fa-solid fa-stop fa-4x set-completed-icon checkbox-unchecked"
+          className={[
+            "fas fa-solid fa-stop fa-4x set-completed-icon checkbox-unchecked",
+            props.openDatePicker || props.openTimePicker
+              ? "set-completed-icon-picker-open"
+              : "set-completed-icon-picker-closed",
+          ].join(" ")}
           style={{
             color: "#FeFFFF",
             fontSize: "23px",
