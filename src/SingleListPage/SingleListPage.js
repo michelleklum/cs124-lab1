@@ -3,7 +3,7 @@ import "./SingleListPage.css";
 import ListTopBar from "./ListTopBar";
 import ListOfTasks from "./ListOfTasks";
 import ListMenu from "./ListMenu";
-import AddButton from "../Home/AddButton";
+import AddButton from "../Global/AddButton";
 
 function SingleListPage(props) {
   const [inMenuMode, setMenuMode] = useState(false);
@@ -20,9 +20,13 @@ function SingleListPage(props) {
           currentListId={props.currentListId}
           inMenuMode={inMenuMode}
           onChangePage={props.onChangePage}
+          onChangeList={props.onChangeList}
           onChangeMenuMode={toggleMenuMode}
         />
-        <AddButton />
+        <AddButton
+          currentPage={props.currentPage}
+          onChangePage={props.onChangePage}
+        />
         <div
           id={inMenuMode ? "single-list-menu-mode-overlay" : null}
           onClick={inMenuMode ? toggleMenuMode : null}
@@ -45,6 +49,7 @@ function SingleListPage(props) {
           onDeleteCompleted={props.onDeleteCompleted}
           onDeleteAllTasks={props.onDeleteAllTasks}
           onDeleteList={props.onDeleteList}
+          onChangePage={props.onChangePage}
         />
       ) : null}
     </Fragment>

@@ -2,12 +2,17 @@ import React, { Fragment } from "react";
 
 function Checkbox(props) {
   function handleEditTaskCompletionStatus() {
-    props.onEditTask(
-      props.currentListId,
-      props.task.id,
-      "isTaskCompleted",
-      !props.task.isTaskCompleted
-    );
+    // use onChangeTaskStatus for changing task completion status on View Edit Create Task Page
+    props.onChangeTaskStatus && props.onChangeTaskStatus(!props.tempTaskStatus);
+
+    // use onEditTask for changing task completion status on Single List Page (List of Tasks -> Task Card)
+    props.onEditTask &&
+      props.onEditTask(
+        props.currentListId,
+        props.task.id,
+        "isTaskCompleted",
+        !props.tempTaskStatus
+      );
   }
 
   // TODO: We styled the checkbox directly in the JSX because otherwise, the checkbox icon wouldn't appear.
@@ -17,7 +22,7 @@ function Checkbox(props) {
   // and added a border.
   return (
     <Fragment>
-      {props.task.isTaskCompleted ? (
+      {props.tempTaskStatus ? (
         <i
           id={`task-${props.task.id}`}
           name={`is-task-${props.task.id}-complete`}

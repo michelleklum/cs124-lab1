@@ -1,5 +1,3 @@
-import "./ConfirmEditListButton.css";
-
 function ConfirmEditListButton(props) {
     function confirmEdit() {
         props.onEditList(props.currentListId,
@@ -8,12 +6,30 @@ function ConfirmEditListButton(props) {
         props.onChangePage("Home")
     }
 
+    function confirmCreateList() {
+        props.onCreateList(props.listName,
+            props.listIcon)
+        props.onChangePage("Home")
+    }
+
     return (
-        <div className="right-aligned">
-            <i className="fas fa-check fa-4x"
-                onClick={() => confirmEdit()}></i>
+        <div>
+            {props.inEditListMode &&
+                <div className="right-aligned">
+                    <i className="fas fa-check fa-4x"
+                        onClick={() => confirmEdit()}></i>
+                </div>}
+            {props.inCreateListMode && (props.listName !== "") && (props.listIcon !== "") &&
+                <div className="right-aligned create-mode-confirm">
+                    <i className="fas fa-check fa-4x"
+                        onClick={() => confirmCreateList()}></i>
+                </div>}
+            {props.inCreateListMode && (props.listName === "" || props.listIcon === "") &&
+                <div className="right-aligned">
+                    <i className="fas fa-check fa-4x" id="no-info"></i>
+                </div>}
         </div>
-    );
+    )
 }
 
 export default ConfirmEditListButton;

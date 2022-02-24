@@ -4,33 +4,85 @@ import TaskTopBar from "./TaskTopBar";
 import TaskDisplay from "./TaskDisplay";
 import DeleteTaskBar from "./DeleteTaskBar";
 
-function ViewEditCreateTaskPage(props) {
-  /* TODO: when in create mode, task shouldn't be saved until user types something, etc. */
-  const list = props.data.find((list) => list.id === props.currentListId);
-  const task = list.listTasks.find((task) => task.id === props.currentTaskId);
+function getCurrentDate() {
+  const today = new Date();
 
-  /* TODO: Better way of capturing the previous state data for cancel edit task button? */
-  const [initialData, setInitialData] = useState(props.data);
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); // today.getMonth() gives 0 for January, which is why we need the + 1
+  const yyyy = today.getFullYear();
+
+  const currDate = mm + "/" + dd + "/" + yyyy;
+  return currDate;
+}
+
+function getCurrentTimeRoundedToNearestFiveMin() {
+  const today = new Date();
+
+  const hours = String(today.getHours()).padStart(2, "0");
+  const nearestFiveMinutes = Math.round(today.getMinutes() / 5) * 5;
+  const nearestFiveMinutesStr = String(nearestFiveMinutes).padStart(2, "0");
+
+  const currTime = hours + ":" + nearestFiveMinutesStr;
+  return currTime;
+}
+
+function ViewEditCreateTaskPage(props) {
+  const list = props.data.find((list) => list.id === props.currentListId);
+  const currentTask = list.listTasks.find(
+    (task) => task.id === props.currentTaskId
+  );
+  const task = currentTask
+    ? currentTask
+    : {
+        taskName: "",
+        taskDate: getCurrentDate(),
+        taskTime: getCurrentTimeRoundedToNearestFiveMin(),
+        taskNotes: "",
+        isTaskCompleted: false,
+      };
+
+  const [tempTaskName, setTempTaskName] = useState(task.taskName);
+  const [tempTaskDate, setTempTaskDate] = useState(task.taskDate);
+  const [tempTaskTime, setTempTaskTime] = useState(task.taskTime);
+  const [tempTaskNotes, setTempTaskNotes] = useState(task.taskNotes);
+  const [tempTaskStatus, setTempTaskStatus] = useState(task.isTaskCompleted);
 
   return (
     <div id="task-page">
       <TaskTopBar
+        task={task}
         currentListId={props.currentListId}
         currentTaskId={props.currentTaskId}
-        task={task}
         onChangePage={props.onChangePage}
         inEditTaskMode={props.inEditTaskMode}
-        initialData={initialData}
-        onEditData={props.onEditData}
-        onEditTask={props.onEditTask}
+        inCreateTaskMode={props.inCreateTaskMode}
+        onCreateTask={props.onCreateTask}
+        tempTaskName={tempTaskName}
+        onChangeTaskName={setTempTaskName}
+        tempTaskDate={tempTaskDate}
+        onChangeTaskDate={setTempTaskDate}
+        tempTaskTime={tempTaskTime}
+        onChangeTaskTime={setTempTaskTime}
+        tempTaskNotes={tempTaskNotes}
+        onChangeTaskNotes={setTempTaskNotes}
+        tempTaskStatus={tempTaskStatus}
+        onEditAllTaskFields={props.onEditAllTaskFields}
       />
       <hr />
       <TaskDisplay
+        task={task}
         currentListId={props.currentListId}
         currentTaskId={props.currentTaskId}
-        task={task}
         inEditTaskMode={props.inEditTaskMode}
-        onEditTask={props.onEditTask}
+        inCreateTaskMode={props.inCreateTaskMode}
+        tempTaskDate={tempTaskDate}
+        onChangeTaskDate={setTempTaskDate}
+        tempTaskTime={tempTaskTime}
+        onChangeTaskTime={setTempTaskTime}
+        tempTaskNotes={tempTaskNotes}
+        onChangeTaskNotes={setTempTaskNotes}
+        tempTaskStatus={tempTaskStatus}
+        onChangeTaskStatus={setTempTaskStatus}
       />
       {props.inEditTaskMode ? (
         <DeleteTaskBar

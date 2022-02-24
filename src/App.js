@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { generateUniqueID } from "web-vitals/dist/modules/lib/generateUniqueID";
 import "./App.css";
 import Home from "./Home/Home";
 import HomeSearchPage from "./HomeSearchPage/HomeSearchPage";
@@ -18,6 +19,38 @@ function App(props) {
               ...list,
               listTasks: list.listTasks.map((task) =>
                 task.id === taskId ? { ...task, [taskField]: newValue } : task
+              ),
+            }
+          : list
+      )
+    );
+  }
+
+  function handleEditTaskAllFields(
+    listId,
+    taskId,
+    taskName,
+    taskDate,
+    taskTime,
+    taskNotes,
+    taskStatus
+  ) {
+    setData(
+      data.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              listTasks: list.listTasks.map((task) =>
+                task.id === taskId
+                  ? {
+                      ...task,
+                      taskName: taskName,
+                      taskDate: taskDate,
+                      taskTime: taskTime,
+                      taskNotes: taskNotes,
+                      isTaskCompleted: taskStatus,
+                    }
+                  : task
               ),
             }
           : list
@@ -49,7 +82,7 @@ function App(props) {
     );
   }
 
-  function handleEditListNameIcon(listId, newName, newIcon) {
+  function handleEditListAppearance(listId, newName, newIcon) {
     setData(
       data.map((list) =>
         list.id === listId
@@ -85,12 +118,18 @@ function App(props) {
     setCurrentPage("Home"); /* after deleting list, redirect to Home Page */
   }
 
+  // Code below changes current page, list, and task
   const [currentPage, setCurrentPage] = useState("Home");
   const [currentListId, setCurrentListId] = useState();
   const [currentTaskId, setCurrentTaskId] = useState();
 
   function handleChangePage(newPage) {
     setCurrentPage(newPage);
+    if (newPage === "Home") {
+      handleChangeList(null);
+    } else if (newPage === "SingleListPage") {
+      handleChangeTask(null);
+    }
   }
 
   function handleChangeList(newListId) {
@@ -101,6 +140,37 @@ function App(props) {
     setCurrentTaskId(newTaskId);
   }
 
+  // Functions below handle list and task creation
+  function handleCreateList(listName, listIcon) {
+    const newList = {
+      id: generateUniqueID(),
+      listName: listName,
+      listIcon: listIcon,
+      areCompletedTasksHidden: false,
+      listTasks: [],
+    };
+    const newData = data.concat(newList);
+    setData(newData);
+  }
+
+  function handleCreateTask(listId, taskName, taskDate, taskTime, taskNotes) {
+    const list = data.find((list) => list.id === listId);
+    const id = generateUniqueID();
+    const newTasks = list.listTasks.concat({
+      id: id,
+      taskName: taskName,
+      taskDate: taskDate,
+      taskTime: taskTime,
+      taskNotes: taskNotes,
+      isTaskCompleted: false,
+    });
+    setData(
+      data.map((list) =>
+        list.id === listId ? { ...list, listTasks: newTasks } : list
+      )
+    );
+  }
+
   return (
     <Fragment>
       {currentPage === "Home" ? (
@@ -108,9 +178,11 @@ function App(props) {
           data={data}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
+          currentPage={currentPage}
           onDeleteList={handleDeleteList}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
+          onCreateTask={handleCreateList}
         />
       ) : null}
       {currentPage === "HomeSearchPage" ? (
@@ -128,13 +200,15 @@ function App(props) {
           data={data}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
+          currentPage={currentPage}
           onChangePage={handleChangePage}
           onChangeTask={handleChangeTask}
           onEditList={handleEditList}
+          onEditTask={handleEditTask}
           onDeleteCompleted={handleDeleteCompletedTasks}
           onDeleteAllTasks={handleDeleteAllTasks}
           onDeleteList={handleDeleteList}
-          onEditTask={handleEditTask}
+          onCreateTask={handleChangeTask}
         />
       ) : null}
       {currentPage === "ListSearchPage" ? (
@@ -144,7 +218,6 @@ function App(props) {
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
           onChangeTask={handleChangeTask}
-          onEditTask={handleEditTask}
         />
       ) : null}
       {currentPage === "ViewTaskPage" ? (
@@ -163,21 +236,50 @@ function App(props) {
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
-          onEditData={setData}
-          onEditTask={handleEditTask}
+          onCreateTask={handleCreateTask}
           onDeleteTask={handleDeleteTask}
+          onEditAllTaskFields={handleEditTaskAllFields}
           inEditTaskMode={true}
           inCreateTaskMode={false}
+        />
+      ) : null}
+      {currentPage === "CreateTaskPage" ? (
+        <ViewEditCreateTaskPage
+          data={data}
+          currentListId={currentListId}
+          currentTaskId={currentTaskId}
+          onChangePage={handleChangePage}
+          onDeleteTask={handleDeleteTask}
+          onCreateTask={handleCreateTask}
+          onEditAllTaskFields={handleEditTaskAllFields}
+          inEditTaskMode={false}
+          inCreateTaskMode={true}
         />
       ) : null}
       {currentPage === "EditListPage" ? (
         <EditCreateListPage
           data={data}
           currentListId={currentListId}
-          onEditList={handleEditListNameIcon}
+          onEditList={handleEditListAppearance}
           onChangePage={handleChangePage}
-          inEditListMode={false}
+          onChangeList={handleChangeList}
+          onDeleteList={handleDeleteList}
+          onCreateList={handleCreateList}
+          inEditListMode={true}
           inCreateListMode={false}
+        />
+      ) : null}
+      {currentPage === "CreateListPage" ? (
+        <EditCreateListPage
+          data={data}
+          currentListId={currentListId}
+          onEditList={handleEditListAppearance}
+          onCreateList={handleCreateList}
+          onChangeList={handleChangeList}
+          onChangePage={handleChangePage}
+          onDeleteList={handleDeleteList}
+          inEditListMode={false}
+          inCreateListMode={true}
         />
       ) : null}
     </Fragment>

@@ -17,6 +17,8 @@ function getHourMinAmPm(militaryTime) {
 
 function getPrevHour(hour) {
   let prevHour = parseInt(hour) - 1;
+  console.log(typeof prevHour);
+  console.log(prevHour);
   if (prevHour === 0) {
     prevHour = 12;
   }
@@ -75,7 +77,7 @@ function convertStandardTimeToMilitaryTime(hour, minute, amPm) {
 
 function TimePicker(props) {
   const [initialHour, initialMinute, initialAmPm] = getHourMinAmPm(
-    props.task.taskTime
+    props.tempTaskTime
   );
   const [selectedHour, setSelectedHour] = useState(initialHour);
   const [selectedMinute, setSelectedMinute] = useState(initialMinute);
@@ -93,19 +95,9 @@ function TimePicker(props) {
     setTouchEnd(e.targetTouches[0].clientY);
   }
 
-  function updateTaskTime(hour, minute, amPm) {
-    // TODO: convert from standard to military time
-    props.onEditTask(
-      props.currentListId,
-      props.task.id,
-      "taskTime",
-      convertStandardTimeToMilitaryTime(hour, minute, amPm)
-    );
-  }
-
   function handleTouchEnd(e) {
     if (touchStart - touchEnd > 10) {
-      // need to call updateTaskTime on getNextHour(selectedHour) before and separately from
+      // need to call onChangeTaskTime on getNextHour(selectedHour) before and separately from
       // call to setSelectedHour on getNextHour(selectedHour) because useState and setState
       // are asynchronous and won't update immediately
 
@@ -114,36 +106,42 @@ function TimePicker(props) {
         case "prev-hour":
         case "selected-hour":
         case "next-hour":
-          updateTaskTime(
-            getNextHour(selectedHour),
-            selectedMinute,
-            selectedAmPm
+          props.onChangeTaskTime(
+            convertStandardTimeToMilitaryTime(
+              getNextHour(selectedHour),
+              selectedMinute,
+              selectedAmPm
+            )
           );
           setSelectedHour(getNextHour(selectedHour));
           break;
         case "prev-minute":
         case "selected-minute":
         case "next-minute":
-          updateTaskTime(
-            selectedHour,
-            getNextMinute(selectedMinute),
-            selectedAmPm
+          props.onChangeTaskTime(
+            convertStandardTimeToMilitaryTime(
+              selectedHour,
+              getNextMinute(selectedMinute),
+              selectedAmPm
+            )
           );
           setSelectedMinute(getNextMinute(selectedMinute));
           break;
         case "selected-am-pm":
         case "not-selected-am-pm":
-          updateTaskTime(
-            selectedHour,
-            selectedMinute,
-            selectedAmPm === "AM" ? "PM" : "AM"
+          props.onChangeTaskTime(
+            convertStandardTimeToMilitaryTime(
+              selectedHour,
+              getNextMinute(selectedMinute),
+              selectedAmPm === "AM" ? "PM" : "AM"
+            )
           );
           setSelectedAmPm(selectedAmPm === "AM" ? "PM" : "AM");
           break;
       }
     }
     if (touchStart - touchEnd < -10) {
-      // need to call updateTaskTime on getPrevHour(selectedHour) before and separately from
+      // need to call onChangeTaskTime on getPrevHour(selectedHour) before and separately from
       // call to setSelectedHour on getPrevHour(selectedHour) because useState and setState
       // are asynchronous and won't update immediately
 
@@ -152,29 +150,35 @@ function TimePicker(props) {
         case "prev-hour":
         case "selected-hour":
         case "next-hour":
-          updateTaskTime(
-            getPrevHour(selectedHour),
-            selectedMinute,
-            selectedAmPm
+          props.onChangeTaskTime(
+            convertStandardTimeToMilitaryTime(
+              getPrevHour(selectedHour),
+              selectedMinute,
+              selectedAmPm
+            )
           );
           setSelectedHour(getPrevHour(selectedHour));
           break;
         case "prev-minute":
         case "selected-minute":
         case "next-minute":
-          updateTaskTime(
-            selectedHour,
-            getPrevMinute(selectedMinute),
-            selectedAmPm
+          props.onChangeTaskTime(
+            convertStandardTimeToMilitaryTime(
+              selectedHour,
+              getPrevMinute(selectedMinute),
+              selectedAmPm
+            )
           );
           setSelectedMinute(getPrevMinute(selectedMinute));
           break;
         case "selected-am-pm":
         case "not-selected-am-pm":
-          updateTaskTime(
-            selectedHour,
-            selectedMinute,
-            selectedAmPm === "AM" ? "PM" : "AM"
+          props.onChangeTaskTime(
+            convertStandardTimeToMilitaryTime(
+              selectedHour,
+              getNextMinute(selectedMinute),
+              selectedAmPm === "AM" ? "PM" : "AM"
+            )
           );
           setSelectedAmPm(selectedAmPm === "AM" ? "PM" : "AM");
           break;

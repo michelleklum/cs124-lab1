@@ -6,19 +6,18 @@ function CompletionBar(props) {
     <Fragment>
       {props.inEditTaskMode ? (
         <Checkbox
-          currentListId={props.currentListId}
           task={props.task}
+          tempTaskStatus={props.tempTaskStatus}
           disableCheckbox={false}
-          onEditTask={props.onEditTask}
+          onChangeTaskStatus={props.onChangeTaskStatus}
           openDatePicker={props.openDatePicker}
           openTimePicker={props.openTimePicker}
         />
       ) : (
         <Checkbox
-          currentListId={props.currentListId}
           task={props.task}
+          tempTaskStatus={props.tempTaskStatus}
           disableCheckbox={true}
-          onEditTask={props.onEditTask}
           openDatePicker={props.openDatePicker}
           openTimePicker={props.openTimePicker}
         />
@@ -31,11 +30,7 @@ function CompletionBar(props) {
             : "set-completed-picker-closed",
         ].join(" ")}
       >
-        {props.inEditTaskMode
-          ? "Completed?"
-          : props.task.isTaskCompleted
-          ? "Completed"
-          : "Not completed"}
+        {props.tempTaskStatus ? "Completed" : "Not completed"}
       </p>
     </Fragment>
   );

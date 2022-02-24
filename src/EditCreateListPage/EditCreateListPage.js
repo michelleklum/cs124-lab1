@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import "./EditCreateListPage.css";
 import EditListTopBar from "./EditListTopBar";
 import ListIconOptions from "./ListIconOptions";
+import DeleteListBarFromEditPage from './DeleteListBarFromEditPage';
 
 function EditCreateListPage(props) {
-  /* TODO: when in create mode, task shouldn't be saved until user types something, etc. */
-  const list = props.data.find((list) => list.id === props.currentListId);
-  const [tempListName, setTempListName] = useState(list.listName || "");
-  const [tempSelectedIcon, setTempSelectedIcon] = useState(list.listIcon || "");
+  const currentList = props.data.find((list) => list.id === props.currentListId);
+  const list = (
+    currentList ? currentList : 
+    {listName:"", listIcon:""}
+  );
+   
+  const [tempListName, setTempListName] = useState(list.listName);
+  const [tempSelectedIcon, setTempSelectedIcon] = useState(list.listIcon);
 
   return (
     <div id="edit-list-page">
@@ -16,12 +21,16 @@ function EditCreateListPage(props) {
           data={props.data}
           onChangePage={props.onChangePage}
           currentListId={props.currentListId}
-          currentListName={list.listName}
           onEditList={props.onEditList}
-          tempListName={tempListName} 
+          onCreateList={props.onCreateList}
+          onChangeList={props.onChangeList}
+          tempListName={tempListName}
           tempSelectedIcon={tempSelectedIcon}
           onChangeListName={setTempListName}
-          />
+          onChangeListIcon={setTempSelectedIcon}
+          inEditListMode={props.inEditListMode}
+          inCreateListMode={props.inCreateListMode}
+        />
       </div>
       <ListIconOptions
         onChangeListIcon={setTempSelectedIcon}
@@ -29,6 +38,11 @@ function EditCreateListPage(props) {
         onEditList={props.onEditList}
         onChangePage={props.onChangePage}
       />
+      {props.inEditTaskMode ? (
+        <DeleteListBarFromEditPage
+          onDeleteList={props.onDeleteList}
+          currentListId={props.currentListId} />)
+        : null}
     </div>
   );
 }

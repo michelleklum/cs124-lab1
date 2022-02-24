@@ -12,7 +12,7 @@ function AdditionalNotesBar(props) {
             : "set-note-icon-picker-closed",
         ].join(" ")}
       ></i>
-      {props.inEditTaskMode ? (
+      {props.inEditTaskMode || props.inCreateTaskMode ? (
         <AdditionalNotesEditor
           className={[
             "set-note",
@@ -21,8 +21,8 @@ function AdditionalNotesBar(props) {
               : "set-note-picker-closed",
           ].join(" ")}
           currentListId={props.currentListId}
-          task={props.task}
-          onEditTask={props.onEditTask}
+          tempTaskNotes={props.tempTaskNotes}
+          onChangeTaskNotes={props.onChangeTaskNotes}
         />
       ) : (
         <p
@@ -33,7 +33,7 @@ function AdditionalNotesBar(props) {
               : "set-note-picker-closed",
           ].join(" ")}
         >
-          {props.task.taskNotes || "No additional notes"}
+          {props.tempTaskNotes || "No additional notes"}
         </p>
       )}
     </Fragment>

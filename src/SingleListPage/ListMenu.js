@@ -10,7 +10,9 @@ function ListMenu(props) {
 
   return (
     <div className="bottom-toolbar-edit-list-menu">
-      <EditListBar />
+      <EditListBar
+        onChangePage={props.onChangePage}
+      />
       <HideCompletedBar
         areCompletedTasksHidden={taskList.areCompletedTasksHidden}
         currentListId={props.currentListId}

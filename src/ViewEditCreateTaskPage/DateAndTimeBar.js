@@ -9,6 +9,10 @@ function convertMilitaryTimeToStandardTime(militaryTime) {
     // PM times
     hour -= 12;
     amPm = "PM";
+  } else if (hour === 0) {
+    // 12:__ AM
+    hour = 12;
+    amPm = "AM";
   }
 
   return `${hour}:${minute} ${amPm}`;
@@ -19,10 +23,10 @@ function DateAndTimeBar(props) {
     <Fragment>
       <i className="far fa-clock fa-4x set-date-icon"></i>
       <p className="set-date" onClick={props.onDateClick}>
-        {props.task.taskDate}
+        {props.tempTaskDate}
       </p>
       <p className="set-time" onClick={props.onTimeClick}>
-        {convertMilitaryTimeToStandardTime(props.task.taskTime)}
+        {convertMilitaryTimeToStandardTime(props.tempTaskTime)}
       </p>
     </Fragment>
   );

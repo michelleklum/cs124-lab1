@@ -23,16 +23,10 @@ function AdditionalNotesEditor(props) {
         onChange={handleTextareaChange}
         id="edit-task-notes"
         name="task-notes"
+        placeholder="Enter additional notes"
         autoComplete="off"
-        defaultValue={props.task.taskNotes}
-        onInput={(e) =>
-          props.onEditTask(
-            props.currentListId,
-            props.task.id,
-            "taskNotes",
-            e.target.value
-          )
-        }
+        defaultValue={props.tempTaskNotes}
+        onInput={(e) => props.onChangeTaskNotes(e.target.value)}
       ></textarea>
     </div>
   );
