@@ -87,7 +87,6 @@ function App(props) {
           : list
       )
     );
-    console.log(taskStatus)
   }
 
   function handleDeleteCompletedTasks(listId) {

@@ -25,7 +25,6 @@ function ViewEditCreateTaskPage(props) {
   const [tempTaskNotes, setTempTaskNotes] = useState(task.taskNotes);
   const [tempTaskStatus, setTempTaskStatus] = useState(task.isTaskCompleted);
   
-  console.log(tempTaskNotes)
   return (
     <div id="task-page">
       <TaskTopBar
@@ -62,6 +61,7 @@ function ViewEditCreateTaskPage(props) {
         tempTaskNotes={tempTaskNotes}
         onChangeTaskNotes={setTempTaskNotes}
         tempTaskStatus={tempTaskStatus}
+        onEditTask={props.onEditTask}
       />
       {props.inEditTaskMode ? (
         <DeleteTaskBar
