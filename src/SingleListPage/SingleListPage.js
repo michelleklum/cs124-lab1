@@ -48,6 +48,7 @@ function SingleListPage(props) {
           onDeleteCompleted={props.onDeleteCompleted}
           onDeleteAllTasks={props.onDeleteAllTasks}
           onDeleteList={props.onDeleteList}
+          onChangePage={props.onChangePage}
         />
       ) : null}
     </Fragment>
