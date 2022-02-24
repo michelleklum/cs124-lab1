@@ -5,11 +5,10 @@ import ListIconOptions from "./ListIconOptions";
 import DeleteListBarFromEditPage from './DeleteListBarFromEditPage';
 
 function EditCreateListPage(props) {
-  /* TODO: when in create mode, task shouldn't be saved until user types something, etc. */
   const currentList = props.data.find((list) => list.id === props.currentListId);
-  var list = (
-    currentList ? currentList : // if 
-    {listName:"", listIcon:""} // else 
+  const list = (
+    currentList ? currentList : 
+    {listName:"", listIcon:""}
   );
    
   const [tempListName, setTempListName] = useState(list.listName);

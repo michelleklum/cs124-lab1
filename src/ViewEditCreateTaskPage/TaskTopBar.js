@@ -6,49 +6,45 @@ import SaveTaskButton from "./SaveTaskButton";
 import EditTaskButton from "./EditTaskButton";
 
 function TaskTopBar(props) {
-  // var confirmButton;
-  // if (props.inEditTaskMode) {
-  //   confirmButton =
-  //   <SaveTaskButton onChangePage={props.onChangePage} />
-  // }
-  // else if (props.inCreateTaskMode) {
-  //   confirmButton =
-  //     <div className="right-aligned create-mode-confirm">
-  //       <i className="fas fa-check fa-4x"
-  //         onClick={() => confirmCreateList()}></i>
-  //     </div>
-  // }
-  // else {
-  //   confirmButton =
-  //     <div className="right-aligned">
-  //       <i className="fas fa-check fa-4x" id="no-info"></i>
-  //     </div>
-  // }
-
   return (
     <div className="task-header">
-      {props.inEditTaskMode ? (
+      {(props.inEditTaskMode || props.inCreateTaskMode) ? (
         <CancelEditTaskButton
           onChangePage={props.onChangePage}
           initialData={props.initialData}
-          onEditData={props.onEditData}
         />
       ) : (
         <TaskBackButton onChangePage={props.onChangePage} />
       )}
-      {props.inEditTaskMode ? (
+      {(props.inEditTaskMode || props.inCreateTaskMode) ? (
         <EditTaskNameInput
           currentListId={props.currentListId}
-          task={props.task}
           onEditTask={props.onEditTask}
+          tempTaskName={props.tempTaskName}
+          onChangeTaskName={props.onChangeTaskName}
         />
       ) : (
-        <h2 id="task-name-h2">{props.task.taskName}</h2>
+        <h2 id="task-name-h2">{props.tempTaskName}</h2>
       )}
-      {props.inEditTaskMode ? (
-        <SaveTaskButton onChangePage={props.onChangePage} />
+      {(props.inEditTaskMode || props.inCreateTaskMode) ? (
+        <SaveTaskButton
+          currentListId={props.currentListId}
+          currentTaskId={props.currentTaskId}
+          inEditTaskMode={props.inEditTaskMode}
+          inCreateTaskMode={props.inCreateTaskMode}
+          onChangePage={props.onChangePage}
+          onEditTask={props.onEditAllTaskFields}
+          onCreateTask={props.onCreateTask}
+          taskName={props.tempTaskName}
+          taskDate={props.tempTaskDate}
+          taskTime={props.tempTaskTime}
+          taskNotes={props.tempTaskNotes}
+          taskStatus={props.tempTaskStatus} />
       ) : (
-        <EditTaskButton onChangePage={props.onChangePage} />
+        <EditTaskButton
+          onChangePage={props.onChangePage}
+          taskName={props.tempTaskName}
+          taskDate={props.tempTaskDate} />
       )}
     </div>
   );

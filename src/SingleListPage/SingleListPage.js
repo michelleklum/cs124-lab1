@@ -20,6 +20,7 @@ function SingleListPage(props) {
           currentListId={props.currentListId}
           inMenuMode={inMenuMode}
           onChangePage={props.onChangePage}
+          onChangeList={props.onChangeList}
           onChangeMenuMode={toggleMenuMode}
         />
         <AddButton

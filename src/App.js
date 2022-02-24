@@ -60,6 +60,36 @@ function App(props) {
     );
   }
 
+  function handleEditTaskAllFields(
+    listId,
+    taskId,
+    taskName,
+    taskDate,
+    taskTime,
+    taskNotes,
+    taskStatus) {
+    setData(
+      data.map((list) =>
+        list.id === listId
+          ? {
+            ...list,
+            listTasks: list.listTasks.map((task) =>
+              task.id === taskId ? {
+                ...task,
+                taskName: taskName,
+                taskDate: taskDate,
+                taskTime: taskTime,
+                taskNotes: taskNotes,
+                isTaskCompleted: taskStatus,
+              } : task
+            ),
+          }
+          : list
+      )
+    );
+    console.log(taskStatus)
+  }
+
   function handleDeleteCompletedTasks(listId) {
     setData(
       data.map((list) =>
@@ -94,6 +124,12 @@ function App(props) {
 
   function handleChangePage(newPage) {
     setCurrentPage(newPage);
+    if (newPage === "Home") {
+      handleChangeList(null)
+    }
+    else if (newPage === "SingleListPage") {
+      handleChangeTask(null)
+    }
   }
 
   function handleChangeList(newListId) {
@@ -119,15 +155,21 @@ function App(props) {
   }
 
 
-  function handleCreateTask(listId) {
+  function handleCreateTask(
+    listId,
+    taskName,
+    taskDate,
+    taskTime,
+    taskNotes) {
     const list = data.find((list) => list.id === listId);
+    const id = generateUniqueID()
     const newTasks = list.listTasks.concat(
       {
-        id: generateUniqueID(),
-        taskName: null,
-        taskDate: null,
-        taskTime: null,
-        taskNotes: null,
+        id: id,
+        taskName: taskName,
+        taskDate: taskDate,
+        taskTime: taskTime,
+        taskNotes: taskNotes,
         isTaskCompleted: false
       })
     setData(
@@ -149,6 +191,7 @@ function App(props) {
           onDeleteList={handleDeleteList}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
+          onCreateTask={handleCreateList}
         />
       ) : null}
       {currentPage === "HomeSearchPage" ? (
@@ -174,6 +217,7 @@ function App(props) {
           onDeleteAllTasks={handleDeleteAllTasks}
           onDeleteList={handleDeleteList}
           onEditTask={handleEditTask}
+          onCreateTask={handleChangeTask}
         />
       ) : null}
       {currentPage === "ListSearchPage" ? (
@@ -202,9 +246,10 @@ function App(props) {
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
-          onEditData={setData}
           onEditTask={handleEditTask}
+          onCreateTask={handleCreateTask}
           onDeleteTask={handleDeleteTask}
+          onEditAllTaskFields={handleEditTaskAllFields}
           inEditTaskMode={true}
           inCreateTaskMode={false}
         />
@@ -215,10 +260,10 @@ function App(props) {
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
-          onEditData={setData}
           onEditTask={handleEditTask}
           onDeleteTask={handleDeleteTask}
           onCreateTask={handleCreateTask}
+          onEditAllTaskFields={handleEditTaskAllFields}
           inEditTaskMode={false}
           inCreateTaskMode={true}
         />

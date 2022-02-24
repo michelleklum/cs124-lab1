@@ -15,7 +15,7 @@ function ListTopBar(props) {
         </div>
         <div className="right-aligned">
           {props.inMenuMode ? null : (
-            <ListSearchButton onChangePage={props.onChangePage} />
+            <ListSearchButton onChangePage={props.onChangePage} onChangeList={props.onChangeList} />
           )}
           <ListMenuButton onChangeMenuMode={props.onChangeMenuMode} />
         </div>

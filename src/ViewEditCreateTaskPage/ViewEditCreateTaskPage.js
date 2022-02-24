@@ -5,38 +5,63 @@ import TaskDisplay from "./TaskDisplay";
 import DeleteTaskBar from "./DeleteTaskBar";
 
 function ViewEditCreateTaskPage(props) {
-  /* TODO: when in create mode, task shouldn't be saved until user types something, etc. */
   const list = props.data.find((list) => list.id === props.currentListId);
-  const task = list.listTasks.find((task) => task.id === props.currentTaskId);
+  const currentTask = list.listTasks.find((task) => task.id === props.currentTaskId);
+  const task = (
+    currentTask ? currentTask :
+      {
+        taskName: "",
+        taskDate: "",
+        taskTime: "",
+        taskNotes: "",
+        isTaskCompleted: false,
+      }
+  );
 
-  /* TODO: Better way of capturing the previous state data for cancel edit task button? */
-  const [initialData, setInitialData] = useState(props.data);
 
-  if (props.inCreateTaskMode) {
-    props.onCreateTask(props.currentListId)
-    const task = list.listTasks.find((task) => task.name === null);
-    props.onChangeTask(task.id)
-  }
-
+  const [tempTaskName, setTempTaskName] = useState(task.taskName);
+  const [tempTaskDate, setTempTaskDate] = useState(task.taskDate);
+  const [tempTaskTime, setTempTaskTime] = useState(task.taskTime);
+  const [tempTaskNotes, setTempTaskNotes] = useState(task.taskNotes);
+  const [tempTaskStatus, setTempTaskStatus] = useState(task.isTaskCompleted);
+  
+  console.log(tempTaskNotes)
   return (
     <div id="task-page">
       <TaskTopBar
+        task={task}
         currentListId={props.currentListId}
         currentTaskId={props.currentTaskId}
-        task={task}
         onChangePage={props.onChangePage}
         inEditTaskMode={props.inEditTaskMode}
-        initialData={initialData}
-        onEditData={props.onEditData}
+        inCreateTaskMode={props.inCreateTaskMode}
         onEditTask={props.onEditTask}
+        onCreateTask={props.onCreateTask}
+        tempTaskName={tempTaskName}
+        onChangeTaskName={setTempTaskName}
+        tempTaskDate={tempTaskDate}
+        onChangeTaskDate={setTempTaskDate}
+        tempTaskTime={tempTaskTime}
+        onChangeTaskTime={setTempTaskTime}
+        tempTaskNotes={tempTaskNotes}
+        onChangeTaskNotes={setTempTaskNotes}
+        tempTaskStatus={tempTaskStatus}
+        onEditAllTaskFields={props.onEditAllTaskFields}
       />
       <hr />
       <TaskDisplay
+        task={task}
         currentListId={props.currentListId}
         currentTaskId={props.currentTaskId}
-        task={task}
         inEditTaskMode={props.inEditTaskMode}
-        onEditTask={props.onEditTask}
+        inCreateTaskMode={props.inCreateTaskMode}
+        tempTaskDate={tempTaskDate}
+        onChangeTaskDate={setTempTaskDate}
+        tempTaskTime={tempTaskTime}
+        onChangeTaskTime={setTempTaskTime}
+        tempTaskNotes={tempTaskNotes}
+        onChangeTaskNotes={setTempTaskNotes}
+        tempTaskStatus={tempTaskStatus}
       />
       {props.inEditTaskMode ? (
         <DeleteTaskBar

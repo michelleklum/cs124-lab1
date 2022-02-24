@@ -22,7 +22,7 @@ function CompletionBar(props) {
       <p className="set-completed">
         {props.inEditTaskMode
           ? "Completed?"
-          : props.task.isTaskCompleted
+          : props.tempTaskStatus
           ? "Completed"
           : "Not completed"}
       </p>

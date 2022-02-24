@@ -18,9 +18,9 @@ function DateAndTimeBar(props) {
   return (
     <Fragment>
       <i className="far fa-clock fa-4x set-date-icon"></i>
-      <p className="set-date">{props.task.taskDate}</p>
+      <p className="set-date">{(props.tempTaskDate !== "") ? props.tempTaskDate : ""}</p>
       <p className="set-time">
-        {convertMilitaryTimeToStandardTime(props.task.taskTime)}
+        {props.tempTaskTime === "" ? "" : convertMilitaryTimeToStandardTime(props.tempTaskTime)}
       </p>
     </Fragment>
   );

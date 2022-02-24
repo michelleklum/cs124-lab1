@@ -5,16 +5,16 @@ function AdditionalNotesBar(props) {
   return (
     <Fragment>
       <i className="fas fa-sticky-note fa-4x set-note-icon"></i>
-      {props.inEditTaskMode ? (
+      {(props.inEditTaskMode || props.inCreateTaskMode) ? (
         <AdditionalNotesEditor
           className="set-note"
           currentListId={props.currentListId}
-          task={props.task}
-          onEditTask={props.onEditTask}
+          tempTaskNotes={props.tempTaskNotes}
+          onChangeTaskNotes={props.onChangeTaskNotes}
         />
       ) : (
         <p className="set-note">
-          {props.task.taskNotes || "No additional notes"}
+          {props.tempTaskNotes || "No additional notes"}
         </p>
       )}
     </Fragment>

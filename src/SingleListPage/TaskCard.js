@@ -41,8 +41,8 @@ function TaskCard(props) {
           <h2>{props.task.taskName}</h2>
         </label>
         <p className="date">
-          {props.task.taskDate},{" "}
-          {convertMilitaryTimeToStandardTime(props.task.taskTime)}
+          {(props.task.taskDate !== "") ? props.task.taskDate : ""},{" "}
+          {(props.task.taskTime !== "") ? convertMilitaryTimeToStandardTime(props.task.taskTime): ""}
         </p>
       </div>
     </div>

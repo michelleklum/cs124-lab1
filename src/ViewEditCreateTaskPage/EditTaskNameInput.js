@@ -31,17 +31,10 @@ function EditTaskNameInput(props) {
         name="task-name"
         placeholder="Enter task name"
         autoComplete="off"
-        value={props.task.taskName}
+        value={props.tempTaskName}
         autoFocus
         onFocus={placeCursorAtEndOfValueOnFocus}
-        onInput={(e) =>
-          props.onEditTask(
-            props.currentListId,
-            props.task.id,
-            "taskName",
-            e.target.value
-          )
-        }
+        onInput={(e) => props.onChangeTaskName(e.target.value)}
       ></textarea>
     </div>
   );
