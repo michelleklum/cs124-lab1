@@ -3,7 +3,7 @@ function ConfirmEditListButton(props) {
         props.onEditList(props.currentListId,
             props.listName,
             props.listIcon)
-        props.onChangePage("Home")
+        props.onChangePage(props.prevPage)
     }
 
     function confirmCreateList() {

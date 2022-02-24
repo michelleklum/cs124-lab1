@@ -11,6 +11,7 @@ function TaskTopBar(props) {
       {(props.inEditTaskMode || props.inCreateTaskMode) ? (
         <CancelEditTaskButton
           onChangePage={props.onChangePage}
+          prevPage={props.prevPage}
           initialData={props.initialData}
         />
       ) : (
@@ -30,6 +31,7 @@ function TaskTopBar(props) {
         <SaveTaskButton
           currentListId={props.currentListId}
           currentTaskId={props.currentTaskId}
+          prevPage={props.prevPage}
           inEditTaskMode={props.inEditTaskMode}
           inCreateTaskMode={props.inCreateTaskMode}
           onChangePage={props.onChangePage}

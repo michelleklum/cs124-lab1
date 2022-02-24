@@ -28,5 +28,12 @@
 
 .date {
   margin-top: 0; /* to make task and date flush next to each other vertically */
-  font-size: 15px;
+  font-size: 14px;
+  color: #2B7A78;
+}
+
+#no-date {
+  font-size: 16px;
+  padding-bottom: 19px; 
+  padding-top: 4px; 
 }

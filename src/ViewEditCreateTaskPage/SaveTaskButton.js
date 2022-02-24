@@ -8,7 +8,7 @@ function SaveTaskButton(props) {
       props.taskTime,
       props.taskNotes,
       props.taskStatus)
-    props.onChangePage("SingleListPage")
+    props.onChangePage(props.prevPage)
   }
 
   function confirmCreateTask() {
@@ -18,7 +18,7 @@ function SaveTaskButton(props) {
       props.taskDate,
       props.taskTime,
       props.taskNotes)
-    props.onChangePage("SingleListPage")
+    props.onChangePage(props.prevPage)
   }
 
   return (

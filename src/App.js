@@ -116,12 +116,14 @@ function App(props) {
   }
 
 
-  // Code below changes current page, list, and task
+  // Code below changes current/previous page, list, and task
   const [currentPage, setCurrentPage] = useState("Home");
+  const [prevPage, setPrevPage] = useState("Home");
   const [currentListId, setCurrentListId] = useState();
   const [currentTaskId, setCurrentTaskId] = useState();
 
   function handleChangePage(newPage) {
+    setPrevPage(currentPage);
     setCurrentPage(newPage);
     if (newPage === "Home") {
       handleChangeList(null)
@@ -196,16 +198,19 @@ function App(props) {
       {currentPage === "HomeSearchPage" ? (
         <HomeSearchPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
           onChangeTask={handleChangeTask}
+          onDeleteList={handleDeleteList}
         />
       ) : null}
       {currentPage === "SingleListPage" ? (
         <SingleListPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           currentPage={currentPage}
@@ -222,6 +227,7 @@ function App(props) {
       {currentPage === "ListSearchPage" ? (
         <ListSearchPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -232,6 +238,7 @@ function App(props) {
       {currentPage === "ViewTaskPage" ? (
         <ViewEditCreateTaskPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -242,6 +249,7 @@ function App(props) {
       {currentPage === "EditTaskPage" ? (
         <ViewEditCreateTaskPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -256,6 +264,7 @@ function App(props) {
       {currentPage === "CreateTaskPage" ? (
         <ViewEditCreateTaskPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           currentTaskId={currentTaskId}
           onChangePage={handleChangePage}
@@ -270,6 +279,7 @@ function App(props) {
       {currentPage === "EditListPage" ? (
         <EditCreateListPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           onEditList={handleEditListAppearance}
           onChangePage={handleChangePage}
@@ -283,6 +293,7 @@ function App(props) {
       {currentPage === "CreateListPage" ? (
         <EditCreateListPage
           data={data}
+          prevPage={prevPage}
           currentListId={currentListId}
           onEditList={handleEditListAppearance}
           onCreateList={handleCreateList}

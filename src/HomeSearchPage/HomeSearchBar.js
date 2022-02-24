@@ -16,11 +16,13 @@ function HomeSearchBar(props) {
             autoComplete="off"
             autoFocus
             value={props.searchQuery}
-            onInput={e => props.setSearchQuery(e.target.value)} 
+            onInput={e => props.setSearchQuery(e.target.value)}
           />
         </form>
       </div>
-      <CancelHomeSearch onChangePage={props.onChangePage} />
+      <CancelHomeSearch
+        onChangePage={props.onChangePage}
+        prevPage={props.prevPage} />
     </div>
   );
 }

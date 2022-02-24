@@ -37,13 +37,26 @@ function TaskCard(props) {
         className="task-and-date"
         onClick={props.inMenuMode ? null : handleTaskCardClick}
       >
-        <label htmlFor={`task-${props.task.id}`}>
-          <h2>{props.task.taskName}</h2>
-        </label>
-        <p className="date">
-          {(props.task.taskDate !== "") ? props.task.taskDate : ""},{" "}
-          {(props.task.taskTime !== "") ? convertMilitaryTimeToStandardTime(props.task.taskTime): ""}
-        </p>
+        {((props.task.taskDate === "") && (props.task.taskTime === "")) ?
+          <label htmlFor={`task-${props.task.id}`}>
+            <h2 id="no-date">{props.task.taskName}</h2>
+          </label>
+          : <label htmlFor={`task-${props.task.id}`}>
+            <h2>{props.task.taskName}</h2>
+          </label>}
+        {((props.task.taskDate !== "") && (props.task.taskTime !== "")) ?
+          <p className="date">
+            {props.task.taskDate},{" "}
+            {convertMilitaryTimeToStandardTime(props.task.taskTime)}
+          </p> : null}
+        {((props.task.taskDate === "") && (props.task.taskTime !== "")) ?
+          <p className="date">
+            {(props.task.taskTime !== "") ? convertMilitaryTimeToStandardTime(props.task.taskTime) : ""}
+          </p> : null}
+        {((props.task.taskTime === "") && (props.task.taskDate !== "")) ?
+          <p className="date">
+            {props.task.taskDate}
+          </p> : null}
       </div>
     </div>
   );
