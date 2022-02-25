@@ -22,7 +22,7 @@ function HomeSearchBar(props) {
       </div>
       <CancelHomeSearch
         onChangePage={props.onChangePage}
-        prevPage={props.prevPage} />
+        prevPage={"Home"} />
     </div>
   );
 }
