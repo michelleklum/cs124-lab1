@@ -4,7 +4,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   color: #172528;
   margin-bottom: 1em;
-  padding: 0.2em 2em 0.2em 1em;
+  padding: 0.3em 2em 0.3em 1em;
   display: grid;
   align-items: center;
   justify-content: flex-start;
@@ -17,7 +17,7 @@
 
 .list h2 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 i.list-icon {
@@ -31,4 +31,5 @@ i.list-icon {
 
 .edit-list-grid {
   grid-template-columns: 1.9em 9.6em 2em 3em;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2);
 }
