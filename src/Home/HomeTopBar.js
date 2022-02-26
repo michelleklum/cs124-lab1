@@ -12,7 +12,6 @@ function HomeTopBar(props) {
         </div>
         <div className="right-aligned">
           <HomeSearchButton onChangePage={props.onChangePage} />
-          <SettingsButton onChangePage={props.onChangePage} />
         </div>
       </div>
     </div>
