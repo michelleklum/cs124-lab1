@@ -1,7 +1,7 @@
 function DeleteTaskBar(props) {
   return (
     <div
-      className="bottom-toolbar"
+      className="delete-toolbar"
       onClick={() =>
         props.onDeleteTask(props.currentListId, props.currentTaskId)
       }

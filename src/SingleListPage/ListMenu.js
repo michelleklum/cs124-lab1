@@ -9,10 +9,8 @@ function ListMenu(props) {
   const taskList = props.data.find((list) => list.id === props.currentListId);
 
   return (
-    <div className="bottom-toolbar-edit-list-menu">
-      <EditListBar
-        onChangePage={props.onChangePage}
-      />
+    <div className="delete-toolbar-edit-list-menu">
+      <EditListBar onChangePage={props.onChangePage} />
       <HideCompletedBar
         areCompletedTasksHidden={taskList.areCompletedTasksHidden}
         currentListId={props.currentListId}

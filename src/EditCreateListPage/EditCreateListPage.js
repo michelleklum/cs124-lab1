@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import "./EditCreateListPage.css";
 import EditListTopBar from "./EditListTopBar";
 import ListIconOptions from "./ListIconOptions";
-import DeleteListBarFromEditPage from './DeleteListBarFromEditPage';
+import DeleteListBarFromEditPage from "./DeleteListBarFromEditPage";
 
 function EditCreateListPage(props) {
-  const currentList = props.data.find((list) => list.id === props.currentListId);
-  const list = (
-    currentList ? currentList : 
-    {listName:"", listIcon:""}
+  const currentList = props.data.find(
+    (list) => list.id === props.currentListId
   );
-   
+  const list = currentList ? currentList : { listName: "", listIcon: "" };
+
   const [tempListName, setTempListName] = useState(list.listName);
   const [tempSelectedIcon, setTempSelectedIcon] = useState(list.listIcon);
 
@@ -39,11 +38,12 @@ function EditCreateListPage(props) {
         onEditList={props.onEditList}
         onChangePage={props.onChangePage}
       />
-      {props.inEditTaskMode ? (
+      {props.inEditListMode ? (
         <DeleteListBarFromEditPage
           onDeleteList={props.onDeleteList}
-          currentListId={props.currentListId} />)
-        : null}
+          currentListId={props.currentListId}
+        />
+      ) : null}
     </div>
   );
 }

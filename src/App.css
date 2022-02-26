@@ -69,9 +69,9 @@ p {
   padding-left: 0.5em;
 }
 
-/* Bottom toolbar for deleting on Edit Task Page  + Edit List Page */
+/* Delete toolbar for deleting on Edit Task Page  + Edit List Page */
 /* first three styles are for sticky toolbar */
-.bottom-toolbar {
+.delete-toolbar {
   bottom: 0;
   position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
   width: 100%;
@@ -85,16 +85,16 @@ p {
   padding-bottom: 0;
 }
 
-.bottom-toolbar:active {
+.delete-toolbar:active {
   color: #eae8e8;
 }
 
-.bottom-toolbar i {
+.delete-toolbar i {
   font-size: 23pt !important;
   color: #feffff;
 }
 
-.bottom-toolbar h2 {
+.delete-toolbar h2 {
   margin-left: 0.5em;
 }
 

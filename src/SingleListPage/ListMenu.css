@@ -1,5 +1,5 @@
 /* first three styles are for sticky toolbar */
-.bottom-toolbar-edit-list-menu {
+.delete-toolbar-edit-list-menu {
   bottom: 0;
   position: fixed; /* use fixed instead of sticky so toolbar is at bottom even if we don't have that many lists */
   width: 100%;
@@ -14,22 +14,22 @@
   padding-left: 1em;
 }
 
-.bottom-toolbar-edit-list-menu h2 {
+.delete-toolbar-edit-list-menu h2 {
   font-size: 16px !important;
   font-weight: normal;
 }
 
-.bottom-toolbar-edit-list-menu i {
+.delete-toolbar-edit-list-menu i {
   justify-self: center; /* center icons in menu */
   font-size: 22px !important;
   color: #172528;
 }
 
-.bottom-toolbar-edit-list-menu i:active {
+.delete-toolbar-edit-list-menu i:active {
   color: #2b7a78;
 }
 
-.bottom-toolbar-edit-list-menu h2 {
+.delete-toolbar-edit-list-menu h2 {
   font-size: 20px;
   margin-left: 0.5em;
 }
