@@ -41,6 +41,11 @@ function ViewEditCreateTaskPage(props) {
         isTaskCompleted: false,
       };
 
+  // When a user is editing a task, they may potentially edit more than one task field.
+  // useState is asynchronous, which may cause problems.
+  // As a workaround, we put all of users' tasks in these state variables,
+  // and then only when the user clicks the SaveTaskButton do we call onEditAllTaskFields
+  // or onCreateTask to actually update the data in the App component's state.
   const [tempTaskName, setTempTaskName] = useState(task.taskName);
   const [tempTaskDate, setTempTaskDate] = useState(task.taskDate);
   const [tempTaskTime, setTempTaskTime] = useState(task.taskTime);

@@ -40,6 +40,7 @@ function TaskDisplay(props) {
       <DateAndTimeBar
         task={props.task}
         inEditTaskMode={props.inEditTaskMode}
+        inCreateTaskMode={props.inCreateTaskMode}
         tempTaskDate={props.tempTaskDate}
         tempTaskTime={props.tempTaskTime}
         onDateClick={
