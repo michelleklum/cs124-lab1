@@ -3,7 +3,7 @@ import ListCard from "./ListCard";
 
 function ListOfLists(props) {
   function sortListsCompareFunction(a, b) {
-    return a.listName < b.listName ? -1 : 1;
+    return a.listName.toLowerCase() < b.listName.toLowerCase() ? -1 : 1;
   }
 
   return (
