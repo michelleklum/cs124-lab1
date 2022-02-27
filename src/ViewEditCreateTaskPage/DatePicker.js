@@ -1,3 +1,6 @@
+// DatePicker component supports using picking task MM/DD/YYYY via 2 methods:
+// 1. Clicking the desired MM/DD/YYYY in the DatePicker.
+// 2. Scrolling through the DatePicker (by clicking and dragging).
 import React, { useState } from "react";
 import "./DatePicker.css";
 
@@ -107,77 +110,95 @@ function DatePicker(props) {
   }
 
   function handleTouchEnd(e) {
-    if (touchStart - touchEnd > 10) {
-      // need to call onChangeTaskDate passing in nextMonth before and separately from
-      // call to setSelectedMonth passing in nextMonth because useState and setState
-      // are asynchronous and won't update immediately
-
-      // eslint-disable-next-line default-case
-      switch (e.target.className) {
-        case "prev-month":
-        case "selected-month":
-        case "next-month":
-          const nextMonth = getNextMonth(selectedMonth);
-          props.onChangeTaskDate(
-            [nextMonth, selectedDay, selectedYear].join("/")
-          );
-          setSelectedMonth(nextMonth);
-          break;
-        case "prev-day":
-        case "selected-day":
-        case "next-day":
-          const nextDay = getNextDay(selectedDay, selectedMonth, selectedYear);
-          props.onChangeTaskDate(
-            [selectedMonth, nextDay, selectedYear].join("/")
-          );
-          setSelectedDay(nextDay);
-          break;
-        case "prev-year":
-        case "selected-year":
-        case "next-year":
-          const nextYear = getNextYear(selectedYear);
-          props.onChangeTaskDate(
-            [selectedMonth, selectedDay, nextYear].join("/")
-          );
-          setSelectedYear(nextYear);
-          break;
-      }
+    // touchEnd !== 0 ensures there's a drag, not a click/tap
+    if (touchStart - touchEnd > 10 && touchEnd !== 0) {
+      handleMoveToNext(e);
     }
-    if (touchStart - touchEnd < -10) {
-      // need to call onChangeTaskDate passing in prevMonth before and separately from
-      // call to setSelectedMonth passing in prevMonth because useState and setState
-      // are asynchronous and won't update immediately
+    // touchEnd !== 0 ensures there's a drag, not a click/tap
+    if (touchStart - touchEnd < -10 && touchEnd !== 0) {
+      handleMoveToPrev(e);
+    }
 
-      // eslint-disable-next-line default-case
-      switch (e.target.className) {
-        case "prev-month":
-        case "selected-month":
-        case "next-month":
-          const prevMonth = getPrevMonth(selectedMonth);
-          props.onChangeTaskDate(
-            [prevMonth, selectedDay, selectedYear].join("/")
-          );
-          setSelectedMonth(prevMonth);
-          break;
-        case "prev-day":
-        case "selected-day":
-        case "next-day":
-          const prevDay = getPrevDay(selectedDay, selectedMonth, selectedYear);
-          props.onChangeTaskDate(
-            [selectedMonth, prevDay, selectedYear].join("/")
-          );
-          setSelectedDay(prevDay);
-          break;
-        case "prev-year":
-        case "selected-year":
-        case "next-year":
-          const prevYear = getPrevYear(selectedYear);
-          props.onChangeTaskDate(
-            [selectedMonth, selectedDay, prevYear].join("/")
-          );
-          setSelectedYear(prevYear);
-          break;
-      }
+    // reset touchStart and touchEnd states to initial values of 0
+    setTouchStart(0);
+    setTouchEnd(0);
+  }
+
+  // Scrolls the month/day/year up by 1
+  // used for onClick on next month/day/year or (onTouchStart and onTouchEnd) up
+  function handleMoveToNext(e) {
+    // need to call onChangeTaskDate passing in nextMonth before and separately from
+    // call to setSelectedMonth passing in nextMonth because useState and setState
+    // are asynchronous and won't update immediately
+
+    // eslint-disable-next-line default-case
+    switch (e.target.className) {
+      case "prev-month":
+      case "selected-month":
+      case "next-month":
+        const nextMonth = getNextMonth(selectedMonth);
+        props.onChangeTaskDate(
+          [nextMonth, selectedDay, selectedYear].join("/")
+        );
+        setSelectedMonth(nextMonth);
+        break;
+      case "prev-day":
+      case "selected-day":
+      case "next-day":
+        const nextDay = getNextDay(selectedDay, selectedMonth, selectedYear);
+        props.onChangeTaskDate(
+          [selectedMonth, nextDay, selectedYear].join("/")
+        );
+        setSelectedDay(nextDay);
+        break;
+      case "prev-year":
+      case "selected-year":
+      case "next-year":
+        const nextYear = getNextYear(selectedYear);
+        props.onChangeTaskDate(
+          [selectedMonth, selectedDay, nextYear].join("/")
+        );
+        setSelectedYear(nextYear);
+        break;
+    }
+  }
+
+  // Scrolls the month/day/year down by 1
+  // used for onClick on previous month/day/year or (onTouchStart and onTouchEnd) down
+  function handleMoveToPrev(e) {
+    // need to call onChangeTaskDate passing in prevMonth before and separately from
+    // call to setSelectedMonth passing in prevMonth because useState and setState
+    // are asynchronous and won't update immediately
+
+    // eslint-disable-next-line default-case
+    switch (e.target.className) {
+      case "prev-month":
+      case "selected-month":
+      case "next-month":
+        const prevMonth = getPrevMonth(selectedMonth);
+        props.onChangeTaskDate(
+          [prevMonth, selectedDay, selectedYear].join("/")
+        );
+        setSelectedMonth(prevMonth);
+        break;
+      case "prev-day":
+      case "selected-day":
+      case "next-day":
+        const prevDay = getPrevDay(selectedDay, selectedMonth, selectedYear);
+        props.onChangeTaskDate(
+          [selectedMonth, prevDay, selectedYear].join("/")
+        );
+        setSelectedDay(prevDay);
+        break;
+      case "prev-year":
+      case "selected-year":
+      case "next-year":
+        const prevYear = getPrevYear(selectedYear);
+        props.onChangeTaskDate(
+          [selectedMonth, selectedDay, prevYear].join("/")
+        );
+        setSelectedYear(prevYear);
+        break;
     }
   }
 
@@ -188,6 +209,7 @@ function DatePicker(props) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMoveToPrev}
       >
         {getPrevMonth(selectedMonth)}
       </p>
@@ -196,6 +218,7 @@ function DatePicker(props) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMoveToPrev}
       >
         {getPrevDay(selectedDay, selectedMonth, selectedYear)}
       </p>
@@ -204,6 +227,7 @@ function DatePicker(props) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMoveToPrev}
       >
         {getPrevYear(selectedYear)}
       </p>
@@ -238,6 +262,7 @@ function DatePicker(props) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMoveToNext}
       >
         {getNextMonth(selectedMonth)}
       </p>
@@ -246,6 +271,7 @@ function DatePicker(props) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMoveToNext}
       >
         {getNextDay(selectedDay, selectedMonth, selectedYear)}
       </p>
@@ -254,6 +280,7 @@ function DatePicker(props) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMoveToNext}
       >
         {getNextYear(selectedYear)}
       </p>
