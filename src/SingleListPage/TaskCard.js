@@ -20,6 +20,7 @@ function convertMilitaryTimeToStandardTime(militaryTime) {
 }
 
 function TaskCard(props) {
+  const numTaskCharsToShow = 50;
   function handleTaskCardClick() {
     props.onChangePage("ViewTaskPage");
     props.onChangeTask(props.task.id);
@@ -43,7 +44,11 @@ function TaskCard(props) {
         onClick={props.inMenuMode ? null : handleTaskCardClick}
       >
         <label htmlFor={`task-${props.task.id}`}>
-          <h2>{props.task.taskName}</h2>
+          <h2>
+            {props.task.taskName.length > numTaskCharsToShow
+              ? props.task.taskName.slice(0, numTaskCharsToShow) + "..."
+              : props.task.taskName}
+          </h2>
         </label>
         <p className="date">
           {props.task.taskDate !== "" ? props.task.taskDate : ""},{" "}
