@@ -20,7 +20,6 @@ function getPrevDay(day, month, year) {
     const monthInt = parseInt(month);
     const yearInt = parseInt(year);
     switch (monthInt) {
-      // TODO: account for non-leap years (by using year as well)
       case 2:
         if (isLeapYear(yearInt)) {
           // account for number of days (29) in February during leap years
@@ -100,6 +99,30 @@ function DatePicker(props) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
+  function constrainToValidDayUpdateTaskDateSetState(month, day, year) {
+    day = parseInt(day);
+
+    // number of days in current month changes depending on what current month and year is
+    const monthInt = parseInt(month);
+    const yearInt = parseInt(year);
+    if (
+      day > 30 &&
+      (monthInt === 4 || monthInt === 6 || monthInt === 9 || monthInt === 11)
+    ) {
+      day = 30;
+    } else if (day > 29 && monthInt === 2 && isLeapYear(yearInt)) {
+      // account for number of days (29) in February during leap years
+      day = 29;
+    } else if (day > 28 && monthInt === 2 && !isLeapYear(yearInt)) {
+      // account for number of days (28) in February during non-leap years
+      day = 28;
+    }
+
+    const dayStr = String(day).padStart(2, "0");
+    props.onChangeTaskDate([month, dayStr, year].join("/"));
+    setSelectedDay(dayStr);
+  }
+
   /* The three functions below handle user swiping up or down on hour / minute / amPm to look through the times */
   function handleTouchStart(e) {
     setTouchStart(e.targetTouches[0].clientY);
@@ -137,8 +160,10 @@ function DatePicker(props) {
       case "selected-month":
       case "next-month":
         const nextMonth = getNextMonth(selectedMonth);
-        props.onChangeTaskDate(
-          [nextMonth, selectedDay, selectedYear].join("/")
+        constrainToValidDayUpdateTaskDateSetState(
+          nextMonth,
+          selectedDay,
+          selectedYear
         );
         setSelectedMonth(nextMonth);
         break;
@@ -146,17 +171,20 @@ function DatePicker(props) {
       case "selected-day":
       case "next-day":
         const nextDay = getNextDay(selectedDay, selectedMonth, selectedYear);
-        props.onChangeTaskDate(
-          [selectedMonth, nextDay, selectedYear].join("/")
+        constrainToValidDayUpdateTaskDateSetState(
+          selectedMonth,
+          nextDay,
+          selectedYear
         );
-        setSelectedDay(nextDay);
         break;
       case "prev-year":
       case "selected-year":
       case "next-year":
         const nextYear = getNextYear(selectedYear);
-        props.onChangeTaskDate(
-          [selectedMonth, selectedDay, nextYear].join("/")
+        constrainToValidDayUpdateTaskDateSetState(
+          selectedMonth,
+          selectedDay,
+          nextYear
         );
         setSelectedYear(nextYear);
         break;
@@ -176,8 +204,10 @@ function DatePicker(props) {
       case "selected-month":
       case "next-month":
         const prevMonth = getPrevMonth(selectedMonth);
-        props.onChangeTaskDate(
-          [prevMonth, selectedDay, selectedYear].join("/")
+        constrainToValidDayUpdateTaskDateSetState(
+          prevMonth,
+          selectedDay,
+          selectedYear
         );
         setSelectedMonth(prevMonth);
         break;
@@ -185,17 +215,20 @@ function DatePicker(props) {
       case "selected-day":
       case "next-day":
         const prevDay = getPrevDay(selectedDay, selectedMonth, selectedYear);
-        props.onChangeTaskDate(
-          [selectedMonth, prevDay, selectedYear].join("/")
+        constrainToValidDayUpdateTaskDateSetState(
+          selectedMonth,
+          prevDay,
+          selectedYear
         );
-        setSelectedDay(prevDay);
         break;
       case "prev-year":
       case "selected-year":
       case "next-year":
         const prevYear = getPrevYear(selectedYear);
-        props.onChangeTaskDate(
-          [selectedMonth, selectedDay, prevYear].join("/")
+        constrainToValidDayUpdateTaskDateSetState(
+          selectedMonth,
+          selectedDay,
+          prevYear
         );
         setSelectedYear(prevYear);
         break;
