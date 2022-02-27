@@ -26,6 +26,10 @@ function ListCard(props) {
     if (touchStart - touchEnd < -75 && touchEnd !== 0 && inEditMode) {
       toggleEditMode();
     }
+
+    // reset touchStart and touchEnd states to initial values of 0
+    setTouchStart(0);
+    setTouchEnd(0);
   }
 
   function toggleEditMode() {
@@ -56,7 +60,8 @@ function ListCard(props) {
           <EditListButton
             onChangePage={props.onChangePage}
             id={props.id}
-            onChangeList={props.onChangeList} />
+            onChangeList={props.onChangeList}
+          />
           <DeleteListButton onDeleteList={props.onDeleteList} id={props.id} />
         </Fragment>
       ) : (
