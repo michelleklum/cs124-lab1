@@ -99,7 +99,7 @@ function DatePicker(props) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  function constrainToValidDayUpdateTaskDateSetState(month, day, year) {
+  function constrainToValidDayUpdateTaskDateSetDateState(month, day, year) {
     day = parseInt(day);
 
     // number of days in current month changes depending on what current month and year is
@@ -160,7 +160,7 @@ function DatePicker(props) {
       case "selected-month":
       case "next-month":
         const nextMonth = getNextMonth(selectedMonth);
-        constrainToValidDayUpdateTaskDateSetState(
+        constrainToValidDayUpdateTaskDateSetDateState(
           nextMonth,
           selectedDay,
           selectedYear
@@ -171,7 +171,7 @@ function DatePicker(props) {
       case "selected-day":
       case "next-day":
         const nextDay = getNextDay(selectedDay, selectedMonth, selectedYear);
-        constrainToValidDayUpdateTaskDateSetState(
+        constrainToValidDayUpdateTaskDateSetDateState(
           selectedMonth,
           nextDay,
           selectedYear
@@ -181,7 +181,7 @@ function DatePicker(props) {
       case "selected-year":
       case "next-year":
         const nextYear = getNextYear(selectedYear);
-        constrainToValidDayUpdateTaskDateSetState(
+        constrainToValidDayUpdateTaskDateSetDateState(
           selectedMonth,
           selectedDay,
           nextYear
@@ -204,7 +204,7 @@ function DatePicker(props) {
       case "selected-month":
       case "next-month":
         const prevMonth = getPrevMonth(selectedMonth);
-        constrainToValidDayUpdateTaskDateSetState(
+        constrainToValidDayUpdateTaskDateSetDateState(
           prevMonth,
           selectedDay,
           selectedYear
@@ -215,7 +215,7 @@ function DatePicker(props) {
       case "selected-day":
       case "next-day":
         const prevDay = getPrevDay(selectedDay, selectedMonth, selectedYear);
-        constrainToValidDayUpdateTaskDateSetState(
+        constrainToValidDayUpdateTaskDateSetDateState(
           selectedMonth,
           prevDay,
           selectedYear
@@ -225,7 +225,7 @@ function DatePicker(props) {
       case "selected-year":
       case "next-year":
         const prevYear = getPrevYear(selectedYear);
-        constrainToValidDayUpdateTaskDateSetState(
+        constrainToValidDayUpdateTaskDateSetDateState(
           selectedMonth,
           selectedDay,
           prevYear
