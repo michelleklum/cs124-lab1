@@ -2,6 +2,7 @@ import "./HomeSearchPage.css";
 import React, { Fragment, useState } from "react";
 import HomeSearchBar from "./HomeSearchBar";
 import ListCard from "../Home/ListCard";
+import DeleteAlert from "../Global/DeleteAlert";
 
 const filterLists = (lists, query) => {
   if (query.length === 0) {
@@ -36,9 +37,15 @@ function HomeSearchPage(props) {
             onChangePage={props.onChangePage}
             onChangeList={props.onChangeList}
             onDeleteList={props.onDeleteList}
+            onToggleDeleteAlert={props.onToggleDeleteAlert}
           />
         ))}
       </div>
+      {props.showDeleteAlert && <DeleteAlert
+        type="this list" 
+        onToggleDeleteAlert={props.onToggleDeleteAlert}
+        onDelete={() => props.onDeleteList(props.currentListId)}
+      />}
     </Fragment>
   );
 }

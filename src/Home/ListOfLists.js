@@ -17,6 +17,7 @@ function ListOfLists(props) {
           onChangePage={props.onChangePage}
           onChangeList={props.onChangeList}
           onDeleteList={props.onDeleteList}
+          onToggleDeleteAlert={props.onToggleDeleteAlert}
         />
       ))}
     </div>

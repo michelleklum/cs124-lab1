@@ -5,11 +5,11 @@ function DeleteListBar(props) {
     <Fragment>
       <i
         className="fas fa-dumpster-fire delete-list-icon"
-        onClick={() => props.onDeleteList(props.currentListId)}
+        onClick={() => props.onToggleDeleteListAlert()}
       ></i>
       <h2
         className="delete-list-desc"
-        onClick={() => props.onDeleteList(props.currentListId)}
+        onClick={() => props.onToggleDeleteListAlert()}
       >
         Delete list
       </h2>

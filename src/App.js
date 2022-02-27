@@ -173,6 +173,13 @@ function App(props) {
     );
   }
 
+  // State and functions below handle alerts and warnings
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  
+  function handleToggleDeleteAlert() {
+    setShowDeleteAlert(!showDeleteAlert)
+  }
+
   return (
     <Fragment>
       {currentPage === "Home" ? (
@@ -185,6 +192,8 @@ function App(props) {
           onChangePage={handleChangePage}
           onChangeList={handleChangeList}
           onCreateTask={handleCreateList}
+          onToggleDeleteAlert={handleToggleDeleteAlert}
+          showDeleteAlert={showDeleteAlert}
         />
       ) : null}
       {currentPage === "HomeSearchPage" ? (
@@ -197,6 +206,8 @@ function App(props) {
           onChangeList={handleChangeList}
           onChangeTask={handleChangeTask}
           onDeleteList={handleDeleteList}
+          onToggleDeleteAlert={handleToggleDeleteAlert}
+          showDeleteAlert={showDeleteAlert}
         />
       ) : null}
       {currentPage === "SingleListPage" ? (
@@ -214,6 +225,7 @@ function App(props) {
           onDeleteAllTasks={handleDeleteAllTasks}
           onDeleteList={handleDeleteList}
           onCreateTask={handleChangeTask}
+          onToggleDeleteAlert={handleToggleDeleteAlert}
         />
       ) : null}
       {currentPage === "ListSearchPage" ? (
@@ -249,6 +261,8 @@ function App(props) {
           onEditAllTaskFields={handleEditTaskAllFields}
           inEditTaskMode={true}
           inCreateTaskMode={false}
+          onToggleDeleteAlert={handleToggleDeleteAlert}
+          showDeleteAlert={showDeleteAlert}
         />
       ) : null}
       {currentPage === "CreateTaskPage" ? (

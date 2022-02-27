@@ -5,11 +5,11 @@ function DeleteCompletedBar(props) {
     <Fragment>
       <i
         className="fas fa-trash-alt delete-completed-icon"
-        onClick={() => props.onDeleteCompleted(props.currentListId)}
+        onClick={() => props.onToggleDeleteCompletedAlert()}
       ></i>
       <h2
         className="delete-completed-desc"
-        onClick={() => props.onDeleteCompleted(props.currentListId)}
+        onClick={() => props.onToggleDeleteCompletedAlert()}
       >
         Delete completed tasks
       </h2>

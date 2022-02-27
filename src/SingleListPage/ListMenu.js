@@ -19,14 +19,15 @@ function ListMenu(props) {
       <DeleteCompletedBar
         currentListId={props.currentListId}
         onDeleteCompleted={props.onDeleteCompleted}
+        onToggleDeleteCompletedAlert={props.onToggleDeleteCompletedAlert}
       />
       <DeleteAllTasksBar
         currentListId={props.currentListId}
-        onDeleteAllTasks={props.onDeleteAllTasks}
+        onToggleDeleteTasksAlert={props.onToggleDeleteTasksAlert}
       />
       <DeleteListBar
         currentListId={props.currentListId}
-        onDeleteList={props.onDeleteList}
+        onToggleDeleteListAlert={props.onToggleDeleteListAlert}
       />
     </div>
   );

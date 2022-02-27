@@ -3,6 +3,7 @@ import "./ViewEditCreateTaskPage.css";
 import TaskTopBar from "./TaskTopBar";
 import TaskDisplay from "./TaskDisplay";
 import DeleteTaskBar from "./DeleteTaskBar";
+import DeleteAlert from "../Global/DeleteAlert";
 
 function getCurrentDate() {
   const today = new Date();
@@ -92,11 +93,14 @@ function ViewEditCreateTaskPage(props) {
       />
       {props.inEditTaskMode ? (
         <DeleteTaskBar
-          currentListId={props.currentListId}
-          currentTaskId={props.currentTaskId}
-          onDeleteTask={props.onDeleteTask}
+          onToggleDeleteAlert={props.onToggleDeleteAlert}
         />
       ) : null}
+      {props.showDeleteAlert && <DeleteAlert
+        type="this task" 
+        onToggleDeleteAlert={props.onToggleDeleteAlert}
+        onDelete={() => props.onDeleteTask(props.currentListId, props.currentTaskId)}
+      />}
     </div>
   );
 }

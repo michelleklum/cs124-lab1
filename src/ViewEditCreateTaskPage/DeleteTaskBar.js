@@ -3,7 +3,7 @@ function DeleteTaskBar(props) {
     <div
       className="delete-toolbar"
       onClick={() =>
-        props.onDeleteTask(props.currentListId, props.currentTaskId)
+        props.onToggleDeleteAlert()
       }
     >
       <i className="fas fa-trash-alt fa-4x trash"></i>

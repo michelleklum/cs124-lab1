@@ -5,11 +5,11 @@ function DeleteAllTasks(props) {
     <Fragment>
       <i
         className="fas fa-dumpster delete-all-icon"
-        onClick={() => props.onDeleteAllTasks(props.currentListId)}
+        onClick={() => props.onToggleDeleteTasksAlert()}
       ></i>
       <h2
         className="delete-all-desc"
-        onClick={() => props.onDeleteAllTasks(props.currentListId)}
+        onClick={() => props.onToggleDeleteTasksAlert()}
       >
         Delete all tasks
       </h2>

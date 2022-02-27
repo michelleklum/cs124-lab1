@@ -4,12 +4,28 @@ import ListTopBar from "./ListTopBar";
 import ListOfTasks from "./ListOfTasks";
 import ListMenu from "./ListMenu";
 import AddButton from "../Global/AddButton";
+import DeleteAlert from "../Global/DeleteAlert";
 
 function SingleListPage(props) {
   const [inMenuMode, setMenuMode] = useState(false);
+  const [deleteListAlert, setDeleteListAlert] = useState(false);
+  const [deleteTasksAlert, setDeleteTasksAlert] = useState(false);
+  const [deleteCompletedAlert, setDeleteCompletedAlert] = useState(false);
 
   function toggleMenuMode() {
     setMenuMode(!inMenuMode);
+  }
+
+  function toggleDeleteListAlert() {
+    setDeleteListAlert(!deleteListAlert);
+  }
+
+  function toggleDeleteTasksAlert() {
+    setDeleteTasksAlert(!deleteTasksAlert);
+  }
+
+  function toggleDeleteCompletedAlert() {
+    setDeleteCompletedAlert(!deleteCompletedAlert);
   }
 
   return (
@@ -50,8 +66,27 @@ function SingleListPage(props) {
           onDeleteAllTasks={props.onDeleteAllTasks}
           onDeleteList={props.onDeleteList}
           onChangePage={props.onChangePage}
+          onToggleDeleteListAlert={toggleDeleteListAlert}
+          onToggleDeleteTasksAlert={toggleDeleteTasksAlert}
+          onToggleDeleteCompletedAlert={toggleDeleteCompletedAlert}
+
         />
       ) : null}
+      {deleteListAlert && <DeleteAlert
+        type="this list" 
+        onToggleDeleteAlert={toggleDeleteListAlert}
+        onDelete={() => props.onDeleteList(props.currentListId)}
+      />}
+      {deleteTasksAlert && <DeleteAlert
+        type="all tasks" 
+        onToggleDeleteAlert={toggleDeleteTasksAlert}
+        onDelete={() => props.onDeleteAllTasks(props.currentListId)}
+      />}
+      {deleteCompletedAlert && <DeleteAlert
+        type="all completed tasks" 
+        onToggleDeleteAlert={toggleDeleteCompletedAlert}
+        onDelete={() => props.onDeleteCompleted(props.currentListId)}
+      />}
     </Fragment>
   );
 }

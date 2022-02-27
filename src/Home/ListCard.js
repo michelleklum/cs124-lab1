@@ -62,7 +62,10 @@ function ListCard(props) {
             id={props.id}
             onChangeList={props.onChangeList}
           />
-          <DeleteListButton onDeleteList={props.onDeleteList} id={props.id} />
+          <DeleteListButton
+            onToggleDeleteAlert={props.onToggleDeleteAlert}
+            onChangeList={props.onChangeList}
+            id={props.id} />
         </Fragment>
       ) : (
         <EnterListArrow onListIconClick={toggleEditMode} />
