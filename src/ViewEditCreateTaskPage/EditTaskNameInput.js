@@ -7,7 +7,7 @@ function EditTaskNameInput(props) {
   // Automatically resizes textarea according to its scrollHeight, if necessary,
   // in order to show all text
   function handleTextareaChange(e) {
-    const rowHeight = 30;
+    const rowHeight = 25;
     const textareaRowsRequired =
       Math.ceil(e.target.scrollHeight / rowHeight) - 1;
 
@@ -34,7 +34,10 @@ function EditTaskNameInput(props) {
         autoComplete="off"
         value={props.tempTaskName}
         autoFocus
-        onFocus={placeCursorAtEndOfValueOnFocus}
+        onFocus={function (e) {
+          placeCursorAtEndOfValueOnFocus(e);
+          handleTextareaChange(e);
+        }}
         onInput={(e) => props.onChangeTaskName(e.target.value)}
       ></textarea>
     </div>
