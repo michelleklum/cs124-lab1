@@ -24,4 +24,6 @@
   font-weight: 500;
   margin-left: 1.4em;
   margin-right: 1.4em;
+  inline-size: 225px;
+  overflow-wrap: break-word;
 }
