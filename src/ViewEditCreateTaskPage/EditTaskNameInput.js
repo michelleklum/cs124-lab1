@@ -4,6 +4,12 @@ import "./EditTaskNameInput.css";
 function EditTaskNameInput(props) {
   const [textareaRows, setTextareaRows] = useState(1);
 
+  function placeCursorAtEndOfValueOnFocus(e) {
+    const val = e.target.value;
+    e.target.value = "";
+    e.target.value = val;
+  }
+
   // Automatically resizes textarea according to its scrollHeight, if necessary,
   // in order to show all text
   function handleTextareaChange(e) {
@@ -14,12 +20,6 @@ function EditTaskNameInput(props) {
     if (textareaRowsRequired > textareaRows) {
       setTextareaRows(textareaRowsRequired);
     }
-  }
-
-  function placeCursorAtEndOfValueOnFocus(e) {
-    const val = e.target.value;
-    e.target.value = "";
-    e.target.value = val;
   }
 
   return (

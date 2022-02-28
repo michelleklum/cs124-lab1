@@ -4,10 +4,16 @@ import "./AdditionalNotesEditor.css";
 function AdditionalNotesEditor(props) {
   const [textareaRows, setTextareaRows] = useState(1);
 
+  function placeCursorAtEndOfValueOnFocus(e) {
+    const val = e.target.value;
+    e.target.value = "";
+    e.target.value = val;
+  }
+
   // Automatically resizes textarea according to its scrollHeight, if necessary,
   // in order to show all text
   function handleTextareaChange(e) {
-    const rowHeight = 30;
+    const rowHeight = 25;
     const textareaRowsRequired =
       Math.ceil(e.target.scrollHeight / rowHeight) - 1;
 
@@ -27,6 +33,11 @@ function AdditionalNotesEditor(props) {
         placeholder="Enter additional notes"
         autoComplete="off"
         defaultValue={props.tempTaskNotes}
+        autoFocus
+        onFocus={function (e) {
+          placeCursorAtEndOfValueOnFocus(e);
+          handleTextareaChange(e);
+        }}
         onInput={(e) => props.onChangeTaskNotes(e.target.value)}
       ></textarea>
     </div>
