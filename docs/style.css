@@ -583,7 +583,6 @@ i.list-icon {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-  overflow-wrap: break-word;
   width: 200px;
   height: 60px;
 }
