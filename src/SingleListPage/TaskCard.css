@@ -10,6 +10,11 @@
   justify-content: space-between;
 }
 
+.task-card-completed h2,
+.task-card-completed p {
+  text-decoration: line-through;
+}
+
 .task i {
   margin-right: 16px;
 }
@@ -24,16 +29,12 @@
 .task-and-date h2 {
   font-size: 16px;
   margin-bottom: 0; /* to make task and date flush next to each other vertically */
+  inline-size: 245px;
+  overflow-wrap: break-word;
 }
 
 .date {
   margin-top: 0; /* to make task and date flush next to each other vertically */
   font-size: 14px;
-  color: #2B7A78;
-}
-
-#no-date {
-  font-size: 16px;
-  padding-bottom: 19px; 
-  padding-top: 4px; 
+  color: #2b7a78;
 }

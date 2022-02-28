@@ -26,8 +26,12 @@ function TaskCard(props) {
     props.onChangeTask(props.task.id);
   }
 
+  const completedTaskClassName = props.task.isTaskCompleted
+    ? "task-card-completed"
+    : null;
+
   return (
-    <div className="task">
+    <div className={["task", completedTaskClassName].join(" ")}>
       <div className="left-aligned">
         <Checkbox
           className="checkbox"

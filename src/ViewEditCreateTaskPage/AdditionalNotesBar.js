@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import "./AdditionalNotesBar.css";
 import AdditionalNotesEditor from "./AdditionalNotesEditor";
 
 function AdditionalNotesBar(props) {
