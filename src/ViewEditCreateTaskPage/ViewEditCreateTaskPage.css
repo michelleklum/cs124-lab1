@@ -6,6 +6,6 @@
 
 #task-page hr {
   border: thin solid #91c6c3;
-  margin-bottom: 2em;
+  margin-top: 0;
+  margin-bottom: 0.7em;
 }
-

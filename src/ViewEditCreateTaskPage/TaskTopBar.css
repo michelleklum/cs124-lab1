@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
 }
 
 .task-header i {

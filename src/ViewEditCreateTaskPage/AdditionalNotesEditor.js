@@ -13,7 +13,7 @@ function AdditionalNotesEditor(props) {
   // Automatically resizes textarea according to its scrollHeight, if necessary,
   // in order to show all text
   function handleTextareaChange(e) {
-    const rowHeight = 25;
+    const rowHeight = 27;
     const textareaRowsRequired =
       Math.ceil(e.target.scrollHeight / rowHeight) - 1;
 
@@ -29,7 +29,7 @@ function AdditionalNotesEditor(props) {
         onChange={handleTextareaChange}
         id="edit-task-notes"
         name="task-notes"
-        maxLength="180"
+        maxLength="160"
         placeholder="Enter additional notes"
         autoComplete="off"
         defaultValue={props.tempTaskNotes}

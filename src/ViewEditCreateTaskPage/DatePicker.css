@@ -9,10 +9,6 @@
   text-align: center;
 }
 
-.date-picker p {
-  font-size: 12pt;
-}
-
 /* to enable highlighting selected-month, selected-day, selected-year */
 .prev-month,
 .prev-day,

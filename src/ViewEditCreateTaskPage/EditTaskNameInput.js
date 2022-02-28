@@ -13,7 +13,7 @@ function EditTaskNameInput(props) {
   // Automatically resizes textarea according to its scrollHeight, if necessary,
   // in order to show all text
   function handleTextareaChange(e) {
-    const rowHeight = 25;
+    const rowHeight = 27;
     const textareaRowsRequired =
       Math.ceil(e.target.scrollHeight / rowHeight) - 1;
 
