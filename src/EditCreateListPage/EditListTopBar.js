@@ -23,7 +23,7 @@ function EditListTopBar(props) {
                         name="edit-list-name"
                         autoComplete="off"
                         value={props.tempListName}
-                        maxLength="18"
+                        maxLength="16"
                         onInput={e => props.onChangeListName(e.target.value)}
                     />
                 </div>

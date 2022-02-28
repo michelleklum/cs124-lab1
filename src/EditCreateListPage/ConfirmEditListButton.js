@@ -14,10 +14,14 @@ function ConfirmEditListButton(props) {
 
     return (
         <div>
-            {props.inEditListMode &&
+            {props.inEditListMode && (props.listName !== "") && (props.listIcon !== "") &&
                 <div className="right-aligned">
                     <i className="fas fa-check fa-4x"
                         onClick={() => confirmEdit()}></i>
+                </div>}
+            {props.inEditListMode && (props.listName === "" || props.listIcon === "") &&
+                <div className="right-aligned">
+                    <i className="fas fa-check fa-4x" id="no-info"></i>
                 </div>}
             {props.inCreateListMode && (props.listName !== "") && (props.listIcon !== "") &&
                 <div className="right-aligned create-mode-confirm">

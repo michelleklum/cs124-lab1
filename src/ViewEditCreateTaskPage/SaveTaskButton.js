@@ -25,8 +25,11 @@ function SaveTaskButton(props) {
 
   return (
     <div>
-      {props.inEditTaskMode && (
+      {props.inEditTaskMode && props.taskName !== "" && (
         <i className="fas fa-check fa-4x" onClick={() => confirmEditTask()}></i>
+      )}
+      {props.inEditTaskMode && props.taskName === "" && (
+        <i className="fas fa-check fa-4x" id="no-info"></i>
       )}
       {props.inCreateTaskMode && props.taskName !== "" && (
         <i
