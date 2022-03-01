@@ -22,6 +22,10 @@
   grid-template-rows: 70px 1fr 70px; /* TODO: may have to change depending on whether we add more attributes a task could have! */
 }
 
+.completed-icon-view-page {
+  font-size: 25pt !important;
+}
+
 .set-date-icon {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;

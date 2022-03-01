@@ -13,14 +13,10 @@ function CompletionBar(props) {
           openDatePicker={props.openDatePicker}
           openTimePicker={props.openTimePicker}
         />
+      ) : props.task.isTaskCompleted ? (
+        <i className="fas fa-solid fa-check completed-icon-view-page"></i>
       ) : (
-        <Checkbox
-          task={props.task}
-          tempTaskStatus={props.tempTaskStatus}
-          disableCheckbox={true}
-          openDatePicker={props.openDatePicker}
-          openTimePicker={props.openTimePicker}
-        />
+        <i className="fas fa-solid fa-spinner completed-icon-view-page"></i>
       )}
       <p
         className={[
