@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.time-picker p {
+  font-size: 12pt;
+}
+
 /* to enable highlighting selected-hour, selected-minute, selected-am-pm */
 .prev-hour,
 .prev-minute,
