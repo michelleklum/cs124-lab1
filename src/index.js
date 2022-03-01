@@ -9,7 +9,7 @@ const initialData = [
     id: 1,
     listName: "Calls and Texts",
     listIcon: "phone",
-    areCompletedTasksHidden: true,
+    areCompletedTasksHidden: false,
     listTasks: [
       {
         id: 2,
