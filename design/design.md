@@ -24,7 +24,9 @@ Users should tap a card for an individual list in order to get to the Single Lis
 
 Users should swipe from right to left on the cards for individual lists in order to reveal the pencil icon and the trash can icon for editing the list and deleting the list, respectively. We believed this swiping motion would be intuitive because it was something users are already accustomed to from their interactions with other mobile apps, and that hypothesis was confirmed by our user testing.
 
-<img src="home_page_edit_icons_final.png" alt="Home Page Edit Icons Lab 1 Final Version" width="200px">
+In Lab 2, we also decided to add a deeper shadow to a task card when it has its edit and delete icons revealed. That deeper shadow distinguishes that particular task card from all the others. This conforms with a lesson from Chapter 5 of The Design of Everyday Things: “Make the item being acted upon more prominent. That is, change the appearance of the actual object being acted upon to be more visible: enlarge it, or perhaps change its color” (205).
+
+<img src="home_page_edit_icons_final_lab_2.png" alt="Home Page Edit Icons Lab 2 Final Version" width="200px">
 
 ## Final App: Create List Page / Edit List Page
 
@@ -40,6 +42,10 @@ When a user taps the card for an individual list on the Home Page, the user will
 
 The circular plus icon in the bottom right corner of the Single List Page serves a similar purpose to the plus icon on the Home Page. But instead of creating a new list, the plus icon now enables users to add a new task.
 
+In Lab 1, we had the search bar appear automatically across the entire screen upon entering the Single List Page. However, for Lab 2, we decided to make the search bar only appear across the screen when the user taps the magnifying glass icon. This makes the design of the Single List Page more consistent with the design of the Home Page. We also considered the 80/20 rule discussed in the Zen of Palm reading: for 80% of users, any given list will probably be short, so most users won't default to using the search option to find a particular task. Rather, most users will scroll through the Single List Page to find the task they're looking for. Having a search bar across the width of the entire screen would just unnecessarily take up space for most users.
+
+In Lab 1, we also had a pencil icon for each task that would bring the user to the Edit Task Page for that task. However, for Lab 2, we decided to remove the pencil icons from the task cards on the Single List Page, because we wanted users to go through a two-step flow of first tapping on the task card to get to the View Task Page, and then clicking an edit icon on the View Task Page to get to the Edit Task Page. With such a two-step flow, it would be harder to accidentally edit tasks. Having pencil icons on the task cards on the Single List Page would be contradictory to that two-step flow. Also, removing the pencil icons helps our app better follow the 80/20 rule from the Zen of Palm reading. 80% of users tapping on a task probably just want to look at the task details; very few probably want ot edit the task. Removing the pencil icons makes our app less cluttered, while taking care of the majority of our users.
+
 <img src="single_list_page_final_lab_2.png" alt="Single List Page Lab 2 Final Version" width="200px">
 
 Users can tap the 3 horizontal dots in the top right corner of the Single List Page to enter the Single List Page's Menu Mode, where they can customize the list appearance by going to the Edit List Page (which is basically the same as the Create List Page), hide / show completed tasks, delete completed tasks, delete all tasks, or delete the list.
@@ -48,17 +54,19 @@ Initially, we had the delete options appear directly on the Single List Page; th
 
 Similarly, we initially had our "Hide completed tasks" filter appear directly on the Single List Page. However, that took up a lot of space, so we decided to put it in this menu so that we could display more tasks onscreen.
 
-In Lab 1, we had the search bar appear automatically across the entire screen upon entering the Single List Page. However, for Lab 2, we decided to make the search bar only appear across the screen when the user taps the magnifying glass icon. This makes the design of the Single List Page more consistent with the design of the Home Page. We also considered the 80/20 rule discussed in the Zen of Palm reading: for 80% of users, any given list will probably be short, so most users won't default to using the search option to find a particular task. Rather, most users will scroll through the Single List Page to find the task they're looking for. Having a search bar across the width of the entire screen would just unnecessarily take up space for most users.
+In Lab 1, we had the same trashcan icon for all three delete actions in the Single List Page Menu Mode: delete completed tasks, delete all tasks, and delete list. However, since each action is distinct, we thought it would be confusing to users for all three actions to share the same visual representation. So, for Lab 2, we gave each of these delete actions a unique icon.
 
-<img src="single_list_page_menu_mode_final.png" alt="Single List Page Menu Mode Lab 1 Final Version" width="200px">
+<img src="single_list_page_menu_mode_final_lab_2.png" alt="Single List Page Menu Mode Lab 2 Final Version" width="200px">
 
 ## Final App: View Task Page
 
 When a user taps the card for a task on the Single List Page, they are brought to the View Task Page, where they can view more details about that task, such as location and additional notes, which aren't visible on the Single List Page of all tasks.
 
-Users can tap the X icon to return to the Single List Page of all tasks in the list. Or, alternatively, they can tap the pencil icon to go to the Edit Task Page. This was inspired by Google Calendar, which has a similar mobile user flow. The two-step user flow prevents users from accidentally editing a task when all they want to do is just to view that task.
+Users can tap the back arrow to return to the Single List Page of all tasks in the list. Or, alternatively, they can tap the pencil icon to go to the Edit Task Page. This was inspired by Google Calendar, which has a similar mobile user flow. The two-step user flow prevents users from accidentally editing a task when all they want to do is just to view that task.
 
-<img src="view_task_page_final.png" alt="View Task Page Lab 1 Final Version" width="200px">
+In Lab 1, we had an X icon for returning to the Single List Page from the View Task Page. For Lab 2, we changed that X icon into a back arrow. Why? Our app uses the X icon to represent a cancel icon for a list or a task being edited. However, nothing is being edited when the user is on the View Task Page. We did not want to confuse users by using icons inconsistently.
+
+<img src="view_task_page_final_lab_2.png" alt="View Task Page Lab 2 Final Version" width="200px">
 
 ## Final App: Edit Task Page
 
@@ -96,6 +104,10 @@ This is the second version of our Home Page that we created. As mentioned above,
 
 <img src="alt_home_page_v2.JPEG" alt="Home Page Lab 1 Version 2" width="200px">
 
+This is the version of our Home Page that we turned in for Lab 1. As mentioned above, in Lab 2, we decided to add a deeper shadow to a task card when it has its edit and delete icons revealed, in order to distinguish that task card from all the others.
+
+<img src="home_page_edit_icons_final_lab_1.png" alt="Home Page Edit Icons Lab 1 Final Version" width="200px">
+
 ## Alternate Designs: Single List Page
 
 This is the first version of our Single List Page that we created. As mentioned above, we later decided to save space by putting the hide completed tasks behind a Single List Page menu mode, and to reduce the chances of users accidentally deleting all tasks by placing that functionality in the menu mode as well. We'll discuss this in more detail in the usability testing section below.
@@ -106,7 +118,21 @@ In our final Single List Page, we decided to decrease the font weight to give ou
 
 This is the version of our Single List Page that we turned in for Lab 1. As mentioned above, in Lab 2, we decided to hide the search bar behind a magnifying glass icon so that the Single List Page's design would be consistent with that of the Home Page, and also so that the search bar would not take up so much space on the Single List Page.
 
+Furthermore, we also decided to remove the pencil icons from the task cards on the Single List Page for Lab 2 because we wanted it to take two steps to get to the Edit Task Page from the Single List Page, rather than just one step. Having an extra step to get to the Edit Task Page would help prevent users from accidentally editing tasks.
+
 <img src="single_list_page_final_lab_1.png" alt="Single List Page Lab 1 Final Version" width="200px">
+
+## Alternate Designs: Single List Page Menu Mode
+
+This is the version of our Single List Page Menu Mode that we turned in for Lab 1. As mentioned above, we decided it would not be a good idea to have the same trashcan icon represent three different delete actions: delete completed tasks, delete all tasks, and delete list. So, for Lab 2, we decided to differentiate these actions by assigning each action a distinct icon.
+
+<img src="single_list_page_menu_mode_final_lab_1.png" alt="Single List Page Menu Mode Lab 1 Final Version" width="200px">
+
+## Alternate Designs: View Task Page
+
+This is the version of our View Task Page that we turned in for Lab 1. For Lab 2, we changed the X icon for returning to the Single List Page from the View Task Page. We made that into a back arrow instead, since the X icon signifies the cancellation of current edits, but nothing is actually getting edited on the View Task Page.
+
+<img src="view_task_page_final_lab_1.png" alt="View Task Page Lab 1 Final Version" width="200px">
 
 ## Usability Testing
 
