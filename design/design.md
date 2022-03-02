@@ -92,7 +92,7 @@ Tapping on the time field opens up a time picker. The user can either click or s
 
 <img src="edit_task_page_final_lab_2_time_picker.png" alt="Edit Task Page Lab 2 Final Version Time Picker" width="200px">
 
-## Final App: Delete Popup Confirmation Messages
+## Final App: Delete Pop-Up Confirmation Messages
 
 For Lab 2, we introduced confirmation messages that would pop up when a user clicks a delete button. During user testing, one of our participants accidentally deleted a task and remarked that it would have been nice to have an extra warning to prevent that from happening. We thought that was a great idea, and now have confirmation messages whenever a user clicks a button to delete a task, delete completed tasks in a list, delete all tasks in a list, and delete a list.
 
