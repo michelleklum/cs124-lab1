@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import ListSearchBar from "./ListSearchBar";
 import TaskCard from "../SingleListPage/TaskCard";
 
-const filterTasks = (tasks, query) => {
+const filterTasksBySearch = (tasks, query) => {
   if (!query) {
     return tasks;
   }
@@ -13,16 +13,34 @@ const filterTasks = (tasks, query) => {
   });
 };
 
-
 function ListSearchPage(props) {
   const list = props.data.find((list) => list.id === props.currentListId);
+
+  const tasksToShow = list.areCompletedTasksHidden
+    ? list.listTasks.filter((task) => !task.isTaskCompleted)
+    : list.listTasks;
+
+  const completedTasks = tasksToShow.filter((task) => task.isTaskCompleted);
+  const incompleteTasks = tasksToShow.filter((task) => !task.isTaskCompleted);
+
+  // Put incomplete tasks first, and then completed tasks.
+  // Within each sublist (i.e., incomplete tasks), sort by date.
+  const sortedTasksToShow = incompleteTasks
+    .sort(sortTasksByDateCompareFunction)
+    .concat(completedTasks.sort(sortTasksByDateCompareFunction));
+
+  function sortTasksByDateCompareFunction(a, b) {
+    return new Date(a.taskDate) < new Date(b.taskDate) ? -1 : 1;
+  }
+
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
-  const tasksToShow = list.areCompletedTasksHidden
-    ? list.listTasks.filter((task) => task.isTaskCompleted === false)
-    : list.listTasks;
-  const filteredTasks = filterTasks(tasksToShow, searchQuery);
+
+  const searchFilteredTasksToShow = filterTasksBySearch(
+    sortedTasksToShow,
+    searchQuery
+  );
 
   return (
     <Fragment>
@@ -34,7 +52,7 @@ function ListSearchPage(props) {
         prevPage={props.prevPage}
       />
       <div id="filtered-tasks">
-        {filteredTasks.map((task) => (
+        {searchFilteredTasksToShow.map((task) => (
           <TaskCard
             key={task.id}
             task={task}

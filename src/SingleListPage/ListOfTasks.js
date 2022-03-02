@@ -2,18 +2,18 @@ import "./ListOfTasks.css";
 import TaskCard from "./TaskCard";
 
 function ListOfTasks(props) {
-  const taskList = props.data.find((list) => list.id === props.currentListId);
+  const list = props.data.find((list) => list.id === props.currentListId);
 
-  const tasks = taskList.areCompletedTasksHidden
-    ? taskList.listTasks.filter((task) => !task.isTaskCompleted)
-    : taskList.listTasks;
+  const tasksToShow = list.areCompletedTasksHidden
+    ? list.listTasks.filter((task) => !task.isTaskCompleted)
+    : list.listTasks;
 
-  const completedTasks = tasks.filter((task) => task.isTaskCompleted);
-  const incompleteTasks = tasks.filter((task) => !task.isTaskCompleted);
+  const completedTasks = tasksToShow.filter((task) => task.isTaskCompleted);
+  const incompleteTasks = tasksToShow.filter((task) => !task.isTaskCompleted);
 
   // Put incomplete tasks first, and then completed tasks.
   // Within each sublist (i.e., incomplete tasks), sort by date.
-  const sortedTasks = incompleteTasks
+  const sortedTasksToShow = incompleteTasks
     .sort(sortTasksByDateCompareFunction)
     .concat(completedTasks.sort(sortTasksByDateCompareFunction));
 
@@ -23,7 +23,7 @@ function ListOfTasks(props) {
 
   return (
     <div id="list-of-tasks">
-      {sortedTasks.map((task) => (
+      {sortedTasksToShow.map((task) => (
         <TaskCard
           key={task.id}
           currentListId={props.currentListId}
