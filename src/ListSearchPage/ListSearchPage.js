@@ -4,6 +4,7 @@ import ListSearchBar from "./ListSearchBar";
 import TaskCard from "../SingleListPage/TaskCard";
 
 const filterTasksBySearch = (tasks, query) => {
+  query = query.toLowerCase();
   if (!query) {
     return tasks;
   }
