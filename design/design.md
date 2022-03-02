@@ -34,9 +34,9 @@ In Lab 2, we also decided to add a deeper shadow to a task card when it has its 
 
 When a user taps the plus button on the Home Page, they will be brought to the Create List Page, where they can enter a list name into the input box in the top navigation bar, and also select an icon to represent their list. We wanted to give users a way to customize the appearances of their lists to their liking. The X icon cancels the action of creating a new list, while the checkmark icon saves the newly created list. This is similar to behavior seen in apps such as Google Calendar, when users edit Calendar Events on mobile devices. The checkmark icon is only enabled after the user has named their list and given it a representative icon.
 
-<img src="create_list_page_final.png" alt="Create List Page Lab 1 Final Version" width="200px">
+<img src="create_list_page_final_lab_2.png" alt="Create List Page Lab 2 Final Version" width="200px">
 
-<img src="create_list_page_in_progress_final.png" alt="Create List Page In Progress Lab 1 Final Version" width="200px">
+<img src="create_list_page_in_progress_final_lab_2.png" alt="Create List Page In Progress Lab 2 Final Version" width="200px">
 
 ## Final App: Single List Page
 
