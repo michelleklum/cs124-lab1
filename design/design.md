@@ -1,8 +1,8 @@
-# CS 124 Lab 1 Design Document
+# CS 124 Lab 2 Design Document
 
-CS 124 Interaction Design Lab 1: To-do App UI Design (HTML and CSS)
+CS 124 Interaction Design Lab 2: To-do App UI Design (Create Delete Complete Edit)
 
-Link to walkthrough: [https://michelleklum.github.io/cs124-lab1/](https://michelleklum.github.io/cs124-lab1/)
+Link to app: [https://zoetokheim.github.io/cs124-lab2](https://zoetokheim.github.io/cs124-lab2)
 
 ## Final App: Home Page
 
@@ -36,17 +36,19 @@ When a user taps the plus button on the Home Page, they will be brought to the C
 
 ## Final App: Single List Page
 
-When a user taps the card for an individual list on the Home Page, the user will be brought to the Single List Page, which displays all the tasks in that list, sorted in chronological order, as well as a search bar for filtering through the tasks in that list. We thought it would be helpful to have the option to attach dates to tasks in case users want to perform specific tasks at specific times / dates. We also thought the search functionality would be helpful in case there are many tasks in a single list.
+When a user taps the card for an individual list on the Home Page, the user will be brought to the Single List Page, which displays all the tasks in that list, sorted in chronological order, as well as a magnifying glass that can be tapped to unfurl a search bar for filtering through the tasks in that list. We thought it would be helpful to have the option to attach dates to tasks in case users want to perform specific tasks at specific times / dates. We also thought the search functionality would be helpful in case there are many tasks in a single list.
 
 The circular plus icon in the bottom right corner of the Single List Page serves a similar purpose to the plus icon on the Home Page. But instead of creating a new list, the plus icon now enables users to add a new task.
 
-<img src="single_list_page_final.png" alt="Single List Page Lab 1 Final Version" width="200px">
+<img src="single_list_page_final_lab_2.png" alt="Single List Page Lab 2 Final Version" width="200px">
 
 Users can tap the 3 horizontal dots in the top right corner of the Single List Page to enter the Single List Page's Menu Mode, where they can customize the list appearance by going to the Edit List Page (which is basically the same as the Create List Page), hide / show completed tasks, delete completed tasks, delete all tasks, or delete the list.
 
 Initially, we had the delete options appear directly on the Single List Page; they were not hidden in this menu mode. However, during usability testing, participants remarked that having the "Add New Task" and "Delete All Tasks" buttons so close to each other would lead to unwanted accidental deletes. That's why we decided to add this extra layer of tapping the 3 dots to enter the Single List Page Menu Mode.
 
 Similarly, we initially had our "Hide completed tasks" filter appear directly on the Single List Page. However, that took up a lot of space, so we decided to put it in this menu so that we could display more tasks onscreen.
+
+In Lab 1, we had the search bar appear automatically across the entire screen upon entering the Single List Page. However, for Lab 2, we decided to make the search bar only appear across the screen when the user taps the magnifying glass icon. This makes the design of the Single List Page more consistent with the design of the Home Page. We also considered the 80/20 rule discussed in the Zen of Palm reading: for 80% of users, any given list will probably be short, so most users won't default to using the search option to find a particular task. Rather, most users will scroll through the Single List Page to find the task they're looking for. Having a search bar across the width of the entire screen would just unnecessarily take up space for most users.
 
 <img src="single_list_page_menu_mode_final.png" alt="Single List Page Menu Mode Lab 1 Final Version" width="200px">
 
