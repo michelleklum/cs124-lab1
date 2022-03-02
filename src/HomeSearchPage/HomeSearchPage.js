@@ -5,6 +5,7 @@ import ListCard from "../Home/ListCard";
 import DeleteAlert from "../Global/DeleteAlert";
 
 const filterLists = (lists, query) => {
+  query = query.toLowerCase();
   if (query.length === 0) {
     return lists;
   }
@@ -15,7 +16,7 @@ const filterLists = (lists, query) => {
 };
 
 function HomeSearchPage(props) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const filteredLists = filterLists(props.data, searchQuery);
 
   return (
@@ -41,11 +42,13 @@ function HomeSearchPage(props) {
           />
         ))}
       </div>
-      {props.showDeleteAlert && <DeleteAlert
-        type="this list" 
-        onToggleDeleteAlert={props.onToggleDeleteAlert}
-        onDelete={() => props.onDeleteList(props.currentListId)}
-      />}
+      {props.showDeleteAlert && (
+        <DeleteAlert
+          type="this list"
+          onToggleDeleteAlert={props.onToggleDeleteAlert}
+          onDelete={() => props.onDeleteList(props.currentListId)}
+        />
+      )}
     </Fragment>
   );
 }
