@@ -14,7 +14,7 @@ In order to save space, we decided not to display the search bar in a fixed posi
 
 Tapping on the gear icon in the top right will bring users to their user setting page, where they can edit their name, email, etc. That page will be implemented when we introduce user authentication to our app.
 
-In Lab 2, we added an app icon and logo to our Home Page.
+In Lab 2, we added an app icon and logo to our Home Page. This was to give our app more brand identity, and also to distinguish our Home Page from other pages of the app.
 
 <img src="home_page_final_lab_2.png" alt="Home Page Lab 2 Final Version" width="200px">
 
@@ -64,7 +64,7 @@ In Lab 1, we had the same trashcan icon for all three delete actions in the Sing
 
 ## Final App: View Task Page
 
-When a user taps the card for a task on the Single List Page, they are brought to the View Task Page, where they can view more details about that task, such as location and additional notes, which aren't visible on the Single List Page of all tasks.
+When a user taps the card for a task on the Single List Page, they are brought to the View Task Page, where they can view more details about that task, such as additional notes, which aren't visible on the Single List Page of all tasks.
 
 Users can tap the back arrow to return to the Single List Page of all tasks in the list. Or, alternatively, they can tap the pencil icon to go to the Edit Task Page. This was inspired by Google Calendar, which has a similar mobile user flow. The two-step user flow prevents users from accidentally editing a task when all they want to do is just to view that task.
 
@@ -74,9 +74,9 @@ In Lab 1, we had an X icon for returning to the Single List Page from the View T
 
 ## Final App: Edit Task Page
 
-When a user taps the pencil icon on the View Task Page, they are brought to the Edit Task Page, where they can edit the task name in the input box at the top of the page. They can also change the task date and time using dropdown menus, as well as set the location of the task, add any additional notes, and/or mark the task as completed / not completed. Clicking the trash can icon at the bottom of the Edit Task Page will delete the task.
+When a user taps the pencil icon on the View Task Page, they are brought to the Edit Task Page, where they can edit the task name in the input box at the top of the page. They can also change the task date and time using dropdown menus, as well as add any additional notes, and/or mark the task as completed / not completed. Clicking the trash can icon at the bottom of the Edit Task Page will delete the task.
 
-<img src="edit_task_page_final.png" alt="Edit Task Page Lab 1 Final Version" width="200px">
+<img src="edit_task_page_final_lab_2.png" alt="Edit Task Page Lab 2 Final Version" width="200px">
 
 ## Alternate Designs: Home Page and Single List Page Initial Brainstorming
 
@@ -143,6 +143,12 @@ This is the version of our Single List Page Menu Mode that we turned in for Lab 
 This is the version of our View Task Page that we turned in for Lab 1. For Lab 2, we changed the X icon for returning to the Single List Page from the View Task Page. We made that into a back arrow instead, since the X icon would be inappropriate in this situation; the X icon signifies the cancellation of current edits, but nothing is actually getting edited on the View Task Page.
 
 <img src="view_task_page_final_lab_1.png" alt="View Task Page Lab 1 Final Version" width="200px">
+
+## Alternate Designs: Edit Task Page
+
+This is the version of our Edit Task Page that we turned in for Lab 1. We fleshed out the design of the Edit Task Page further for Lab 2.
+
+<img src="edit_task_page_final_lab_1.png" alt="Edit Task Page Lab 1 Final Version" width="200px">
 
 ## Usability Testing
 
