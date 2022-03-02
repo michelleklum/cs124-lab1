@@ -14,7 +14,9 @@ In order to save space, we decided not to display the search bar in a fixed posi
 
 Tapping on the gear icon in the top right will bring users to their user setting page, where they can edit their name, email, etc. That page will be implemented when we introduce user authentication to our app.
 
-<img src="home_page_final.png" alt="Home Page Lab 1 Final Version" width="200px">
+In Lab 2, we added an app icon and logo to our Home Page.
+
+<img src="home_page_final_lab_2.png" alt="Home Page Lab 2 Final Version" width="200px">
 
 <img src="home_page_search_final.png" alt="Home Page Search Lab 1 Final Version" width="200px">
 
@@ -45,6 +47,8 @@ The circular plus icon in the bottom right corner of the Single List Page serves
 In Lab 1, we had the search bar appear automatically across the entire screen upon entering the Single List Page. However, for Lab 2, we decided to make the search bar only appear across the screen when the user taps the magnifying glass icon. This makes the design of the Single List Page more consistent with the design of the Home Page. We also considered the 80/20 rule discussed in the Zen of Palm reading: for 80% of users, any given list will probably be short, so most users won't default to using the search option to find a particular task. Rather, most users will scroll through the Single List Page to find the task they're looking for. Having a search bar across the width of the entire screen would just unnecessarily take up space for most users.
 
 In Lab 1, we also had a pencil icon for each task that would bring the user to the Edit Task Page for that task. However, for Lab 2, we decided to remove the pencil icons from the task cards on the Single List Page, because we wanted users to go through a two-step flow of first tapping on the task card to get to the View Task Page, and then clicking an edit icon on the View Task Page to get to the Edit Task Page. With such a two-step flow, it would be harder to accidentally edit tasks. Having pencil icons on the task cards on the Single List Page would be contradictory to that two-step flow. Also, removing the pencil icons helps our app better follow the 80/20 rule from the Zen of Palm reading. 80% of users tapping on a task probably just want to look at the task details; very few probably want ot edit the task. Removing the pencil icons makes our app less cluttered, while taking care of the majority of our users.
+
+For Lab 2, we also restyled our checkboxes so that they would better cohere with the aesthetics (in particular, the color scheme) of our app.
 
 <img src="single_list_page_final_lab_2.png" alt="Single List Page Lab 2 Final Version" width="200px">
 
@@ -108,6 +112,10 @@ This is the version of our Home Page that we turned in for Lab 1. As mentioned a
 
 <img src="home_page_edit_icons_final_lab_1.png" alt="Home Page Edit Icons Lab 1 Final Version" width="200px">
 
+This is the version of our Home Page that we turned in for Lab 1. This version of our home page had neither an app icon nor a logo. We remedied that in Lab 2.
+
+<img src="home_page_final_lab_1.png" alt="Home Page Lab 1 Final Version" width="200px">
+
 ## Alternate Designs: Single List Page
 
 This is the first version of our Single List Page that we created. As mentioned above, we later decided to save space by putting the hide completed tasks behind a Single List Page menu mode, and to reduce the chances of users accidentally deleting all tasks by placing that functionality in the menu mode as well. We'll discuss this in more detail in the usability testing section below.
@@ -120,6 +128,8 @@ This is the version of our Single List Page that we turned in for Lab 1. As ment
 
 Furthermore, we also decided to remove the pencil icons from the task cards on the Single List Page for Lab 2 because we wanted it to take two steps to get to the Edit Task Page from the Single List Page, rather than just one step. Having an extra step to get to the Edit Task Page would help prevent users from accidentally editing tasks.
 
+And as you can see, our checkboxes for Lab 1 were styled a bit oddly. So, for Lab 2, we changed the look of our checkboxes to better adhere to the aesthetics of our app.
+
 <img src="single_list_page_final_lab_1.png" alt="Single List Page Lab 1 Final Version" width="200px">
 
 ## Alternate Designs: Single List Page Menu Mode
@@ -130,7 +140,7 @@ This is the version of our Single List Page Menu Mode that we turned in for Lab 
 
 ## Alternate Designs: View Task Page
 
-This is the version of our View Task Page that we turned in for Lab 1. For Lab 2, we changed the X icon for returning to the Single List Page from the View Task Page. We made that into a back arrow instead, since the X icon signifies the cancellation of current edits, but nothing is actually getting edited on the View Task Page.
+This is the version of our View Task Page that we turned in for Lab 1. For Lab 2, we changed the X icon for returning to the Single List Page from the View Task Page. We made that into a back arrow instead, since the X icon would be inappropriate in this situation; the X icon signifies the cancellation of current edits, but nothing is actually getting edited on the View Task Page.
 
 <img src="view_task_page_final_lab_1.png" alt="View Task Page Lab 1 Final Version" width="200px">
 
