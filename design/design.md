@@ -104,6 +104,10 @@ In our final Single List Page, we decided to decrease the font weight to give ou
 
 <img src="alt_single_list_page_v1.png" alt="Single List Page Lab 1 Version 1" width="200px">
 
+This is the version of our Single List Page that we turned in for Lab 1. As mentioned above, in Lab 2, we decided to hide the search bar behind a magnifying glass icon so that the Single List Page's design would be consistent with that of the Home Page, and also so that the search bar would not take up so much space on the Single List Page.
+
+<img src="single_list_page_final_lab_1.png" alt="Single List Page Lab 1 Final Version" width="200px">
+
 ## Usability Testing
 
 We conducted usability testing with four Mudd friends, asking them to tell us about their impressions of our app and how they would navigate from page to page to perform certain tasks.
