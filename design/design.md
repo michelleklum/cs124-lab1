@@ -178,43 +178,79 @@ This is the version of our Edit Task Page that we turned in for Lab 1. We fleshe
 
 <img src="edit_task_page_final_lab_1.png" alt="Edit Task Page Lab 1 Final Version" width="200px">
 
-## Usability Testing
+## Usability Testing: Lab 1
 
 We conducted usability testing with four Mudd friends, asking them to tell us about their impressions of our app and how they would navigate from page to page to perform certain tasks.
 
-## Usability Testing: Home Page
+### Home Page
 
 Without any prompting, usability testing participants were able to understand that tapping the plus button would create a new list. That told us that there was no need to include text like explaining the plus icon, which we had previously believed would be necessary. So, the final version of our app does not contain text accompanying the plus icon.
 
-<img src="user_test_home_page_plus.png" alt="User Testing Home Page Plus Icon Only" width="200px">
+<img src="user_test_home_page_plus.png" alt="User Testing Home Page Plus Icon Only - Lab 1" width="200px">
 
-## Usability Testing: Home Page New Version
+### Home Page New Version
 
 Users understood that if they tapped an individual list, they would see more of the list (i.e., tasks contained in the list). That told us that we had a user-friendly structure with a Home Page containing multiple lists, and then Single List Pages that could be accessed by tapping lists on the Home Page.
 
 Users understood that swiping from right to left would reveal the pencil and trash can icons. They mentioned that other apps used that same swiping motion. They also understood that the pencil icon would allow them to edit an individual list, while the trash can icon would delete the list. So, we decided to keep these features in our final version of the Home Page for Lab 1.
 
-<img src="user_test_home_page_new_version.png" alt="User Testing Home Page New Version" width="200px">
+<img src="user_test_home_page_new_version.png" alt="User Testing Home Page New Version - Lab 1" width="200px">
 
-## Usability Testing: Home Page Search
+### Home Page Search
 
 Originally, our app displayed an empty screen before users entered search keywords. However, usability testing participants told us that they wanted to see all the list items displayed on the screen, if they had not yet typed anything in the search bar, so that the search would behave like it filtered. That's why we decided to change our app so that the search starts with all lists displayed, and then gradually filters those lists as the user types their search terms.
 
-<img src="user_test_home_page_search.png" alt="User Testing Home Page Search" width="200px">
+<img src="user_test_home_page_search.png" alt="User Testing Home Page Search - Lab 1" width="200px">
 
-## Usability Testing: Single List Page
+### Single List Page
 
 Usability testing participants knew the home icon would bring them back to the Home Page, but preferred having a back icon more reflective of the arrow icon they saw on the Home Page. So, we decided to change the home icon into a left arrow icon in the final version of our Single List Page for Lab 1.
 
 Furthermore, users did not like that the Add New Task and Delete All Tasks buttons were situated right next to each other in this first version of our Single List Page, saying that it would be easy to make a mistake and delete all tasks, when they were actually intending to add a new task. To prevent such accidents, we decided to hide the delete all tasks functionality behind a separate menu mode that users could only enter upon tapping the 3 dots in the top right corner of the Single List page.
 
-<img src="user_test_single_list_page.png" alt="User Testing Single List Page" width="200px">
+<img src="user_test_single_list_page.png" alt="User Testing Single List Page - Lab 1" width="200px">
 
-## Usability Testing: Edit Task Page
+### Edit Task Page
 
 While users understood that this page would allow them to edit a task name, date, location, notes, and completion status, they didn't see a way to get out of this page without deleting the task they were trying to edit. That was an oversight on our part. In our final design of the Edit Task Page for Lab 1, we decided to add an X icon to the top left corner and a checkmark to the top right corner of this page to allow users to get back to the Single List Page without saving their changes, or with saving their changes, respectively.
 
-<img src="user_test_edit_task_page.png" alt="User Testing Edit Task Page" width="200px">
+<img src="user_test_edit_task_page.png" alt="User Testing Edit Task Page - Lab 1" width="200px">
+
+
+## Usability Testing: Lab 2
+
+### Home Page
+
+All four users understood that our app was a task managing app just from looking at the home screen. They cited the name of our app ("Task Monster") and the layout of the lists on the home screen as primary reasons behind this. All users also understood that the plus icon in the bottom right corner added a list and that the search button in the upper right corner allowed them to search for lists. Users believed the location of these buttons was intuitive. Users generally believed alphabetical sorting for the lists on the home screen makes sense, but a few wanted an option to sort the lists by creation date or modification date. We plan to add this functionality in a future lab. Users also understood that, to enter a list, they just have to tap on the list box. 
+
+### Home Page with List in Edit Mode
+
+Most users did not figure out that lists could be swiped to reveal an edit and delete button, but we decided to keep this functionality for "power users," as described in The Zen of Palm reading. One user commented that it made sense that you cannot enter a list when it is in edit mode, so we will keep this design. One user also mentioned that they preferred having a heavier shadow around the list box when it is in edit mode, so we implemented this. 
+
+### Home Page Search
+
+In Lab 1, users said they wanted the search input to act like a filter, such that with no input, all lists would be automatically shown. For our user testing in this lab, users said they preferred seeing all lists before entering a search query, so we plan to keep this design. 
+
+### Single List Page
+
+Multiple users commented that, when a task is marked completed, they expected the task to be moved to the bottom of the list. In response to their feedback, we implemented this change. Users also stated that they wanted completed tasks to be greyed our or otherwise differ more from tasks that are not completed. After researching how other task apps (e.g. Todoist) display completed tasks, we decided to strikethrough the task name and date when the task is marked completed. All users were able to identify that tapping the three dots in the upper right corner opened a menu.
+
+### Single List Page in Menu Mode
+
+Users found the labels for the menu actions clear. However, all users noted that they wanted a warning when deleting a list, all tasks, or completed items. We added this warning to our app for this lab.
+
+### Edit List Page and Create List Page
+
+One user noticed that a list name could be long enough that it does not fit in the top bar, so we implemented a character limit on list names, and if the name is still above a certain width, we will add ellipses so buttons in the top bar are not cut off. The same user noticed that an orange outline appeared around the list name field when it was being edited. This outline was not intentional and does not match our color scheme, so we instead added a light blue outline within our color scheme when the list name is edited. Users also wanted a warning if they try to delete the list from this page, so we added this alert.
+
+### Edit Task Page and Create Task Page
+
+Users found the click and drag mechanism with the date and time pickers a bit unintuitive, although we wonder whether their experience would have been different had they been using a phone rather than a laptop for the usability test. To accomodate different preferences for using the date and time picker, we added the option of allowing users to click above or below the appropriate selected date or time field to modify it.
+
+### View Task Page 
+
+Users were confused about why the "Completed" checkbox was not editable from this page, since the view-only checkbox looks the same as the editable checkbox. We changed the icon used to represent completed and uncompleted tasks on the view task page so users understand they cannot mark a task completed from the view-only page.
+
 
 ## Challenges
 

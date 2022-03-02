@@ -291,6 +291,8 @@ function App(props) {
           onCreateList={handleCreateList}
           inEditListMode={true}
           inCreateListMode={false}
+          onToggleDeleteAlert={handleToggleDeleteAlert}
+          showDeleteAlert={showDeleteAlert}
         />
       ) : null}
       {currentPage === "CreateListPage" ? (

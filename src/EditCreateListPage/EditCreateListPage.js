@@ -3,6 +3,7 @@ import "./EditCreateListPage.css";
 import EditListTopBar from "./EditListTopBar";
 import ListIconOptions from "./ListIconOptions";
 import DeleteListBarFromEditPage from "./DeleteListBarFromEditPage";
+import DeleteAlert from "../Global/DeleteAlert";
 
 function EditCreateListPage(props) {
   const currentList = props.data.find(
@@ -40,10 +41,14 @@ function EditCreateListPage(props) {
       />
       {props.inEditListMode ? (
         <DeleteListBarFromEditPage
-          onDeleteList={props.onDeleteList}
-          currentListId={props.currentListId}
+          onToggleDeleteAlert={props.onToggleDeleteAlert}
         />
       ) : null}
+      {props.showDeleteAlert && <DeleteAlert
+        type="this list" 
+        onToggleDeleteAlert={props.onToggleDeleteAlert}
+        onDelete={() => props.onDeleteList(props.currentListId)}
+      />}
     </div>
   );
 }
