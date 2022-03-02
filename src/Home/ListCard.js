@@ -7,7 +7,8 @@ import DeleteListButton from "./DeleteListButton";
 function ListCard(props) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
-  const [inEditMode, setEditMode] = useState(false);
+
+  const inEditMode = (props.listInEditMode === props.id);
 
   /* The three functions below handle user swiping left or right on ListCard to reveal / hide edit and delete icons */
   function handleTouchStart(e) {
@@ -21,19 +22,15 @@ function ListCard(props) {
   function handleTouchEnd() {
     // touchEnd !== 0 ensures there's a drag, not a click/tap
     if (touchStart - touchEnd > 75 && touchEnd !== 0 && !inEditMode) {
-      toggleEditMode();
+      props.onEditList(props.id);
     }
     if (touchStart - touchEnd < -75 && touchEnd !== 0 && inEditMode) {
-      toggleEditMode();
+      props.onEditList(null);
     }
 
     // reset touchStart and touchEnd states to initial values of 0
     setTouchStart(0);
     setTouchEnd(0);
-  }
-
-  function toggleEditMode() {
-    setEditMode(!inEditMode);
   }
 
   function handleListCardClick() {
@@ -68,7 +65,7 @@ function ListCard(props) {
             id={props.id} />
         </Fragment>
       ) : (
-        <EnterListArrow onListIconClick={toggleEditMode} />
+        <EnterListArrow onListIconClick={() => props.onEditList(null)} />
       )}
     </div>
   );

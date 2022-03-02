@@ -1,7 +1,14 @@
 import "./ListOfLists.css";
+import React, { useState } from 'react';
 import ListCard from "./ListCard";
 
 function ListOfLists(props) {
+  const [listInEditMode, setListInEditMode] = useState(null);
+
+  function handleEditListMode(listId) {
+    setListInEditMode(listId);
+  }
+
   function sortListsCompareFunction(a, b) {
     return a.listName.toLowerCase() < b.listName.toLowerCase() ? -1 : 1;
   }
@@ -18,6 +25,8 @@ function ListOfLists(props) {
           onChangeList={props.onChangeList}
           onDeleteList={props.onDeleteList}
           onToggleDeleteAlert={props.onToggleDeleteAlert}
+          listInEditMode = {listInEditMode}
+          onEditList = {handleEditListMode}
         />
       ))}
     </div>
