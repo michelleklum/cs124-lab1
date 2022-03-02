@@ -2,9 +2,11 @@ import "./ListIconOptions.css";
 import ListIcon from "./ListIcon"
 
 function ListIconOptions(props) {
-    const iconOptions = ["globe-africa", "broom", "gifts", "ghost", "baseball-ball", "list-alt",
-        "shopping-basket", "seedling", "book", "pepper-hot", "football-ball", "carrot", "phone", "music", "briefcase", "user-friends",
-        "heart", "shapes", "puzzle-piece", "microscope", "address-book", "baby-carriage", "umbrella-beach", "cat", "basketball-ball"]
+    const iconOptions = ["globe-africa", "broom", "gifts", "baseball-ball", "list-alt",
+    "shopping-basket", "seedling", "book", "football-ball", "carrot", "phone", "briefcase", "music", "user-friends",
+    "heart", "puzzle-piece", "microscope", "address-book", "baby-carriage", "umbrella-beach", "cat", "basketball-ball", 
+    "ghost", "lemon", "address-card", "ice-cream", "socks", "bicycle",
+    "paper-plane", "pills"]
 
     return (
         <div className="icon-options">
