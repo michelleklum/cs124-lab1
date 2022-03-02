@@ -92,7 +92,7 @@ Tapping on the time field opens up a time picker. The user can either click or s
 
 <img src="edit_task_page_final_lab_2_time_picker.png" alt="Edit Task Page Lab 2 Final Version Time Picker" width="200px">
 
-## Final App: Delete Popup Confirmation Messages
+## Final App: Delete Pop-Up Confirmation Messages
 
 For Lab 2, we introduced confirmation messages that would pop up when a user clicks a delete button. During user testing, one of our participants accidentally deleted a task and remarked that it would have been nice to have an extra warning to prevent that from happening. We thought that was a great idea, and now have confirmation messages whenever a user clicks a button to delete a task, delete completed tasks in a list, delete all tasks in a list, and delete a list.
 
@@ -221,6 +221,7 @@ While users understood that this page would allow them to edit a task name, date
 <img src="user_test_edit_task_page.png" alt="User Testing Edit Task Page - Lab 1" width="200px">
 
 ## Usability Testing: Lab 2
+For Lab 2, we conducted usability testing in-person with three Mudd students and virtually (through Zoom) with a student from another school. We first asked participants to share their impressions of our app just based on the home screen. We asked what they thought our app did and what actions they thought they could perform based on viewing the page. Next, we asked participants to perform a series of tasks while thinking out loud. These tasks included creating, deleting, and editing lists and tasks and searching for lists and tasks.
 
 ### Home Page
 
