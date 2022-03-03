@@ -20,7 +20,7 @@ function convertMilitaryTimeToStandardTime(militaryTime) {
 }
 
 function TaskCard(props) {
-  const numTaskCharsToShow = 25;
+  const numTaskCharsToShow = 30;
   function handleTaskCardClick() {
     props.onChangePage("ViewTaskPage");
     props.onChangeTask(props.task.id);
