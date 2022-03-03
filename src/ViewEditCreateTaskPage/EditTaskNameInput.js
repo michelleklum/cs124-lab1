@@ -29,7 +29,7 @@ function EditTaskNameInput(props) {
         onChange={handleTextareaChange}
         id="edit-task-name"
         name="task-name"
-        maxLength="60"
+        maxLength="40"
         placeholder="Task name"
         autoComplete="off"
         value={props.tempTaskName}

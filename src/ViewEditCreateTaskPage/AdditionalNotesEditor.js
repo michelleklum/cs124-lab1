@@ -29,7 +29,7 @@ function AdditionalNotesEditor(props) {
         onChange={handleTextareaChange}
         id="edit-task-notes"
         name="task-notes"
-        maxLength="120"
+        maxLength="96"
         placeholder="Enter additional notes"
         autoComplete="off"
         defaultValue={props.tempTaskNotes}
